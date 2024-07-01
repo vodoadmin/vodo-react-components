@@ -1,13 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
 import Test from "./Pages/Test";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <Test />
-  </React.StrictMode>
-);
+function App() {
+  return (
+    <div className="h-screen bg-neutral-100">
+      <Test />
+    </div>
+  );
+}
+
+export default App;

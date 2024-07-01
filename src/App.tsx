@@ -1,12 +1,8 @@
-import React from 'react';
-
+import React from "react";
+import Test from "./Pages/Test";
 
 function App() {
-  return (
-    <div className="App">
-      Hello
-    </div>
-  );
+  return <Test />;
 }
 
 export default App;

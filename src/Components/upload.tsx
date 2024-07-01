@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
-import { Progress } from "../ui/progress";
-import UploadIcon from "./vodo-icons/uploadSVG";
-import CloseIcon from "./vodo-icons/closeSVG";
+import { cn } from "../Utils/utils";
+import { Progress } from "./progress";
+import UploadIcon from "../Icons/uploadSVG";
+import CloseIcon from "../Icons/closeSVG";
 import React from "react";
 
 interface Upload {
@@ -22,9 +22,13 @@ const Upload: React.FC<Upload> = ({
 
   const fileSize = (file.size / 1024).toFixed(2);
   return (
-    <section className={cn("w-[391px] bg-black/5 p-3 rounded-md relative", className)}>
+    <section
+      className={cn("w-[391px] bg-black/5 p-3 rounded-md relative", className)}
+    >
       <div className="flex items-center ">
-        <UploadIcon className={`w-11 h-11 ${complete ? "*:*:stroke-secondary" : ""}`} />
+        <UploadIcon
+          className={`w-11 h-11 ${complete ? "*:*:stroke-secondary" : ""}`}
+        />
         <div className=" grow">
           <h1 className="text-sm font-normal">{file.name}</h1>
           {!complete && (

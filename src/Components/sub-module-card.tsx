@@ -1,11 +1,11 @@
 import { useState } from "react";
-import ArrowLeftIcon from "./vodo-icons/arrow-leftSVG";
+import ArrowLeftIcon from "../Icons/arrow-leftSVG";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "./accordion";
 import React from "react";
 
 interface SideModuleProps {
@@ -24,7 +24,9 @@ const SideModuleCard: React.FC<SideModuleProps> = ({ title }) => {
               <ArrowLeftIcon
                 className={`${open ? "rotate-90 *:*:stroke-destructive" : ""}`}
               />
-              <span className={`transition-all ${open ? "text-destructive" : ""}`}>
+              <span
+                className={`transition-all ${open ? "text-destructive" : ""}`}
+              >
                 {title}
               </span>
             </div>

@@ -1,4 +1,4 @@
-import { Button } from "../ui/button";
+import { Button } from "./Main-Components/button";
 import React from "react";
 
 interface SideCard {

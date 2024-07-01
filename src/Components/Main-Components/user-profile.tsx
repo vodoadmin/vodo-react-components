@@ -1,6 +1,6 @@
 import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
-import { cn } from "../Utils/utils";
+import { Avatar, AvatarFallback, AvatarImage } from "../avatar";
+import { cn } from "../../Utils/utils";
 
 interface UserProfileProps {
   name: string;

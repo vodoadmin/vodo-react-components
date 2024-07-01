@@ -1,11 +1,11 @@
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "../Utils/utils";
 
-import ClearIcon from "../../components/Mustafa/vodo-icons/clearSVG";
-import EyePasswordIcon from "../../components/Mustafa/vodo-icons/eyepasswordSVG";
-import EyeSlashIcon from "../../components/Mustafa/vodo-icons/eyeslash";
-import CloseIcon from "../Mustafa/vodo-icons/closeSVG";
+import ClearIcon from "../Icons/clearSVG";
+import EyePasswordIcon from "../Icons/eyepasswordSVG";
+import EyeSlashIcon from "../Icons/eyeslash";
+import CloseIcon from "../Icons/closeSVG";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}

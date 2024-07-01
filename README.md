@@ -51,6 +51,7 @@ function App() {
       <li><a href="#user-content-SearchInput">SearchInput</a></li>
       <li><a href="#user-content-TextArea">TextArea</a></li>
       <li><a href="#user-content-Icons">Icons</a></li>
+      <li><a href="#user-content-table">table</a></li>
 </ul>
 <hr />
 
@@ -102,7 +103,6 @@ The card that appears contains : section containing username,avatar and user's e
 - ref ?: to add refrence to the button
 
 ```javascript
-    <Button className="w-[191px] h-[56px]">Primary</Button>
     <Button variant="destructive">destructive</Button>
     <Button variant="secondary">secondary</Button>
     <Button variant="ghost">ghost</Button>
@@ -114,8 +114,6 @@ The card that appears contains : section containing username,avatar and user's e
 
 ```javascript
     variant: {
-        default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 focus:bg-[#C4332B] active:bg-[#C4332B] active:shadow-custom",
         outline:
@@ -132,6 +130,8 @@ The card that appears contains : section containing username,avatar and user's e
         icon: "h-10 w-10",
       },
 ```
+
+\*\*\*\* HINT : The primary button is depricated
 
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719662187/VODO/reusable%20components/Button_zxnrni.png)
 
@@ -466,5 +466,146 @@ Various icons as shown in the image below.
 ```
 
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719684241/VODO/reusable%20components/Icons_mustafa_ccldbt.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="table">
+
+### 14- Table
+
+#### The userNav takes 2 props:
+
+- columns : column headers
+- data : data added to table
+
+This is how the table component is used :
+
+```javascript
+<DataTable columns={columns} data={tableData} searchKey={"name"} />
+```
+
+##### How to set the headers ?
+
+To set headers you need to pass an array of objects to the columns prop, each object consists of 3 keys : id of the column - acessorKey ( Which is used for passing data in the data array ) - header ( The column's header that will appear in the table ).
+
+```javascript
+export const columns: ColumnDef<Column>[] = [
+  {
+    id: "id",
+    accessorKey: "id",
+    header: "ID",
+  },
+  {
+    id: "image",
+    accessorKey: "image",
+    header: "Image",
+  },
+  {
+    id: "sku",
+    accessorKey: "sku",
+    header: "SKU",
+  },
+  {
+    id: "name",
+    accessorKey: "name",
+    header: "Name",
+  },
+  {
+    id: "category",
+    accessorKey: "category",
+    header: "Category",
+  },
+  {
+    id: "priceCost",
+    accessorKey: "priceCost",
+    header: "Price cost",
+  },
+  {
+    id: "price",
+    accessorKey: "price",
+    header: "Price",
+  },
+  {
+    id: "kind",
+    accessorKey: "kind",
+    header: "Kind",
+  },
+  {
+    id: "virtual",
+    accessorKey: "virtual",
+    header: "Virtual",
+  },
+  {
+    id: "status",
+    accessorKey: "status",
+    header: "Status",
+  },
+  {
+    id: "supplierChair",
+    accessorKey: "supplierChair",
+    header: "Supplier Chair",
+  },
+  {
+    id: "action",
+    header: "Actions",
+    cell: ({ row }) => <CellAction data={row.original} />,
+  },
+];
+```
+
+##### How to set table's data ?
+
+To set headers you need to pass an array of objects to the data prop, each object consists of keys, each key is the accessorKey of the header which is defined in the objects of the columns' array.
+
+```javascript
+export const tableData: Column[] = [
+  {
+    id: 'id',
+    imageUrl: 'image',
+    sku: 'sku',
+    name: 'name',
+    category: 'category',
+    priceCost: 100,
+    price: 100,
+    kind: 'kind',
+    virtual: 'virtual',
+    status: 'status',
+    supplierChair: 'supplierChair',
+  },
+  {
+    id: 'id',
+    imageUrl: 'image',
+    sku: 'sku',
+    name: 'name',
+    category: 'category',
+    priceCost: 100,
+    price: 200,
+    kind: 'kind',
+    virtual: 'virtual',
+    status: 'status',
+    supplierChair: 'supplierChair',
+  },
+  {
+    id: 'id',
+    imageUrl: 'image',
+    sku: 'sku',
+    name: 'name',
+    category: 'category',
+    priceCost: 100,
+    price: 300,
+    kind: 'kind',
+    virtual: 'virtual',
+    status: 'status',
+    supplierChair: 'supplierChair',
+  },
+  .. The remaining of the data ..
+]
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719861786/VODO/reusable%20components/Table_goamak.png)
 
 </section>

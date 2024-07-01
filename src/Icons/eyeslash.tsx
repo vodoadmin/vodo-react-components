@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "../Utils/utils";
 import React from "react";
 
 interface EyeSlash {
@@ -23,7 +23,12 @@ const EyeSlashIcon: React.FC<EyeSlash> = ({ className }) => {
         </g>
         <defs>
           <clipPath id="clip0_3603_823">
-            <rect width="20" height="20" fill="white" transform="translate(0 0.5)" />
+            <rect
+              width="20"
+              height="20"
+              fill="white"
+              transform="translate(0 0.5)"
+            />
           </clipPath>
         </defs>
       </svg>

@@ -14,6 +14,45 @@ interface inputFile {
   url: string;
 }
 
+const uploadFileWithProgress = (
+  url: string,
+  formData: any,
+  setProgress: any,
+  setRemaining: any
+) => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+
+    // Set up a listener to track the upload progress
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable) {
+        const percentCompleted = Math.round((event.loaded * 100) / event.total);
+        const remainingTime = (
+          (event.total - event.loaded) /
+          (event.loaded / event.timeStamp)
+        ).toFixed(2); // Approximate remaining time in milliseconds
+        setProgress(percentCompleted);
+        setRemaining(remainingTime);
+      }
+    };
+
+    // Set up listeners for success and error
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        resolve(xhr.response);
+      } else {
+        reject(new Error(xhr.statusText));
+      }
+    };
+
+    xhr.onerror = () => reject(new Error("Network error"));
+
+    // Send the form data
+    xhr.send(formData);
+  });
+};
+
 const InputFile: React.FC<inputFile> = ({ className, disabled, url }) => {
   const [file, setFile] = useState<File | null>(null);
   const [progress, setProgress] = useState<number>(0);
@@ -25,17 +64,13 @@ const InputFile: React.FC<inputFile> = ({ className, disabled, url }) => {
       const formData = new FormData();
       formData.append("file", selected);
       try {
-        await axios.post(url, formData, {
-          onUploadProgress: (ProgressEvent) => {
-            if (ProgressEvent.total) {
-              const { loaded, total } = ProgressEvent;
-              const percentCompleted = Math.round((loaded * 100) / total);
-              const remainingTime = ProgressEvent.estimated?.toFixed(2);
-              setProgress(percentCompleted);
-              setRemaining(remainingTime);
-            }
-          },
-        });
+        uploadFileWithProgress(url, formData, setProgress, setRemaining)
+          .then((response) => {
+            console.log("Upload successful", response);
+          })
+          .catch((error) => {
+            console.error("Upload failed", error);
+          });
       } catch (err) {
         console.log(err);
       }

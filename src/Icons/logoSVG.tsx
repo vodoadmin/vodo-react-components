@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "../Utils/utils";
 import React from "react";
 
 interface Logo {
@@ -29,7 +29,10 @@ const LogoIcon: React.FC<Logo> = ({ className }) => {
             width="1"
             height="1"
           >
-            <use xlinkHref="#image0_655_156" transform="scale(0.00473934 0.0192308)" />
+            <use
+              xlinkHref="#image0_655_156"
+              transform="scale(0.00473934 0.0192308)"
+            />
           </pattern>
           <image
             id="image0_655_156"

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "../Utils/utils";
 import React from "react";
 
 interface Tick {
@@ -22,7 +22,12 @@ const TickIcon: React.FC<Tick> = ({ className }) => {
         </g>
         <defs>
           <clipPath id="clip0_3603_908">
-            <rect width="18" height="18" fill="white" transform="translate(1 1.5)" />
+            <rect
+              width="18"
+              height="18"
+              fill="white"
+              transform="translate(1 1.5)"
+            />
           </clipPath>
         </defs>
       </svg>

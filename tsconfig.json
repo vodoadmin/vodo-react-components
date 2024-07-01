@@ -3,7 +3,7 @@
     "target": "ES5",
     "module": "ESNext",
     "jsx": "react",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,7 +12,7 @@
     "emitDeclarationOnly": true,
     "outDir": "./dist",
     "strict": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
     }

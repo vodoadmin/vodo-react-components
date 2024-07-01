@@ -10,5 +10,5 @@ export default defineConfig({
   dts: true,
   splitting: true,
   plugins: [cssModulesPlugin()],
-  onSuccess: "npm run copy-assets",
+  // onSuccess: "npm run copy-assets",
 });

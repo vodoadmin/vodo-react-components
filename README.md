@@ -1,46 +1,470 @@
-# Getting Started with Create React App
+# VODO-REACT-COMPONENTS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Npm package created to supply reusable components to VODO developers.
 
-## Available Scripts
+## How to use it ?
 
-In the project directory, you can run:
+Before installing package, you should have tailwindCSS installed and configured in your project as the package styling is built using tailwindCSS.
 
-### `npm start`
+You should also include the index.css file of the package in the top of your app ( eg. in the top of App.tsx - your main file that contains the whole application - ) as following :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```javascript
+import React from "react";
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+// The following import must be included to apply styles used
+// in the package
+import "../node_modules/vodo-react-components/dist/index.css";
 
-### `npm test`
+// This is an example for importing some components from package
+import { Submit, UserNav } from "vodo-react-components";
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+function App() {
+  return (
+    <div className="container">
+      <UserNav
+        name="Zain Ali"
+        avatarUrl="https://i.pravatar.cc/150?img=3"
+        className="p-1.5 rounded-full shadow-[#EB3D34_7px_-3px]"
+        avatarClass=" w-8 h-8"
+        email="zain20@gmail.com"
+      />
+    </div>
+  );
+}
+```
 
-### `npm run build`
+## Table of components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<hr />
+<ul id="table-contents">
+      <li><a href="#user-content-UserNav">UserNav</a></li>
+      <li><a href="#user-content-Button">Button</a></li>
+      <li><a href="#user-content-CardWrapper">CardWrapper</a></li>
+      <li><a href="#user-content-businessCard">businessCard</a></li>
+      <li><a href="#user-content-Switcher">Switcher</a></li>
+      <li><a href="#user-content-InputFile">InputFile</a></li>
+      <li><a href="#user-content-SideBar">SideBar</a></li>
+      <li><a href="#user-content-UserInput">UserInput</a></li>
+      <li><a href="#user-content-Status">Status</a></li>
+      <li><a href="#user-content-NavigationTrail">NavigationTrail</a></li>
+      <li><a href="#user-content-UserProfile">UserProfile</a></li>
+      <li><a href="#user-content-SearchInput">SearchInput</a></li>
+      <li><a href="#user-content-TextArea">TextArea</a></li>
+      <li><a href="#user-content-Icons">Icons</a></li>
+</ul>
+<hr />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠 Components included in the package :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<section id="UserNav">
 
-### `npm run eject`
+### 1- UserNav
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### The userNav takes 5 props:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- name : username
+- avatarUrl : url of avatar
+- className : TailwindCSS styles you want to add to the whole component.
+- avatarClass : TailwindCSS classes you want to apply to avatar
+- email : user's email
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```javascript
+<UserNav
+  name="Zain Ali"
+  avatarUrl="https://i.pravatar.cc/150?img=3"
+  className="p-1.5 rounded-full shadow-[#EB3D34_7px_-3px]"
+  avatarClass=" w-8 h-8"
+  email="zain20@gmail.com"
+/>
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This usernav acts as a like-popup card that appears when you press on a container with the username and the avatar.
+The card that appears contains : section containing username,avatar and user's email and two buttons which are edit account and logout.
 
-## Learn More
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719610722/VODO/reusable%20components/userNav_kzm4rv.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+//=================================================
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+//=================================================
+
+</section>
+
+<section id="Button">
+
+### 2- Button
+
+#### The Button takes 5 props :
+
+- Variant : each variant apply styles. Downwards you will find different varaints values with corresponding styles.
+- classname ?: TailwindCSS classes to apply
+- size ?: each size has corresponding style will be illustrated downwards.
+- props ?: additional button props (eg. onClick, onBlur, ...)
+- ref ?: to add refrence to the button
+
+```javascript
+    <Button className="w-[191px] h-[56px]">Primary</Button>
+    <Button variant="destructive">destructive</Button>
+    <Button variant="secondary">secondary</Button>
+    <Button variant="ghost">ghost</Button>
+    <Button variant="outline">outline</Button>
+    <Button variant="link">link</Button>
+```
+
+#### Diffrent variants and sizes available :
+
+```javascript
+    variant: {
+        default:
+          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 focus:bg-[#C4332B] active:bg-[#C4332B] active:shadow-custom",
+        outline:
+          "border border-destructive text-destructive bg-background shadow-sm hover:bg-destructive/[0.05] hover:text-destructive focus:bg-destructive/[0.05] active:bg-destructive/[0.15] active:shadow-custom",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-muted-foreground/50 underline-offset-4 hover:underline hover:text-primary",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719662187/VODO/reusable%20components/Button_zxnrni.png)
+
+//=================================================
+
+//=================================================
+
+</section>
+
+<section id="CardWrapper">
+
+### 3- CardWrapper
+
+#### The CardWrapper takes 4 props :
+
+- cardTitle : Title appears on the top of the card
+- classname ?: TailwindCSS classes to apply
+- showFooter ?: boolean value to show footer if true
+- footerHref ?: Link appears in the footer ( The footer has a - view all - word which refs to a link )
+
+```javascript
+<CardWrapper
+  className="w-[500px]"
+  showFooter
+  footerHref="#"
+  cardTitle="Add business"
+>
+  Card Content
+</CardWrapper>
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719662839/VODO/reusable%20components/CardWrapper_kwus0q.png)
+
+//=================================================
+
+//=================================================
+
+</section>
+
+<section id="businessCard">
+
+### 4- businessCard
+
+#### The businessCard takes 4 props :
+
+- title
+- description
+- imageUrl
+- addHref : link added to the - add - keyword
+
+```javascript
+<BusinessCard
+  addHref="#"
+  imageUrl={businessCard}
+  title="Business name"
+  description="Quia fugiat magnam sed ut eum voluptas cumque."
+/>
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719663778/VODO/reusable%20components/businessCard_dykeza.png)
+
+CardWrapper containing business cards :
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719663779/VODO/reusable%20components/cardWrapper_with_business_cards_a4n4qo.png)
+
+//=================================================
+
+//=================================================
+
+</section>
+
+<section id="Switcher">
+
+### 5- Switcher
+
+A drop list with a search bar.
+
+#### The Switcher takes 5 props :
+
+- placeHolder : The value appears initially in the droplist section
+- className?
+- items : items appear in the drop list
+- heading : the title of the options in the drop list (eg. sizes)
+- setSelectedOption : Used to get the selected option. This prop is the setState function you pass to the component.
+
+```javascript
+const [item, setItem] = (useState < null) | (string > null);
+<Switcher
+  items={["Large", "Medium", "Small"]}
+  heading="Sizes"
+  setSelectedOption={(item: null | string) => setItem(item)}
+  placeHolder="Select your size"
+/>;
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719664116/VODO/reusable%20components/Switcher_s4zuiy.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="InputFile">
+### 7- InputFile
+
+Used to upload file to a specific URL ( images ony allowed !! ).
+
+#### The InputFile takes 3 props :
+
+- url : url to which file will be uploaded.
+- className?
+- disabled ?: boolean value to indicate of the input is disabled or not
+
+```javascript
+<InputFile url="https://store1.gofile.io/uploadFile" />
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719671300/VODO/reusable%20components/INputFile_ripmgb.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="SideBar">
+
+### 8- SideBar
+
+```javascript
+<SideBar />
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719671524/VODO/reusable%20components/SideBar_gkkpu6.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="UserInput">
+
+### 9- UserInput
+
+A drop list with a search bar.
+
+#### The UserInput takes same props as default input field
+
+```javascript
+<UserInput label="Username" type={"text"} placeholder="type your username" />
+<UserInput disabled label="Password" type={"password"} />
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719683933/VODO/reusable%20components/InputField_ldixiy.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="Status">
+
+### 10- Status
+
+Button contains on/off status
+
+#### The Status takes one prop ( status ) which takes only two value : on - off
+
+```javascript
+<Status status={"on"} />
+<Status status={"off"} />
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719675931/VODO/reusable%20components/Status_ksxisa.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="NavigationTrail">
+
+### 11- NavigationTrail
+
+#### The NavigationTrail takes 2 props :
+
+- trailPage : The current page with the different color which will be the last element in the trial
+- trailLink : These are the remaining previous elements in the trial. It is an array of objects, each object contains two properties ( label : the name of elements & href : the link to which the label refers )
+
+```javascript
+<NavigationTrail
+  trailLink={[
+    { label: "Home", href: "/" },
+    { label: "Products", href: "/" },
+  ]}
+  trailPage="Products Details"
+/>
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719676900/VODO/reusable%20components/NAvigation_trial_gp0l2j.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="UserProfile">
+
+### 12- UserProfile
+
+#### The UserProfile takes 4 props :
+
+- name
+- email
+- avatarUrl : img url
+- className ?: addition TailwindCSS classes to apply
+
+```javascript
+<UserProfile
+  className=" rounded-b-[32px]"
+  name="Zain Ali"
+  email="zain20@gmail.com"
+  avatarUrl={avatar}
+/>
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719678030/VODO/reusable%20components/UserProfile_xszr9n.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="SearchInput">
+
+### 13- SearchInput
+
+#### The SearchInput takes 4 props :
+
+- setInputValue : setState function to get the value of the input field
+- disabled ?
+- props ?: default input props
+- className ?: addition TailwindCSS classes to apply
+
+```javascript
+<SearchInput setInputValue={setInputValue} disabled />
+<SearchInput setInputValue={setInputValue}/>
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719678813/VODO/reusable%20components/Search_input_e7gqzu.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="TextArea">
+
+### 14- TextArea
+
+#### The TextArea takes 4 props :
+
+- label
+- disabled?: boolean;
+- placeHolder?
+- className?: TailwindCSS classes;
+- error?: error message to show;
+- success?: success message to show;
+- onChange?
+- onBlur?
+- onFocus?
+
+```javascript
+<TextArea
+    label="Tell us your opinion"
+    placeHolder="Type something here"
+/>
+<TextArea
+    label="Tell us your opinion"
+    placeHolder="Type something here"
+    disabled
+/>
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719679516/VODO/reusable%20components/TextArea_vgcgkc.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="Icons">
+
+### 14- Icons
+
+Various icons as shown in the image below.
+
+```javascript
+<EyeIcon />
+<AddBusinessIcon />
+<ArrowDownIcon />
+<ArrowMenuIcon />
+<BurgerIcon />
+<CalendarIcon />
+<DeleteIcon />
+<DownloadIcon />
+<ExportIcon />
+<FilterSearchIcon />
+<LinkIcon />
+<LogoIcon />
+<ModulesIcon />
+<NotificationIcon />
+<PaypalIcon />
+<PeopleIcon />
+<PhoneIcon />
+<StatsIcon />
+<TicketIcon />
+<EditIcon />
+<ErrorIcon />
+<TickIcon />
+<ClearIcon />
+<EyePasswordIcon />
+<EyeSlashIcon />
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719684241/VODO/reusable%20components/Icons_mustafa_ccldbt.png)
+
+</section>

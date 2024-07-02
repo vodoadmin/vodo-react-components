@@ -1,11 +1,15 @@
 import React from "react";
-import { SideBar } from "..";
+import { Selector, SideBar } from "..";
 import StatsIcon from "../Icons/statsSVG";
 import TicketIcon from "../Icons/ticketSVG";
 import PeopleIcon from "../Icons/peopleSVG";
 import PaypalIcon from "../Icons/paypalSVG";
 import LinkIcon from "../Icons/linkSVG";
 import { ModuleProps } from "@/Components/Main-Components/sidebar";
+const items = [
+  { name: "English", value: "en" },
+  { name: "Arabic", value: "ar" },
+];
 const submodules: ModuleProps[] = [
   {
     title: "test1",

@@ -21,6 +21,12 @@ export { default as Status } from "./Components/Main-Components/status";
 export { UserProfile } from "./Components/Main-Components/user-profile";
 export { NavigationTrail } from "./Components/Main-Components/navigation-trail";
 export { DataTable } from "./Components/Main-Components/data-table";
+export {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./Components/accordion";
 //===================================================================================================
 //===================================== icons =======================================================
 //===================================================================================================
@@ -47,4 +53,3 @@ export { default as DeleteIcon } from "./Icons/deleteSVG";
 export { default as BurgerIcon } from "./Icons/burgerSVG";
 export { default as ArrowDownIcon } from "./Icons/arrow-downSVG";
 export { default as EyeIcon } from "./Icons/eyeSVG";
-console.log("ss");

@@ -1,11 +1,11 @@
 import "./index.css";
 import "class-variance-authority";
-import "./main.tsx";
-// export { cva } from "class-variance-authority";
-// export { type VariantProps } from "class-variance-authority";
+// import "./main.tsx";
+
 //================================================================================================
 //========================== documentation finished ==============================================
 //================================================================================================
+
 export { Switcher } from "./Components/Main-Components/switcher";
 export { Button } from "./Components/Main-Components/button";
 export { default as UserNav } from "./Components/Main-Components/user-nav";
@@ -20,17 +20,24 @@ export { default as InputFile } from "./Components/Main-Components/input-file";
 export { default as Status } from "./Components/Main-Components/status";
 export { UserProfile } from "./Components/Main-Components/user-profile";
 export { NavigationTrail } from "./Components/Main-Components/navigation-trail";
-export { DataTable } from "./Components/Main-Components/data-table";
 export {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "./Components/accordion";
-// export { DataTable } from "./Components/Main-Components/data-table";
+export { DropDown } from "./Components/Main-Components/DropDown";
+export { default as MainTabel } from "./Components/Main-Components/MainTabel";
+export { default as PaginationComponent } from "./Components/Main-Components/PaginationComponent";
+
+//===================================================================================================
+//==================================== Awaiting =====================================================
+//===================================================================================================
+
 //===================================================================================================
 //===================================== icons =======================================================
 //===================================================================================================
+
 export { default as AddBusinessIcon } from "./Icons/add-businessSVG";
 export { default as ArrowMenuIcon } from "./Icons/arrow-menuSVG";
 export { CalendarIcon, DownloadIcon, EditIcon } from "lucide-react";

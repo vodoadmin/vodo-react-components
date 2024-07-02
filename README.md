@@ -52,6 +52,8 @@ function App() {
       <li><a href="#user-content-TextArea">TextArea</a></li>
       <li><a href="#user-content-Icons">Icons</a></li>
       <li><a href="#user-content-table">table</a></li>
+      <li><a href="#user-content-dropDown">dropDown</a></li>
+      <li><a href="#user-content-pagination">pagination</a></li>
 </ul>
 <hr />
 
@@ -475,17 +477,17 @@ Various icons as shown in the image below.
 
 <section id="table">
 
-### 14- Table
+### 15- Table
 
-#### The userNav takes 2 props:
+#### The Table takes 2 props:
 
-- columns : column headers
-- data : data added to table
+- TabelHead : Array of objects that represent headers, each object has two keys (accessorKey : is the key used in the tabelData array's objects to specify the value at a specific column & header : is the header that appears in the UI )
+- TabelData : data added to table which is an array of objects, each object has keys ( which representthe accessorKey of the corresponding header ) and values
 
 This is how the table component is used :
 
 ```javascript
-<DataTable columns={columns} data={tableData} searchKey={"name"} />
+<MainTabel TabelHead={tableHead} TabelData={tableData} />
 ```
 
 ##### How to set the headers ?
@@ -494,66 +496,24 @@ To set headers you need to pass an array of objects to the columns prop, each ob
 
 ```javascript
 export const columns: ColumnDef<Column>[] = [
+  const tableHead: tableHeaderType[] = [
   {
-    id: "id",
     accessorKey: "id",
     header: "ID",
   },
   {
-    id: "image",
     accessorKey: "image",
     header: "Image",
   },
   {
-    id: "sku",
     accessorKey: "sku",
     header: "SKU",
   },
   {
-    id: "name",
     accessorKey: "name",
     header: "Name",
   },
-  {
-    id: "category",
-    accessorKey: "category",
-    header: "Category",
-  },
-  {
-    id: "priceCost",
-    accessorKey: "priceCost",
-    header: "Price cost",
-  },
-  {
-    id: "price",
-    accessorKey: "price",
-    header: "Price",
-  },
-  {
-    id: "kind",
-    accessorKey: "kind",
-    header: "Kind",
-  },
-  {
-    id: "virtual",
-    accessorKey: "virtual",
-    header: "Virtual",
-  },
-  {
-    id: "status",
-    accessorKey: "status",
-    header: "Status",
-  },
-  {
-    id: "supplierChair",
-    accessorKey: "supplierChair",
-    header: "Supplier Chair",
-  },
-  {
-    id: "action",
-    header: "Actions",
-    cell: ({ row }) => <CellAction data={row.original} />,
-  },
+  .... remaining of headers
 ];
 ```
 
@@ -574,7 +534,13 @@ export const tableData: Column[] = [
     kind: 'kind',
     virtual: 'virtual',
     status: 'status',
-    supplierChair: 'supplierChair',
+    actions: (
+    <DropDown
+      selections={selections}
+      mainIcon={<EditIcon className="w-6 h-6" />}
+      title="Actions"
+    />
+  ),
   },
   {
     id: 'id',
@@ -588,24 +554,109 @@ export const tableData: Column[] = [
     virtual: 'virtual',
     status: 'status',
     supplierChair: 'supplierChair',
+    actions: (
+    <DropDown
+      selections={selections}
+      mainIcon={<EditIcon className="w-6 h-6" />}
+      title="Actions"
+    />
+  ),
   },
-  {
-    id: 'id',
-    imageUrl: 'image',
-    sku: 'sku',
-    name: 'name',
-    category: 'category',
-    priceCost: 100,
-    price: 300,
-    kind: 'kind',
-    virtual: 'virtual',
-    status: 'status',
-    supplierChair: 'supplierChair',
-  },
-  .. The remaining of the data ..
+  .... The remaining of the data ..
 ]
 ```
 
+\*\*\*\* HINT : DropDown is illustrated down in the docs.
+
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719861786/VODO/reusable%20components/Table_goamak.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="dropDown">
+
+### 16- DropDown
+
+#### The DropDown takes 3 props:
+
+- selections : Array of objects, each object has 3 keys (icon , name and action ( the method that is called when click on the corresponding option in the droplist ) )
+- mainIcon : Icon of the droplist
+- title : title appears upwards the options.
+
+This is how the table component is used :
+
+```javascript
+<DropDown
+  selections={selections}
+  mainIcon={<EditIcon className="w-6 h-6" />}
+  title="Actions"
+/>
+```
+
+##### Selections array
+
+```javascript
+interface dropOptions {
+  icon?: ReactNode;
+  name: string;
+  action: any;
+}
+
+const selections: dropOptions[] = [
+  {
+    icon: <Copy className="w-4 h-4 mr-2" />,
+    name: "Copy",
+    action: () => {
+      console.log("copy");
+    },
+  },
+
+  {
+    icon: <Edit className="w-4 h-4 mr-2" />,
+    name: "Edit",
+    action: () => {
+      console.log("edit");
+    },
+  },
+];
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719954873/VODO/reusable%20components/DropDown_phhpub.png)
+
+</section>
+
+//=================================================
+
+//=================================================
+
+<section id="pagination">
+
+### 17- PaginationComponent
+
+#### It has two sections :
+
+- The left one for pages
+- The right one for limit
+
+#### The PaginationComponent takes 3 props:
+
+- totalDataLength : total number of rows (data)
+- setPageFn : setState function to get the current page
+- setLimitFn : setState function to get the limit
+
+This is how the table component is used :
+
+```javascript
+<PaginationComponent
+  setLimitFn={() => {}}
+  setPageFn={() => {}}
+  totalDataLength={100}
+/>
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719955058/VODO/reusable%20components/pagination_jwxzkr.png)
 
 </section>

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -78,61 +79,6 @@
   }
 }
 
-/* ./src/index.css */
-
-/* @font-face {
-  font-family: "Poppins";
-  font-weight: 100;
-  src: url("./fonts/Poppins-Thin.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 200;
-  src: url("./fonts/Poppins-ExtraLight.ttf") format("truetype");
-} */
-
-/* @font-face {
-  font-family: "Poppins";
-  font-weight: 300;
-  src: url("./fonts/Poppins-Light.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 400;
-  src: url("./fonts/Poppins-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 500;
-  src: url("./fonts/Poppins-Medium.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 600;
-  src: url("./fonts/Poppins-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 700;
-  src: url("./fonts/Poppins-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 800;
-  src: url("./fonts/Poppins-ExtraBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  font-weight: 900;
-  src: url("./fonts/Poppins-Black.ttf") format("truetype");
-} */
 .icon-trigger {
   @apply relative z-10 grid place-content-center after:-z-10 after:rounded-lg after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-0 after:h-0 after:absolute after:transition-all;
 }
@@ -162,4 +108,31 @@ aside > button path {
 }
 aside button svg path {
   @apply stroke-black;
+}
+
+.custom_tabel tr td {
+  text-align: center;
+}
+.custom_tabel th {
+  text-wrap: nowrap;
+}
+.custom_hight {
+  min-width: 100px;
+
+  min-height: 69px !important;
+  width: 100%;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
 }

@@ -3,7 +3,7 @@ import Test from "./Pages/Test";
 
 function App() {
   return (
-    <div className="h-screen bg-neutral-100">
+    <div className="w-screen h-screen bg-neutral-100">
       <Test />
     </div>
   );

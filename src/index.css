@@ -1,3 +1,165 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 13% 19%;
+    --input-background: #00000014;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --input-valid: #60b04c;
+    --input-invalid: #eb3d34;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 222 13% 19%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 108 40% 49%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 222 13% 19%;
+
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+
+    --destructive: 3 82% 56%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 222 13% 19%;
+    --primary-foreground: 220.9 39.3% 11%;
+
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ./src/index.css */
+
+/* @font-face {
+  font-family: "Poppins";
+  font-weight: 100;
+  src: url("./fonts/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 200;
+  src: url("./fonts/Poppins-ExtraLight.ttf") format("truetype");
+} */
+
+/* @font-face {
+  font-family: "Poppins";
+  font-weight: 300;
+  src: url("./fonts/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  src: url("./fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: url("./fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: url("./fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  src: url("./fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 800;
+  src: url("./fonts/Poppins-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 900;
+  src: url("./fonts/Poppins-Black.ttf") format("truetype");
+} */
+.icon-trigger {
+  @apply relative z-10 grid place-content-center after:-z-10 after:rounded-lg after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-0 after:h-0 after:absolute after:transition-all;
+}
+
+.active {
+  @apply after:bg-destructive after:!w-full after:!h-full;
+}
+.active span {
+  @apply text-white;
+}
+.active svg,
+.active path {
+  @apply !stroke-white;
+}
+aside > button path {
+  stroke: #2b2f3880;
+}
+.read > span {
+  @apply hidden;
+}
+
+.option-Page2 {
+  @apply text-center   border p-2 hover:bg-[#F4F3F3] rounded-md;
+}
+.option-Page1 {
+  @apply p-2 text-left border-b md:w-full;
+}
+aside button svg path {
+  @apply stroke-black;
+}

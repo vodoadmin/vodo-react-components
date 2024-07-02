@@ -7,26 +7,22 @@ import {
   AccordionTrigger,
 } from "./accordion";
 import React from "react";
+import { ModuleProps } from "./Main-Components/sidebar";
 
-interface SideModuleProps {
-  title: string;
-}
-
-const SideModuleCard: React.FC<SideModuleProps> = ({ title }) => {
+const SideModuleCard: React.FC<ModuleProps> = ({ title, submodule }) => {
   const [open, setOpen] = useState(false);
+  console.log(submodule);
 
   return (
     <Accordion type={"single"} collapsible className="w-full">
-      <AccordionItem value="item-1" className="border-none w-full">
-        <AccordionTrigger className="hover:no-underline w-full p-0">
+      <AccordionItem value="item-1" className="w-full border-none">
+        <AccordionTrigger className="w-full p-0 hover:no-underline">
           <li onClick={() => setOpen(!open)}>
             <div className="flex items-center gap-2 hover:text-destructive *:*:*:hover:stroke-destructive ">
               <ArrowLeftIcon
                 className={`${open ? "rotate-90 *:*:stroke-destructive" : ""}`}
               />
-              <span
-                className={`transition-all ${open ? "text-destructive" : ""}`}
-              >
+              <span className={`transition-all ${open ? "text-destructive" : ""}`}>
                 {title}
               </span>
             </div>
@@ -34,10 +30,11 @@ const SideModuleCard: React.FC<SideModuleProps> = ({ title }) => {
         </AccordionTrigger>
         <AccordionContent className="p-0 pl-11">
           <ul className="*:my-3 *:cursor-pointer *:text-black ">
-            <li className="hover:text-destructive">test1</li>
-            <li className="hover:text-destructive">test2</li>
-            <li className="hover:text-destructive">test3</li>
-            <li className="hover:text-destructive">test4</li>
+            {submodule?.map((sub, i) => (
+              <li key={i}>
+                <a href={sub.link}>{sub.title}</a>
+              </li>
+            ))}
           </ul>
         </AccordionContent>
       </AccordionItem>

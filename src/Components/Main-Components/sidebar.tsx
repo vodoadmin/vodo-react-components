@@ -38,11 +38,7 @@ const SideBar = ({ subModules, modules }: SideBarprops) => {
       <div className="flex w-full items-center justify-end gap-[70px]">
         {open && <LogoIcon />}
         <Button className="w-16 py-8 rounded-none " onClick={() => handleSideBar()}>
-          {open ? (
-            <ArrowMenuIcon className="*:*:!stroke-white " />
-          ) : (
-            <BurgerIcon className="*:*:!stroke-white " />
-          )}
+          {open ? <ArrowMenuIcon stroke="white" /> : <BurgerIcon stroke="white" />}
         </Button>
       </div>
       <Accordion type="single" collapsible className="w-full">
@@ -51,7 +47,7 @@ const SideBar = ({ subModules, modules }: SideBarprops) => {
             onClick={(e: any) => e.currentTarget.classList.toggle("active")}
             className="hover:no-underline w-full p-0 rounded-none  py-6 !flex !justify-start px-5 gap-4 icon-trigger after:rounded-none"
           >
-            <ModulesIcon className="*:*:stroke-black/50" />
+            <ModulesIcon stroke="rgb(0 0 0 / 0.5)" />
             {open && <span className=" text-black/50">Modules</span>}
           </AccordionTrigger>
           <AccordionContent className="p-0 pl-11">

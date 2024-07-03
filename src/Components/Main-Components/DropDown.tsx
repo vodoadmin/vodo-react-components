@@ -1,4 +1,3 @@
-import { Copy, Edit, Trash } from "lucide-react";
 import React, { ReactNode } from "react";
 import {
   DropdownMenu,
@@ -9,7 +8,6 @@ import {
 } from "../dropdown-menu";
 import { Button } from "./button";
 
-import EditIcon from "../../Icons/editSVG";
 import { dropOptions } from "@/Utils/DropDown.types";
 
 export const DropDown = ({

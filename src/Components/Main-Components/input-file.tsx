@@ -2,7 +2,7 @@
 import { cn } from "../../Utils/utils";
 import { Input } from "../input";
 import { Label } from "../label";
-import CloudUploadIcon from "../../Icons/cloud-uploadSVG";
+import CloudUploadIcon from "../../Icons/cloudUploadIcon";
 import { ChangeEvent, useState } from "react";
 // import axios from "axios";
 import Upload from "../upload";
@@ -86,14 +86,14 @@ const InputFile: React.FC<inputFile> = ({ className, disabled, url }) => {
           className
         )}
       >
-        <CloudUploadIcon className="w-[25px] h-[17.5px]" />
+        <CloudUploadIcon width={25} height={17.5} fill="#E4412D" />
         <div>
           <h1>Drag your image or click to browse</h1>
-          <p className="text-black/50 font-normal my-2">JPG or PNG only</p>
-          <p className="text-black/50 font-normal">Maximum size 1 MB</p>
+          <p className="my-2 font-normal text-black/50">JPG or PNG only</p>
+          <p className="font-normal text-black/50">Maximum size 1 MB</p>
         </div>
         <Input
-          className=" absolute w-full h-full opacity-0 top-0 left-0 cursor-pointer"
+          className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer "
           type="file"
           id="file"
           disabled={disabled}

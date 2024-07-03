@@ -22,12 +22,7 @@ import {
   TableRow,
 } from "../table";
 import { Button } from "./button";
-import {
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  ChevronUp,
-} from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from "lucide-react";
 import { TablePageSwitcher } from "../table-page-switcher";
 import { Selector } from "./selector";
 import DeleteIcon from "../../Icons/deleteSVG";
@@ -98,9 +93,9 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="w-full">
-      <div className="bg-white p-2 m-2">
+      <div className="p-2 m-2 bg-white">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-x-2 p-6">
+          <div className="flex items-center p-6 gap-x-2">
             <div className="text-primary shrink-0">Sort by:</div>
             <Selector
               onValueChange={handleSortChange}
@@ -116,10 +111,10 @@ export function DataTable<TData, TValue>({
           <div className="flex gap-x-6">
             <div className="flex items-center gap-x-6">
               <Button size="icon" variant="ghost">
-                <ExportIcon className="w-[31.14px] h-[31.14]" />
+                <ExportIcon width={31.14} height={31.14} />
               </Button>
               <Button size="icon" variant="ghost">
-                <DownloadIcon className="w-[31.14px] h-[31.14]" />
+                <DownloadIcon width={31.14} height={31.14} />
               </Button>
               <Button size="icon" variant="ghost">
                 <FilterSearchIcon className="w-[31.14px] h-[31.14]" />
@@ -151,8 +146,8 @@ export function DataTable<TData, TValue>({
                             header.getContext()
                           )}
                           {{
-                            asc: <ChevronUp className="w-4 h-4 inline" />,
-                            desc: <ChevronDown className="w-4 h-4 inline" />,
+                            asc: <ChevronUp className="inline w-4 h-4" />,
+                            desc: <ChevronDown className="inline w-4 h-4" />,
                           }[header.column.getIsSorted() as string] ?? null}
                         </>
                       )}
@@ -164,26 +159,17 @@ export function DataTable<TData, TValue>({
             <TableBody>
               {table.getRowModel().rows?.length ? (
                 table.getRowModel().rows.map((row) => (
-                  <TableRow
-                    key={row.id}
-                    data-state={row.getIsSelected() && "selected"}
-                  >
+                  <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
                     {row.getVisibleCells().map((cell) => (
                       <TableCell key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
                       </TableCell>
                     ))}
                   </TableRow>
                 ))
               ) : (
                 <TableRow>
-                  <TableCell
-                    colSpan={columns.length}
-                    className="h-24 text-center"
-                  >
+                  <TableCell colSpan={columns.length} className="h-24 text-center">
                     No results.
                   </TableCell>
                 </TableRow>
@@ -192,7 +178,7 @@ export function DataTable<TData, TValue>({
           </Table>
         </div>
       </div>
-      <div className="flex items-center justify-between py-1 px-4">
+      <div className="flex items-center justify-between px-4 py-1">
         <div className="text-sm">
           Show {currentPage} of {totalPagesArray.length}
         </div>
@@ -203,11 +189,11 @@ export function DataTable<TData, TValue>({
             size="icon"
             onClick={handlePreviousPage}
             disabled={!table.getCanPreviousPage()}
-            className=" text-destructive hover:text-destructive/80 p-0 w-fit disabled:bg-transparent"
+            className="p-0 text-destructive hover:text-destructive/80 w-fit disabled:bg-transparent"
           >
             <ChevronLeft strokeWidth={3} />
           </Button>
-          <span className="rounded-full bg-destructive text-white h-6 w-6 flex items-center justify-center">
+          <span className="flex items-center justify-center w-6 h-6 text-white rounded-full bg-destructive">
             {currentPage}
           </span>
           <Button
@@ -215,7 +201,7 @@ export function DataTable<TData, TValue>({
             size="icon"
             onClick={handleNextPage}
             disabled={!table.getCanNextPage()}
-            className=" text-destructive hover:text-destructive/80 p-0 w-fit disabled:bg-transparent"
+            className="p-0 text-destructive hover:text-destructive/80 w-fit disabled:bg-transparent"
           >
             <ChevronRight strokeWidth={3} />
           </Button>

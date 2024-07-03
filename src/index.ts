@@ -20,6 +20,8 @@ export { default as InputFile } from "./Components/Main-Components/input-file";
 export { default as Status } from "./Components/Main-Components/status";
 export { UserProfile } from "./Components/Main-Components/user-profile";
 export { NavigationTrail } from "./Components/Main-Components/navigation-trail";
+export { Input } from "./Components/input";
+export { Calendar } from "./Components/calendar";
 export {
   Accordion,
   AccordionContent,

@@ -36,6 +36,7 @@ function App() {
 ## Table of components
 
 <hr />
+<section id="table">
 <ul id="table-contents">
       <li><a href="#user-content-UserNav">UserNav</a></li>
       <li><a href="#user-content-Button">Button</a></li>
@@ -55,6 +56,7 @@ function App() {
       <li><a href="#user-content-dropDown">dropDown</a></li>
       <li><a href="#user-content-pagination">pagination</a></li>
 </ul>
+</section>
 <hr />
 
 ## 🛠 Components included in the package :
@@ -87,6 +89,8 @@ The card that appears contains : section containing username,avatar and user's e
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719610722/VODO/reusable%20components/userNav_kzm4rv.png)
 
 //=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
 
 //=================================================
 

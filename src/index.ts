@@ -1,6 +1,6 @@
 import "./index.css";
 import "class-variance-authority";
-// import "./main.tsx";
+import "./main.tsx";
 
 //================================================================================================
 //========================== documentation finished ==============================================
@@ -40,7 +40,9 @@ export { default as PaginationComponent } from "./Components/Main-Components/Pag
 
 export { default as AddBusinessIcon } from "./Icons/add-businessSVG";
 export { default as ArrowMenuIcon } from "./Icons/arrow-menuSVG";
-export { CalendarIcon, DownloadIcon, EditIcon } from "lucide-react";
+export { default as EditIcon } from "./Icons/editSVG";
+export { default as CalendarIcon } from "./Icons/calendarSVG";
+export { default as DownloadIcon } from "./Icons/downloadSVG";
 export { default as FilterSearchIcon } from "./Icons/filterSearchSVG";
 export { default as LogoIcon } from "./Icons/logoSVG";
 export { default as NotificationIcon } from "./Icons/notification-bill";

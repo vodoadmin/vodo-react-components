@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ArrowLeftIcon from "../Icons/arrow-leftSVG";
+import ArrowLeftIcon from "../Icons/arrow-rightSVG";
 import {
   Accordion,
   AccordionContent,
@@ -22,7 +22,9 @@ const SideModuleCard: React.FC<ModuleProps> = ({ title, submodule }) => {
               <ArrowLeftIcon
                 className={`${open ? "rotate-90 *:*:stroke-destructive" : ""}`}
               />
-              <span className={`transition-all ${open ? "text-destructive" : ""}`}>
+              <span
+                className={`transition-all ${open ? "text-destructive" : ""}`}
+              >
                 {title}
               </span>
             </div>

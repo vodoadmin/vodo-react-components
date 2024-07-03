@@ -33,10 +33,11 @@ function App() {
 }
 ```
 
+<section id="table">
+
 ## Table of components
 
 <hr />
-<section id="table">
 <ul id="table-contents">
       <li><a href="#user-content-UserNav">UserNav</a></li>
       <li><a href="#user-content-Button">Button</a></li>

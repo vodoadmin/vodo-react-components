@@ -143,6 +143,8 @@ The card that appears contains : section containing username,avatar and user's e
 
 //=================================================
 
+<a href="#user-content-table">Go back to the table of components</a>
+
 //=================================================
 
 </section>
@@ -172,6 +174,8 @@ The card that appears contains : section containing username,avatar and user's e
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719662839/VODO/reusable%20components/CardWrapper_kwus0q.png)
 
 //=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
 
 //=================================================
 
@@ -204,6 +208,8 @@ CardWrapper containing business cards :
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719663779/VODO/reusable%20components/cardWrapper_with_business_cards_a4n4qo.png)
 
 //=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
 
 //=================================================
 
@@ -239,6 +245,8 @@ const [item, setItem] = (useState < null) | (string > null);
 
 //=================================================
 
+<a href="#user-content-table">Go back to the table of components</a>
+
 //=================================================
 
 <section id="InputFile">
@@ -262,6 +270,8 @@ Used to upload file to a specific URL ( images ony allowed !! ).
 
 //=================================================
 
+<a href="#user-content-table">Go back to the table of components</a>
+
 //=================================================
 
 <section id="SideBar">
@@ -277,6 +287,8 @@ Used to upload file to a specific URL ( images ony allowed !! ).
 </section>
 
 //=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
 
 //=================================================
 
@@ -299,6 +311,8 @@ A drop list with a search bar.
 
 //=================================================
 
+<a href="#user-content-table">Go back to the table of components</a>
+
 //=================================================
 
 <section id="Status">
@@ -319,6 +333,8 @@ Button contains on/off status
 </section>
 
 //=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
 
 //=================================================
 
@@ -346,6 +362,8 @@ Button contains on/off status
 </section>
 
 //=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
 
 //=================================================
 
@@ -375,6 +393,8 @@ Button contains on/off status
 
 //=================================================
 
+<a href="#user-content-table">Go back to the table of components</a>
+
 //=================================================
 
 <section id="SearchInput">
@@ -398,6 +418,8 @@ Button contains on/off status
 </section>
 
 //=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
 
 //=================================================
 
@@ -434,6 +456,8 @@ Button contains on/off status
 </section>
 
 //=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
 
 //=================================================
 
@@ -476,6 +500,8 @@ Various icons as shown in the image below.
 </section>
 
 //=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
 
 //=================================================
 
@@ -578,6 +604,8 @@ export const tableData: Column[] = [
 
 //=================================================
 
+<a href="#user-content-table">Go back to the table of components</a>
+
 //=================================================
 
 <section id="dropDown">
@@ -634,9 +662,46 @@ const selections: dropOptions[] = [
 
 //=================================================
 
+<a href="#user-content-table">Go back to the table of components</a>
+
 //=================================================
 
 <section id="pagination">
+
+### 17- PaginationComponent
+
+#### It has two sections :
+
+- The left one for pages
+- The right one for limit
+
+#### The PaginationComponent takes 3 props:
+
+- totalDataLength : total number of rows (data)
+- setPageFn : setState function to get the current page
+- setLimitFn : setState function to get the limit
+
+This is how the table component is used :
+
+```javascript
+<PaginationComponent
+  setLimitFn={() => {}}
+  setPageFn={() => {}}
+  totalDataLength={100}
+/>
+```
+
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719955058/VODO/reusable%20components/pagination_jwxzkr.png)
+
+</section>
+
+//=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
+
+//=================================================
+
+<section id="selector">
 
 ### 17- PaginationComponent
 

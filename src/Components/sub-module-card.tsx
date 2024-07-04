@@ -6,10 +6,10 @@ import {
   AccordionTrigger,
 } from "./accordion";
 import React from "react";
-import { ModuleProps } from "./Main-Components/sidebar";
+import { SubModuleProps } from "./Main-Components/sidebar";
 import ArrowRightIcon from "../Icons/arrowRightIcon";
 
-const SideModuleCard: React.FC<ModuleProps> = ({ title, submodule }) => {
+const SideModuleCard: React.FC<SubModuleProps> = ({ title, submodule }) => {
   const [open, setOpen] = useState(false);
   console.log(submodule);
 

@@ -13,22 +13,22 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../accordion";
+
 export interface ModuleProps {
   title: string;
-  link?: string;
+  link: string;
   Svg?: ReactNode;
-  submodule?: ModuleProps[];
+}
+export interface SubModuleProps {
+  title: string;
+  submodule: ModuleProps[];
 }
 interface SideBarprops {
-  subModules?: Omit<ModuleProps[], "Svg" | "link">;
+  subModules?: SubModuleProps[];
   modules?: Omit<ModuleProps[], "submodule">;
   openIndicator?: boolean;
 }
-const SideBar = ({
-  subModules,
-  modules,
-  openIndicator = false,
-}: SideBarprops) => {
+const SideBar = ({ subModules, modules, openIndicator = false }: SideBarprops) => {
   const [open, setOpen] = useState(openIndicator);
   const handleSideBar = () => {
     setOpen(!open);
@@ -41,10 +41,7 @@ const SideBar = ({
     >
       <div className="flex w-full items-center justify-end gap-[70px]">
         {open && <LogoIcon />}
-        <Button
-          className="w-16 py-8 rounded-none "
-          onClick={() => handleSideBar()}
-        >
+        <Button className="w-16 py-8 rounded-none " onClick={() => handleSideBar()}>
           {open ? <ArrowMenuIcon stroke="white" /> : <BurgerIcon />}
         </Button>
       </div>
@@ -60,13 +57,14 @@ const SideBar = ({
           <AccordionContent className="p-0 pl-11">
             {open && (
               <ul className="*:my-3">
-                {subModules?.map((module: ModuleProps, i) => (
-                  <SideModuleCard
-                    key={i}
-                    title={module.title}
-                    submodule={module.submodule}
-                  />
-                ))}
+                {subModules &&
+                  subModules.map((module: SubModuleProps, i) => (
+                    <SideModuleCard
+                      key={i}
+                      title={module.title}
+                      submodule={module.submodule}
+                    />
+                  ))}
               </ul>
             )}
           </AccordionContent>

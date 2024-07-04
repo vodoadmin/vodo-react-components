@@ -29,7 +29,6 @@ const Test: React.FC = () => {
             title: "First",
             Svg: <DeleteIcon height={24} fill="green" />,
             link: "",
-            submodule: [],
           },
         ]}
         openIndicator={true}

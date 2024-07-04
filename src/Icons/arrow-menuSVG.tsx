@@ -1,6 +1,6 @@
 import React from "react";
 
-const ArrowMenuIcon = ({ width = 26, height = 21, stroke = "white" }) => {
+const ArrowMenuIcon = ({ width = 26, height = 21, stroke = "#fff" }) => {
   return (
     <svg
       width={width}
@@ -20,6 +20,7 @@ const ArrowMenuIcon = ({ width = 26, height = 21, stroke = "white" }) => {
       <path
         d="M25.0003 10.4502H1.24023"
         stroke={stroke}
+        fill="white"
         strokeWidth="2"
         strokeMiterlimit="10"
         strokeLinecap="round"

@@ -1,15 +1,17 @@
 import { Button } from "./Main-Components/button";
-import React from "react";
+import React, { ReactNode } from "react";
 import { ModuleProps } from "./Main-Components/sidebar";
 
 interface SideCard {
   open: boolean;
   title: string;
-  link: string;
-  Svg: React.ElementType;
+  link: string | undefined;
+  linkElement: 
+  Svg: ReactNode | undefined;
 }
 
-const SideCard: React.FC<ModuleProps> = ({ open, Svg, title, link }) => {
+const SideCard: React.FC<SideCard> = ({ open, Svg, title, link ,linkElement}) => {
+  const el=linkElement
   return (
     <a
       href={link}

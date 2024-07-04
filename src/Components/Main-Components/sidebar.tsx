@@ -16,16 +16,20 @@ import {
 export interface ModuleProps {
   title: string;
   link?: string;
-  open?: boolean;
   Svg?: ReactNode;
   submodule?: ModuleProps[];
 }
 interface SideBarprops {
-  subModules?: ModuleProps[];
-  modules: ModuleProps[];
+  subModules?: Omit<ModuleProps[], "Svg" | "link">;
+  modules?: Omit<ModuleProps[], "submodule">;
+  openIndicator?: boolean;
 }
-const SideBar = ({ subModules, modules }: SideBarprops) => {
-  const [open, setOpen] = useState(false);
+const SideBar = ({
+  subModules,
+  modules,
+  openIndicator = false,
+}: SideBarprops) => {
+  const [open, setOpen] = useState(openIndicator);
   const handleSideBar = () => {
     setOpen(!open);
   };
@@ -41,11 +45,7 @@ const SideBar = ({ subModules, modules }: SideBarprops) => {
           className="w-16 py-8 rounded-none "
           onClick={() => handleSideBar()}
         >
-          {open ? (
-            <ArrowMenuIcon className="*:*:!stroke-white " />
-          ) : (
-            <BurgerIcon className="*:*:!stroke-white " />
-          )}
+          {open ? <ArrowMenuIcon stroke="white" /> : <BurgerIcon />}
         </Button>
       </div>
       <Accordion type="single" collapsible className="w-full">
@@ -54,7 +54,7 @@ const SideBar = ({ subModules, modules }: SideBarprops) => {
             onClick={(e: any) => e.currentTarget.classList.toggle("active")}
             className="hover:no-underline w-full p-0 rounded-none  py-6 !flex !justify-start px-5 gap-4 icon-trigger after:rounded-none"
           >
-            <ModulesIcon stroke="rgb(0 0 0 / 0.5)" />
+            <ModulesIcon />
             {open && <span className=" text-black/50">Modules</span>}
           </AccordionTrigger>
           <AccordionContent className="p-0 pl-11">
@@ -74,15 +74,16 @@ const SideBar = ({ subModules, modules }: SideBarprops) => {
       </Accordion>
 
       <div className="w-full">
-        {modules.map((module: ModuleProps, i) => (
-          <SideCard
-            key={i}
-            title={module.title}
-            link={module.link}
-            Svg={module.Svg}
-            open={open}
-          />
-        ))}
+        {modules &&
+          modules.map((module: ModuleProps, i) => (
+            <SideCard
+              key={i}
+              title={module.title}
+              link={module.link}
+              Svg={module.Svg}
+              open={open}
+            />
+          ))}
       </div>
     </aside>
   );

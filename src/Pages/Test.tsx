@@ -11,6 +11,7 @@ import Status from "../Components/Main-Components/status";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import SideBar from "../Components/Main-Components/sidebar";
 import { SquareArrowUpLeftIcon } from "lucide-react";
+import DeleteIcon from "../Icons/deleteSVG";
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
 const Test: React.FC = () => {
@@ -26,12 +27,12 @@ const Test: React.FC = () => {
         modules={[
           {
             title: "First",
-            Svg: <SquareArrowUpLeftIcon />,
+            Svg: <DeleteIcon height={24} fill="green" />,
             link: "",
-
             submodule: [],
           },
         ]}
+        openIndicator={true}
       />
     </div>
   );

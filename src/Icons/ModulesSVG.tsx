@@ -1,6 +1,6 @@
 import React from "react";
 
-const ModulesIcon = ({ stroke = "#2B2F38", width = 26, height = 29 }) => {
+const ModulesIcon = ({ stroke = "black", width = 26, height = 29 }) => {
   return (
     <svg
       width={width}

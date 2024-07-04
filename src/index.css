@@ -106,9 +106,6 @@ aside > button path {
 .option-Page1 {
   @apply p-2 text-left border-b md:w-full;
 }
-aside button svg path {
-  @apply stroke-black;
-}
 
 .custom_tabel tr td {
   text-align: center;

@@ -9,6 +9,7 @@ interface TextArea {
   label: string;
   disabled?: boolean;
   placeHolder?: string;
+  name: string;
   className?: string;
   error?: string;
   success?: string;
@@ -21,6 +22,7 @@ const TextArea: React.FC<TextArea> = ({
   disabled,
   placeHolder,
   className,
+  name,
   error,
   success,
   onChange,
@@ -45,6 +47,7 @@ const TextArea: React.FC<TextArea> = ({
         <Textarea
           disabled={disabled}
           id={label}
+          name={name}
           placeholder={placeHolder}
           className={cn(
             `w-[426px]  focus-visible:ring-0 focus-visible:ring-offset-0 focus:shadow-lg disabled:bg-black/10 disabled:resize-none mx-auto ${

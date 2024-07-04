@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import { Button } from "./button";
 import ModulesIcon from "../../Icons/ModulesSVG";
 import BurgerIcon from "../../Icons/burgerSVG";
@@ -17,11 +17,11 @@ export interface ModuleProps {
   title: string;
   link?: string;
   open?: boolean;
-  Svg?: React.ElementType;
+  Svg?: ReactNode;
   submodule?: ModuleProps[];
 }
 interface SideBarprops {
-  subModules: ModuleProps[];
+  subModules?: ModuleProps[];
   modules: ModuleProps[];
 }
 const SideBar = ({ subModules, modules }: SideBarprops) => {
@@ -31,13 +31,16 @@ const SideBar = ({ subModules, modules }: SideBarprops) => {
   };
   return (
     <aside
-      className={`bg-white z-50 items-end w-16 h-screen fixed left-0 top-0 transition-all flex flex-col  ${
+      className={`bg-white z-50 items-end w-16 h-screen  transition-all flex flex-col  ${
         open ? "w-[280px]" : ""
       }`}
     >
       <div className="flex w-full items-center justify-end gap-[70px]">
         {open && <LogoIcon />}
-        <Button className="w-16 py-8 rounded-none " onClick={() => handleSideBar()}>
+        <Button
+          className="w-16 py-8 rounded-none "
+          onClick={() => handleSideBar()}
+        >
           {open ? (
             <ArrowMenuIcon className="*:*:!stroke-white " />
           ) : (
@@ -57,7 +60,7 @@ const SideBar = ({ subModules, modules }: SideBarprops) => {
           <AccordionContent className="p-0 pl-11">
             {open && (
               <ul className="*:my-3">
-                {subModules.map((module: ModuleProps, i) => (
+                {subModules?.map((module: ModuleProps, i) => (
                   <SideModuleCard
                     key={i}
                     title={module.title}

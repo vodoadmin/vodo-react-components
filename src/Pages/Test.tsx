@@ -9,18 +9,30 @@ import { dropOptions } from "@/Utils/DropDown.types";
 import ArrowLeftIcon from "../Icons/arrow-leftSVG";
 import Status from "../Components/Main-Components/status";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
+import SideBar from "../Components/Main-Components/sidebar";
+import { SquareArrowUpLeftIcon } from "lucide-react";
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
 const Test: React.FC = () => {
   return (
-    <div className="p-5">
-      <PaginationComponent
+    <div className="flex items-start justify-start">
+      {/* <PaginationComponent
         setLimitFn={() => {}}
         setPageFn={() => {}}
         totalDataLength={100}
-      />
+      /> */}
       {/* <ArrowRightIcon /> */}
-      <ArrowLeftIcon />
+      <SideBar
+        modules={[
+          {
+            title: "First",
+            Svg: <SquareArrowUpLeftIcon />,
+            link: "",
+
+            submodule: [],
+          },
+        ]}
+      />
     </div>
   );
 };

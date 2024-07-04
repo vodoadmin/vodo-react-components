@@ -9,14 +9,9 @@ import { tableHeaderType, tableItemType } from "@/Utils/tableTypes";
 interface myProps {
   TabelHead: tableHeaderType[];
   TabelData: tableItemType[];
-  setActions?: boolean;
 }
 
-export default function MainTabel({
-  TabelHead,
-  TabelData,
-  setActions,
-}: myProps) {
+export default function MainTabel({ TabelHead, TabelData }: myProps) {
   // Check if all accessor keys in headers are present in tableData
   const allKeysPresent = TabelHead.every((header) =>
     Object.keys(TabelData[0])

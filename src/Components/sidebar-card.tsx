@@ -15,7 +15,7 @@ const SideCard: React.FC<ModuleProps> = ({ open, Svg, title, link }) => {
       href={link}
       className="flex justify-start w-full h-10 gap-4 px-5 py-8 rounded-none"
     >
-      {Svg && <Svg />}
+      {Svg && Svg}
       {open && <span className="text-[#2B2F3880]">{title}</span>}
     </a>
   );

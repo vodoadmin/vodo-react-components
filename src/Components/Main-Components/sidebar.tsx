@@ -13,15 +13,19 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../accordion";
+
 export interface ModuleProps {
   title: string;
-  link?: string;
+  link: string;
   Svg?: ReactNode;
-  submodule?: ModuleProps[];
+}
+export interface SubModuleProps {
+  title: string;
+  submodule: ModuleProps[];
 }
 interface SideBarprops {
-  subModules?: Omit<ModuleProps[], "Svg" | "link">;
-  modules: Omit<ModuleProps[], "submodule">;
+  subModules?: SubModuleProps[];
+  modules?: Omit<ModuleProps[], "submodule">;
   openIndicator?: boolean;
 }
 const SideBar = ({
@@ -60,13 +64,14 @@ const SideBar = ({
           <AccordionContent className="p-0 pl-11">
             {open && (
               <ul className="*:my-3">
-                {subModules?.map((module: ModuleProps, i) => (
-                  <SideModuleCard
-                    key={i}
-                    title={module.title}
-                    submodule={module.submodule}
-                  />
-                ))}
+                {subModules &&
+                  subModules.map((module: SubModuleProps, i) => (
+                    <SideModuleCard
+                      key={i}
+                      title={module.title}
+                      submodule={module.submodule}
+                    />
+                  ))}
               </ul>
             )}
           </AccordionContent>

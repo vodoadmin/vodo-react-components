@@ -1,13 +1,10 @@
-import { Button } from "./Main-Components/button";
 import React, { ReactNode } from "react";
-import { ModuleProps } from "./Main-Components/sidebar";
-import { Link } from "react-router-dom";
 
 interface SideCard {
   open: boolean;
   title: string;
   link: string;
-  Svg: ReactNode | undefined;
+  Svg: ReactNode;
 }
 
 const SideCard: React.FC<SideCard> = ({ open, Svg, title, link }) => {

@@ -5,7 +5,7 @@ import ArrowDownIcon from "../../Icons/arrow-downSVG";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 import { UserProfile } from "../user-profile";
 import { Button } from "./button";
-import EditIcon from "../../Icons/editSVG";
+import EditIcon from "../../Icons/editIcon";
 import LogoutIcon from "../../Icons/LogoutSVG";
 interface UserNavProps {
   name: string;
@@ -40,7 +40,7 @@ const UserNav: React.FC<UserNavProps> = ({
             <AvatarFallback>{avatarFallBack}</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
-            <h3 className="text-primary font-bold text-sm">{name}</h3>
+            <h3 className="text-sm font-bold text-primary">{name}</h3>
           </div>
           <ArrowDownIcon />
         </div>
@@ -55,13 +55,13 @@ const UserNav: React.FC<UserNavProps> = ({
         <div className="p-4">
           <Button
             variant={"ghost"}
-            className="flex items-center gap-3 my-2 w-full justify-start"
+            className="flex items-center justify-start w-full gap-3 my-2"
           >
             <EditIcon /> Edit Account
           </Button>
           <Button
             variant={"ghost"}
-            className="flex items-center gap-3 w-full justify-start"
+            className="flex items-center justify-start w-full gap-3"
           >
             <LogoutIcon /> Logout
           </Button>

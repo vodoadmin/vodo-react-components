@@ -6,7 +6,7 @@ import { tableHeaderType, tableItemType } from "@/Utils/tableTypes";
 import { DropDown } from "../Components/Main-Components/DropDown";
 import { dropOptions } from "@/Utils/DropDown.types";
 // import { Copy, Edit, EditIcon } from "lucide-react";
-import ArrowLeftIcon from "../Icons/arrow-leftSVG";
+
 import Status from "../Components/Main-Components/status";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import SideBar from "../Components/Main-Components/sidebar";

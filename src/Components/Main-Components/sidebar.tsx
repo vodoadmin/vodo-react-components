@@ -54,7 +54,7 @@ const SideBar = ({ subModules, modules }: SideBarprops) => {
             onClick={(e: any) => e.currentTarget.classList.toggle("active")}
             className="hover:no-underline w-full p-0 rounded-none  py-6 !flex !justify-start px-5 gap-4 icon-trigger after:rounded-none"
           >
-            <ModulesIcon className="*:*:stroke-black/50" />
+            <ModulesIcon stroke="rgb(0 0 0 / 0.5)" />
             {open && <span className=" text-black/50">Modules</span>}
           </AccordionTrigger>
           <AccordionContent className="p-0 pl-11">

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ArrowLeftIcon from "../Icons/arrow-rightSVG";
 import {
   Accordion,
   AccordionContent,
@@ -8,6 +7,7 @@ import {
 } from "./accordion";
 import React from "react";
 import { ModuleProps } from "./Main-Components/sidebar";
+import ArrowRightIcon from "../Icons/arrowRightIcon";
 
 const SideModuleCard: React.FC<ModuleProps> = ({ title, submodule }) => {
   const [open, setOpen] = useState(false);
@@ -19,12 +19,11 @@ const SideModuleCard: React.FC<ModuleProps> = ({ title, submodule }) => {
         <AccordionTrigger className="w-full p-0 hover:no-underline">
           <li onClick={() => setOpen(!open)}>
             <div className="flex items-center gap-2 hover:text-destructive *:*:*:hover:stroke-destructive ">
-              <ArrowLeftIcon
-                className={`${open ? "rotate-90 *:*:stroke-destructive" : ""}`}
-              />
-              <span
-                className={`transition-all ${open ? "text-destructive" : ""}`}
-              >
+              <div className={`${open ? "rotate-90 " : ""}`}>
+                <ArrowRightIcon stroke={open ? "#E4412D" : ""} />
+              </div>
+
+              <span className={`transition-all ${open ? "text-destructive" : ""}`}>
                 {title}
               </span>
             </div>

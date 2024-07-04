@@ -21,7 +21,7 @@ export { default as Status } from "./Components/Main-Components/status";
 export { UserProfile } from "./Components/Main-Components/user-profile";
 export { NavigationTrail } from "./Components/Main-Components/navigation-trail";
 export { Input } from "./Components/input";
-export { Calendar } from "./Components/calendar";
+// export { Calendar } from "./Components/calendar";
 export {
   Accordion,
   AccordionContent,
@@ -42,8 +42,8 @@ export { default as PaginationComponent } from "./Components/Main-Components/Pag
 
 export { default as AddBusinessIcon } from "./Icons/add-businessSVG";
 export { default as ArrowMenuIcon } from "./Icons/arrow-menuSVG";
-export { default as EditIcon } from "./Icons/editSVG";
-export { default as CalendarIcon } from "./Icons/calendarSVG";
+export { default as EditIcon } from "./Icons/editIcon";
+export { default as CalendarIcon } from "./Icons/calendarIcon";
 export { default as DownloadIcon } from "./Icons/downloadSVG";
 export { default as FilterSearchIcon } from "./Icons/filterSearchSVG";
 export { default as LogoIcon } from "./Icons/logoSVG";

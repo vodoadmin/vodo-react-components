@@ -21,7 +21,7 @@ export interface ModuleProps {
 }
 interface SideBarprops {
   subModules?: Omit<ModuleProps[], "Svg" | "link">;
-  modules?: Omit<ModuleProps[], "submodule">;
+  modules: Omit<ModuleProps[], "submodule">;
   openIndicator?: boolean;
 }
 const SideBar = ({

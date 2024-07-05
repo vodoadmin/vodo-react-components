@@ -20,12 +20,12 @@ const SideCard: React.FC<SideCard> = ({
     <a
       href={link}
       className={cn(
-        "flex justify-start w-full h-10 gap-4 px-5 py-8 rounded-none",
+        "flex justify-start w-full h-10 gap-4 px-5 py-8 text-[#2B2F3880] rounded-none",
         moduleStyles ?? ""
       )}
     >
       {Svg && Svg}
-      {open && <span className="text-[#2B2F3880]">{title}</span>}
+      {open && <span className="text-inherit">{title}</span>}
     </a>
   );
 };

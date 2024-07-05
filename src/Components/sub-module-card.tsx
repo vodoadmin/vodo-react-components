@@ -37,7 +37,7 @@ const SideModuleCard: React.FC<subModuleCardProps> = ({
                   svg ? "gap-3" : "gap-2"
                 } hover:text-destructive *:*:*:hover:stroke-destructive ${
                   svg ? "flex-row-reverse" : "flex-row"
-                }`,
+                } text-destructive`,
                 subModuleStyles ?? ""
               )}
             >
@@ -45,9 +45,7 @@ const SideModuleCard: React.FC<subModuleCardProps> = ({
                 <ArrowRightIcon stroke={open ? "#E4412D" : ""} />
               </div>
 
-              <span
-                className={`transition-all ${open ? "text-destructive" : ""}`}
-              >
+              <span className={`transition-all ${open ? "text-inherit" : ""}`}>
                 {title}
               </span>
 

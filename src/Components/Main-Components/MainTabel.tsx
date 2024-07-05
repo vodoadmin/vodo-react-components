@@ -9,6 +9,10 @@ import { tableHeaderType, tableItemType } from "@/Utils/tableTypes";
 interface myProps {
   TabelHead: tableHeaderType[];
   TabelData: tableItemType[];
+  tableStyling: {
+    headStyle: string;
+    bodyStyle: string;
+  };
 }
 
 export default function MainTabel({ TabelHead, TabelData }: myProps) {

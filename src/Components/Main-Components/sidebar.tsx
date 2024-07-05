@@ -13,6 +13,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../accordion";
+import { cn } from "../../Utils/utils";
+
+export interface classNameProp {
+  subModule?: string;
+  module?: string;
+}
 
 export interface ModuleProps {
   title: string;
@@ -21,27 +27,33 @@ export interface ModuleProps {
 }
 export interface SubModuleProps {
   title: string;
-  submodule: ModuleProps[];
+  submoduleArr: ModuleProps[];
+  Svg?: ReactNode;
 }
 interface SideBarprops {
   subModules?: SubModuleProps[];
-  modules?: Omit<ModuleProps[], "submodule">;
-  openIndicator?: boolean;
+  modules?: ModuleProps[];
+  className?: classNameProp;
+  sideBarStyle?: string;
 }
 const SideBar = ({
   subModules,
   modules,
-  openIndicator = false,
+  className, //// To add style to subModules & modules
+  sideBarStyle, //// To add style to the whole sidebar
 }: SideBarprops) => {
-  const [open, setOpen] = useState(openIndicator);
+  const [open, setOpen] = useState(true);
   const handleSideBar = () => {
     setOpen(!open);
   };
   return (
     <aside
-      className={`bg-white z-50 items-end w-16 h-screen  transition-all flex flex-col  ${
-        open ? "w-[280px]" : ""
-      }`}
+      className={cn(
+        `bg-white z-50 items-end w-16 h-screen  transition-all flex flex-col  ${
+          open ? "w-[280px]" : ""
+        }`,
+        sideBarStyle ?? ""
+      )}
     >
       <div className="flex w-full items-center justify-end gap-[70px]">
         {open && <LogoIcon />}
@@ -69,7 +81,9 @@ const SideBar = ({
                     <SideModuleCard
                       key={i}
                       title={module.title}
-                      submodule={module.submodule}
+                      submoduleArr={module.submoduleArr}
+                      svg={module.Svg}
+                      subModuleStyles={className?.subModule}
                     />
                   ))}
               </ul>
@@ -78,7 +92,7 @@ const SideBar = ({
         </AccordionItem>
       </Accordion>
 
-      <div className="w-full">
+      <div className="flex flex-col w-full gap-1">
         {modules &&
           modules.map((module: ModuleProps, i) => (
             <SideCard
@@ -87,6 +101,7 @@ const SideBar = ({
               link={module.link}
               Svg={module.Svg}
               open={open}
+              moduleStyles={className?.module}
             />
           ))}
       </div>

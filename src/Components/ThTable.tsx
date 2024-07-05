@@ -14,7 +14,7 @@ export default function ThTable({
   return (
     <th
       className={cn(
-        "px-3 py-2 text-sm font-bold tracking-wider text-center bg-mainBack_light text-hColor poppins-medium text-nowrap",
+        "px-3 py-2 text-sm font-bold tracking-wider text-center bg-mainBack_light text-hColor vodo-rc-poppins-medium text-nowrap",
         className
       )}
     >

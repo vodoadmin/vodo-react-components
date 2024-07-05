@@ -79,51 +79,52 @@
   }
 }
 
-.icon-trigger {
+.vodo-rc-icon-trigger {
   @apply relative z-10 grid place-content-center after:-z-10 after:rounded-lg after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-0 after:h-0 after:absolute after:transition-all;
 }
 
-.active {
+.vodo-rc-sidebar-acitve {
   @apply after:bg-destructive after:!w-full after:!h-full;
 }
-.active span {
+.vodo-rc-sidebar-acitve span {
   @apply text-white;
 }
-.active svg,
-.active path {
+.vodo-rc-sidebar-acitve svg,
+.vodo-rc-sidebar-acitve path {
   @apply !stroke-white;
 }
-aside > button path {
+.vodo-rc-aside > button path {
   stroke: #2b2f3880;
 }
-.read > span {
-  @apply hidden;
-}
 
-.option-Page2 {
-  @apply text-center   border p-2 hover:bg-[#F4F3F3] rounded-md;
-}
-.option-Page1 {
-  @apply p-2 text-left border-b md:w-full;
-}
-
-.custom_hight {
+.vodo-rc-custom_hight {
   min-width: 100px;
 
   min-height: 69px !important;
   width: 100%;
 }
 
-.poppins-regular {
+.vodo-rc-poppins-regular {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.poppins-medium {
+.vodo-rc-poppins-medium {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 14px;
   line-height: 20px;
+}
+
+.vodo-rc-option-Page2 {
+  @apply text-center   border p-2 hover:bg-[#F4F3F3] rounded-md;
+}
+.vodo-rc-option-Page1 {
+  @apply p-2 text-left border-b md:w-full;
+}
+
+.vodo-rc-read > span {
+  @apply hidden;
 }

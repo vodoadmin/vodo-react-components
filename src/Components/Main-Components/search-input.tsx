@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from "react";
-import { SearchIcon } from "lucide-react";
+
+import Search from "../../Icons/searchIcon";
 
 import { Input } from "../input";
 import { cn } from "../../Utils/utils";
@@ -28,9 +29,9 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
         />
         <button
           disabled={disabled}
-          className="absolute bg-destructive right-0 top-0 h-full rounded-s-none text-white flex items-center justify-center rounded-e-lg py-2 px-3 disabled:opacity-60 disabled:cursor-not-allowed cursor-default"
+          className="absolute top-0 right-0 flex items-center justify-center h-full px-3 py-2 text-white cursor-default bg-destructive rounded-s-none rounded-e-lg disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          <SearchIcon className=" w-[14px] h-[14px]" strokeWidth={3} />
+          <Search width={14} height={14} />
         </button>
       </div>
     );

@@ -1,6 +1,11 @@
+import { iconsProps } from "@/Utils/icons.types";
 import React from "react";
 
-const CloseIcon = ({ fill = "#2B2F38", width = 20, height = 20 }) => {
+const CloseIcon = ({
+  fill = "#2B2F38",
+  width = 20,
+  height = 20,
+}: iconsProps) => {
   return (
     <svg
       width={width}

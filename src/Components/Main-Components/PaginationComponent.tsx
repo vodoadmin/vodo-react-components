@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useMemo, useState } from "react";
 import { Button } from "./button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import ArrowLeftIcon from "../../Icons/arrowLeftIcons";
+import ArrowRightIcon from "../../Icons/arrowRightIcon";
 
 interface myProps {
   setPageFn: (page: number) => void;
@@ -56,7 +57,7 @@ const PaginationComponent: React.FC<myProps> = ({
         disabled={page === 1 || totalPages === Infinity}
         className="p-0 text-destructive hover:text-destructive/80 w-fit disabled:bg-transparent"
       >
-        <ChevronLeft strokeWidth={3} />
+        <ArrowLeftIcon />
       </Button>
       <span className="flex items-center justify-center w-6 h-6 text-white rounded-full bg-destructive">
         {page}
@@ -68,7 +69,7 @@ const PaginationComponent: React.FC<myProps> = ({
         disabled={page === totalPages || totalPages === Infinity}
         className="p-0 text-destructive hover:text-destructive/80 w-fit disabled:bg-transparent"
       >
-        <ChevronRight strokeWidth={3} />
+        <ArrowRightIcon />
       </Button>
       <div className="p-1 border border-stone-400">
         <input

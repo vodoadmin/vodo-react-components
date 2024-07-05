@@ -1,15 +1,17 @@
+import { iconsProps } from "@/Utils/icons.types";
 import { cn } from "../Utils/utils";
 import React from "react";
 
-interface ArrowRightProps {
-  className?: string;
-}
-const ArrowRightIcon: React.FC<ArrowRightProps> = ({ className }) => {
+const ArrowRightIcon: React.FC<iconsProps> = ({
+  className,
+  width = 8,
+  height = 14,
+}) => {
   return (
     <div className={cn("", className)}>
       <svg
-        width="8"
-        height="14"
+        width={width}
+        height={height}
         viewBox="0 0 8 14"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -12,6 +12,9 @@ import MainTabel, {
   mainTabelProps,
 } from "../Components/Main-Components/MainTabel";
 import EyeICon from "../Icons/eyeIcon";
+import { Switcher } from "../Components/Main-Components/switcher";
+import PaginationComponent from "../Components/Main-Components/PaginationComponent";
+import { SearchInput } from "../Components/Main-Components/search-input";
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
 const subModules: SubModuleProps[] = [
@@ -92,14 +95,26 @@ const Test: React.FC = () => {
         TabelData={TabelData}
         tableStyling={tableStyling}
       /> */}
-      <SideBar
+      {/* <SideBar
         modules={modules}
         subModules={subModules}
         className={{
           subModule: "bg-green-300 px-2 py-1",
           module: "bg-red-300 px-2 py-1",
         }}
-      />
+      /> */}
+      {/* <Switcher
+        items={["Item 1", "Item 2", "Item 3"]}
+        setSelectedOption={() => {}}
+        placeHolder="Select item"
+        heading="select item"
+      /> */}
+      {/* <PaginationComponent
+        setLimitFn={() => {}}
+        totalDataLength={20}
+        setPageFn={() => {}}
+      /> */}
+      <SearchInput setInputValue={() => {}} />
     </div>
   );
 };

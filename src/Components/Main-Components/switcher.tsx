@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
-import { ChevronDown, CheckIcon } from "lucide-react";
+
+import CheckIcon from "../../Icons/check-icon";
+import ArrowDownIcon from "../../Icons/arrow-downSVG";
 import { cn } from "../../Utils/utils";
 import { Button } from "./button";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
@@ -23,9 +25,9 @@ type SetStateAction<S> = (arg: S) => void;
 
 interface SwitcherProps extends PopoverTriggerProps {
   items: string[];
-  heading: string;
-  placeHolder: string;
-  className: string;
+  heading?: string;
+  placeHolder?: string;
+  className?: string;
   setSelectedOption: SetStateAction<string | null>;
 }
 
@@ -60,14 +62,18 @@ export const Switcher: React.FC<SwitcherProps> = ({
           )}
         >
           {selected || placeHolder}
-          <ChevronDown className="h-3 w-3 text-primary shrink-0 font-bold" />
+          <ArrowDownIcon
+            className="font-bold text-primary shrink-0"
+            height={12}
+            width={12}
+          />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
           <CommandList>
             <CommandInput placeholder="Search size..." />
-            <CommandEmpty>No sizes found.</CommandEmpty>
+            <CommandEmpty>No results found</CommandEmpty>
             <CommandGroup heading={heading}>
               {items.map((item) => (
                 <CommandItem

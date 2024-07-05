@@ -1,12 +1,13 @@
+import { iconsProps } from "@/Utils/icons.types";
 import { cn } from "../Utils/utils";
 import React from "react";
 
-const CheckIcon = ({ className }: { className?: string }) => {
+const CheckIcon = ({ className, width = 12, height = 8 }: iconsProps) => {
   return (
     <svg
       className={cn("", className)}
-      width="12"
-      height="8"
+      width={width}
+      height={height}
       viewBox="0 0 12 8"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

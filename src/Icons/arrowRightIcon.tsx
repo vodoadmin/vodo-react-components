@@ -1,6 +1,11 @@
+import { iconsProps } from "@/Utils/icons.types";
 import React from "react";
 
-const ArrowRightIcon = ({ stroke = "#2B2F38", width = 8, height = 14 }) => {
+const ArrowRightIcon = ({
+  stroke = "#2B2F38",
+  width = 8,
+  height = 14,
+}: iconsProps) => {
   return (
     <svg
       width={width}

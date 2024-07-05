@@ -15,6 +15,7 @@ import EyeICon from "../Icons/eyeIcon";
 import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import { SearchInput } from "../Components/Main-Components/search-input";
+import { Selector } from "../Components/Main-Components/selector";
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
 const subModules: SubModuleProps[] = [
@@ -114,7 +115,12 @@ const Test: React.FC = () => {
         totalDataLength={20}
         setPageFn={() => {}}
       /> */}
-      <SearchInput setInputValue={() => {}} />
+      {/* <SearchInput setInputValue={() => {}} /> */}
+      <Selector
+        items={[{ name: "Item 1", value: "1" }]}
+        value="item 2"
+        placeholder="change"
+      />
     </div>
   );
 };

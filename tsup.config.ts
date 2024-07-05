@@ -1,5 +1,6 @@
 import { defineConfig } from "tsup";
 import cssModulesPlugin from "esbuild-css-modules-plugin";
+import fs from "fs";
 
 export default defineConfig({
   entryPoints: ["src/index.ts"],
@@ -10,5 +11,4 @@ export default defineConfig({
   dts: true,
   splitting: true,
   plugins: [cssModulesPlugin()],
-  // onSuccess: "npm run copy-assets",
 });

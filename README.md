@@ -56,6 +56,7 @@ function App() {
       <li><a href="#user-content-table">table</a></li>
       <li><a href="#user-content-dropDown">dropDown</a></li>
       <li><a href="#user-content-pagination">pagination</a></li>
+      <li><a href="#user-content-selector">selector</a></li>
 </ul>
 </section>
 <hr />
@@ -748,29 +749,28 @@ This is how the table component is used :
 
 <section id="selector">
 
-### 17- PaginationComponent
+### 18- selector
 
-#### It has two sections :
+A drop list with items ( same as select HTML tag )
 
-- The left one for pages
-- The right one for limit
+#### The selector takes 3 props:
 
-#### The PaginationComponent takes 3 props:
+- items : items array of objects, each object has two keys (name , value)
+- placeholder ?: initial text that appears on the selector
+- showCheckIcon ?: boolean value
+- value ?: value of the selection
+- onValueChange ?: setState function used to get the selected value
+- className ?: styles of the selector
+- itemsStyle ?: styles for each element in the selector
 
-- totalDataLength : total number of rows (data)
-- setPageFn : setState function to get the current page
-- setLimitFn : setState function to get the limit
-
-This is how the table component is used :
+This is how the selector component is used :
 
 ```javascript
-<PaginationComponent
-  setLimitFn={() => {}}
-  setPageFn={() => {}}
-  totalDataLength={100}
+<Selector
+  items={[{ name: "Item 1", value: "1" }]}
+  value="item 2"
+  placeholder="change"
 />
 ```
-
-![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719955058/VODO/reusable%20components/pagination_jwxzkr.png)
 
 </section>

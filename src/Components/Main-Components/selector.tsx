@@ -20,6 +20,7 @@ interface SelectorProps {
   value?: string | undefined;
   onValueChange?: (value: string) => void;
   className?: string;
+  itemsStyle?: string;
 }
 
 export const Selector: React.FC<SelectorProps> = ({
@@ -29,6 +30,7 @@ export const Selector: React.FC<SelectorProps> = ({
   value,
   onValueChange,
   className,
+  itemsStyle,
 }) => {
   return (
     <Select defaultValue={value} onValueChange={onValueChange}>
@@ -41,6 +43,7 @@ export const Selector: React.FC<SelectorProps> = ({
             showCheckIcon={showCheckIcon}
             key={item.name}
             value={item.value.toLowerCase()}
+            className={itemsStyle}
           >
             {item.name}
           </SelectItem>

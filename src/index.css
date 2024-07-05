@@ -107,12 +107,6 @@ aside > button path {
   @apply p-2 text-left border-b md:w-full;
 }
 
-.custom_tabel tr td {
-  text-align: center;
-}
-.custom_tabel th {
-  text-wrap: nowrap;
-}
 .custom_hight {
   min-width: 100px;
 

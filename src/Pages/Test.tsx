@@ -4,10 +4,14 @@ import SideBar, {
   ModuleProps,
   SubModuleProps,
 } from "../Components/Main-Components/sidebar";
-import { EyeIcon, SquareArrowUpLeftIcon } from "lucide-react";
+
 import DeleteIcon from "../Icons/deleteSVG";
 import EditIcon from "../Icons/editIcon";
 import TrashCanIcon from "../Icons/trashCanIcon";
+import MainTabel, {
+  mainTabelProps,
+} from "../Components/Main-Components/MainTabel";
+import EyeICon from "../Icons/eyeIcon";
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
 const subModules: SubModuleProps[] = [
@@ -30,13 +34,64 @@ const subModules: SubModuleProps[] = [
 ];
 
 const modules: ModuleProps[] = [
-  { title: "Module 1", link: "/module1", Svg: <EyeIcon /> },
+  { title: "Module 1", link: "/module1", Svg: <EyeICon /> },
   { title: "Module 2", link: "/module2", Svg: <TrashCanIcon /> },
 ];
+
+// const TabelHead = [
+//   { accessorKey: "id", header: "ID" },
+//   { accessorKey: "name", header: "Name" },
+//   { accessorKey: "age", header: "Age" },
+//   { accessorKey: "email", header: "Email" },
+//   { accessorKey: "image", header: "Profile Picture" },
+// ];
+
+// const TabelData = [
+//   {
+//     id: 1,
+//     name: "John Doe",
+//     age: 28,
+//     email: "john.doe@example.com",
+//     image: "https://via.placeholder.com/50",
+//   },
+//   {
+//     id: 2,
+//     name: "Jane Smith",
+//     age: 34,
+//     email: "jane.smith@example.com",
+//     image: "https://via.placeholder.com/50",
+//   },
+//   {
+//     id: 3,
+//     name: "Alice Johnson",
+//     age: 45,
+//     email: "alice.johnson@example.com",
+//     image: "https://via.placeholder.com/50",
+//   },
+//   {
+//     id: 4,
+//     name: "Bob Brown",
+//     age: 52,
+//     email: "bob.brown@example.com",
+//     image: "https://via.placeholder.com/50",
+//   },
+// ];
+
+// const tableStyling: mainTabelProps["tableStyling"] = {
+//   headStyle: "bg-green-300  w-1/2",
+//   headElementStyle: "bg-red-200 p-4 ",
+//   bodyStyle: "bg-green-200",
+//   bodyElementStyle: "bg-yellow-400",
+// };
 
 const Test: React.FC = () => {
   return (
     <div className="flex items-start justify-start">
+      {/* <MainTabel
+        TabelHead={TabelHead}
+        TabelData={TabelData}
+        tableStyling={tableStyling}
+      /> */}
       <SideBar
         modules={modules}
         subModules={subModules}

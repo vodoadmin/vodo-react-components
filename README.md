@@ -279,11 +279,35 @@ Used to upload file to a specific URL ( images ony allowed !! ).
 
 ### 8- SideBar
 
+#### The SideBar takes 3 props :
+
+- modules ?: modules array of objects, each object takes 3 keys :
+  - title
+  - svg ?: icon
+  - link : link to which page navigates when user clicks on the module
+- subModules ?: subModules array of objects, each object takes 3 keys :
+  - title
+  - svg ?: icon
+  - submoduleArr : an array of sub modules appears as a drop list when you click on the main subModule. This array is an array of objects,each object has the same keys as the modules array ( title , svg? , link)
+- sideBarStyle ?: style of the whole sidebar
+- className : object that has two keys:
+  - subModule : style applied to each element in the submodules list
+  - module : styles applies to each element in the modules list
+
+\*\*\*\* HINT : Styles here refers to TailwindCSS classes ( same as the remaining components )
+
 ```javascript
-<SideBar />
+<SideBar
+  modules={modules}
+  subModules={subModules}
+  className={{
+    subModule: "bg-green-300 px-2 py-1",
+    module: "bg-red-300 px-2 py-1",
+  }}
+/>
 ```
 
-![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719671524/VODO/reusable%20components/SideBar_gkkpu6.png)
+![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1720190954/VODO/reusable%20components/SideBar_ttowt0.png)
 
 </section>
 
@@ -514,11 +538,20 @@ Various icons as shown in the image below.
 
 - TabelHead : Array of objects that represent headers, each object has two keys (accessorKey : is the key used in the tabelData array's objects to specify the value at a specific column & header : is the header that appears in the UI )
 - TabelData : data added to table which is an array of objects, each object has keys ( which representthe accessorKey of the corresponding header ) and values
+- tableStyling ?: optional object for styling that takes 4 keys :
+  - headStyle ?: style for the whole header
+  - headElementStyle ?: style for all elements in the header
+  - bodyStyle ?: style for each row in the body ( it doesn't work )
+  - bodyElementStyle ?: style for all elements in body
 
 This is how the table component is used :
 
 ```javascript
-<MainTabel TabelHead={tableHead} TabelData={tableData} />
+<MainTabel
+  TabelHead={TabelHead}
+  TabelData={TabelData}
+  tableStyling={tableStyling}
+/>
 ```
 
 ##### How to set the headers ?
@@ -595,6 +628,17 @@ export const tableData: Column[] = [
   },
   .... The remaining of the data ..
 ]
+```
+
+##### How to set table's style ?
+
+```javascript
+const tableStyling = {
+  headStyle: "bg-green-300  w-1/2",
+  headElementStyle: "bg-red-200 p-4 ",
+  bodyStyle: "bg-green-200",
+  bodyElementStyle: "bg-yellow-400",
+};
 ```
 
 \*\*\*\* HINT : DropDown is illustrated down in the docs.

@@ -1,21 +1,28 @@
-import React from "react";
+import React, { ClassAttributes } from "react";
 import "../../index.css";
 import ThTable from "../ThTable";
 import TdTable from "../TdTable";
 import { TableHead } from "../table";
 import { capitalizeFirstLetter } from "../../Utils/capitalizeFirstLetter";
 import { tableHeaderType, tableItemType } from "@/Utils/tableTypes";
+import { cn } from "../../Utils/utils";
 
-interface myProps {
+export interface mainTabelProps {
   TabelHead: tableHeaderType[];
   TabelData: tableItemType[];
-  tableStyling: {
-    headStyle: string;
-    bodyStyle: string;
+  tableStyling?: {
+    headStyle?: string;
+    headElementStyle?: string;
+    bodyStyle?: string;
+    bodyElementStyle?: string;
   };
 }
 
-export default function MainTabel({ TabelHead, TabelData }: myProps) {
+export default function MainTabel({
+  TabelHead,
+  TabelData,
+  tableStyling,
+}: mainTabelProps) {
   // Check if all accessor keys in headers are present in tableData
   const allKeysPresent = TabelHead.every((header) =>
     Object.keys(TabelData[0])
@@ -24,17 +31,25 @@ export default function MainTabel({ TabelHead, TabelData }: myProps) {
   );
 
   if (!allKeysPresent) {
-    throw new Error("Table data does not contain all required accessor keys");
+    throw new Error(
+      "Table data does not contain all required accessor keys of headers"
+    );
   }
 
   return (
     <>
       <div className="inline-block min-w-full rounded-lg shadow-md ">
         <table className="min-w-full leading-normal custom_tabel">
-          <thead className="border-none rounded-lg whitespace-nowrap bg-neutral-100 hover:bg-neutral-100">
-            <tr className="">
+          <thead
+            className={cn(
+              "w-full border-none rounded-lg whitespace-nowrap bg-neutral-100 hover:bg-neutral-100"
+            )}
+          >
+            <tr className={tableStyling?.headStyle}>
               {TabelHead?.map((item: tableHeaderType) => (
-                <ThTable>{item.header}</ThTable>
+                <ThTable className={tableStyling?.headElementStyle}>
+                  {item.header}
+                </ThTable>
               ))}
             </tr>
           </thead>
@@ -43,9 +58,12 @@ export default function MainTabel({ TabelHead, TabelData }: myProps) {
               <p className="text-center">No data available</p>
             ) : (
               TabelData.map((row: tableItemType, rowIndex: number) => (
-                <tr key={rowIndex}>
+                <tr key={rowIndex} className={tableStyling?.bodyStyle}>
                   {TabelHead.map((head: tableHeaderType, colIndex: number) => (
-                    <TdTable key={colIndex}>
+                    <TdTable
+                      key={colIndex}
+                      className={tableStyling?.bodyElementStyle}
+                    >
                       {head.accessorKey === "image" && row[head.accessorKey] ? (
                         <div className="flex items-center justify-center">
                           <img

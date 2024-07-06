@@ -21,6 +21,8 @@ interface SelectorProps {
   onValueChange?: (value: string) => void;
   className?: string;
   itemsStyle?: string;
+  id?: string;
+  defaultValue?: string;
 }
 
 export const Selector: React.FC<SelectorProps> = ({
@@ -28,13 +30,15 @@ export const Selector: React.FC<SelectorProps> = ({
   placeholder,
   showCheckIcon = true,
   value,
+  defaultValue,
   onValueChange,
   className,
   itemsStyle,
+  id,
 }) => {
   return (
-    <Select defaultValue={value} onValueChange={onValueChange}>
-      <SelectTrigger className={cn("w-[200px] rounded-none", className)}>
+    <Select defaultValue={defaultValue} onValueChange={onValueChange} value={value}>
+      <SelectTrigger className={cn("w-[200px] rounded-none", className)} id={id}>
         <SelectValue className="" placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent className="min-w-fit">

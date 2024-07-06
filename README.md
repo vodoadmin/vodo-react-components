@@ -163,12 +163,7 @@ The card that appears contains : section containing username,avatar and user's e
 - footerHref ?: Link appears in the footer ( The footer has a - view all - word which refs to a link )
 
 ```javascript
-<CardWrapper
-  className="w-[500px]"
-  showFooter
-  footerHref="#"
-  cardTitle="Add business"
->
+<CardWrapper className="w-[500px]" showFooter footerHref="#" cardTitle="Add business">
   Card Content
 </CardWrapper>
 ```
@@ -548,11 +543,7 @@ Various icons as shown in the image below.
 This is how the table component is used :
 
 ```javascript
-<MainTabel
-  TabelHead={TabelHead}
-  TabelData={TabelData}
-  tableStyling={tableStyling}
-/>
+<MainTabel TabelHead={TabelHead} TabelData={TabelData} tableStyling={tableStyling} />
 ```
 
 ##### How to set the headers ?
@@ -730,11 +721,7 @@ const selections: dropOptions[] = [
 This is how the table component is used :
 
 ```javascript
-<PaginationComponent
-  setLimitFn={() => {}}
-  setPageFn={() => {}}
-  totalDataLength={100}
-/>
+<PaginationComponent setLimitFn={() => {}} setPageFn={() => {}} totalDataLength={100} />
 ```
 
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719955058/VODO/reusable%20components/pagination_jwxzkr.png)
@@ -759,9 +746,11 @@ A drop list with items ( same as select HTML tag )
 - placeholder ?: initial text that appears on the selector
 - showCheckIcon ?: boolean value
 - value ?: value of the selection
+- defaultValue:default value of the selector
 - onValueChange ?: setState function used to get the selected value
 - className ?: styles of the selector
 - itemsStyle ?: styles for each element in the selector
+- id?: id for the selector
 
 This is how the selector component is used :
 

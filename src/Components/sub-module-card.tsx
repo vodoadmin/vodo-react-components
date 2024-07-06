@@ -42,7 +42,7 @@ const SideModuleCard: React.FC<subModuleCardProps> = ({
               )}
             >
               <div className={`${open ? "rotate-90 " : ""}`}>
-                <ArrowRightIcon stroke={open ? "#E4412D" : ""} />
+                <ArrowRightIcon stroke={open ? "#E4412D" : "black"} />
               </div>
 
               <span className={`transition-all ${open ? "text-inherit" : ""}`}>

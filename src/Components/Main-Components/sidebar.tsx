@@ -42,7 +42,7 @@ const SideBar = ({
   className, //// To add style to subModules & modules
   sideBarStyle, //// To add style to the whole sidebar
 }: SideBarprops) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const handleSideBar = () => {
     setOpen(!open);
   };
@@ -57,10 +57,7 @@ const SideBar = ({
     >
       <div className="flex w-full items-center justify-end gap-[70px]">
         {open && <LogoIcon />}
-        <Button
-          className="w-16 py-8 rounded-none "
-          onClick={() => handleSideBar()}
-        >
+        <Button className="w-16 py-8 rounded-none " onClick={() => handleSideBar()}>
           {open ? <ArrowMenuIcon stroke="white" /> : <BurgerIcon />}
         </Button>
       </div>

@@ -23,6 +23,7 @@ interface SelectorProps {
   itemsStyle?: string;
   id?: string;
   defaultValue?: string;
+  name?: string;
 }
 
 export const Selector: React.FC<SelectorProps> = ({
@@ -35,10 +36,15 @@ export const Selector: React.FC<SelectorProps> = ({
   className,
   itemsStyle,
   id,
+  name,
 }) => {
   return (
     <Select defaultValue={defaultValue} onValueChange={onValueChange} value={value}>
-      <SelectTrigger className={cn("w-[200px] rounded-none", className)} id={id}>
+      <SelectTrigger
+        className={cn("w-[200px] rounded-none", className)}
+        id={id}
+        name={name}
+      >
         <SelectValue className="" placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent className="min-w-fit">

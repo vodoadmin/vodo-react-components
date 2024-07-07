@@ -18,7 +18,7 @@ import InputFile from "../Components/Main-Components/input-file";
 // import SubmissionProgress from "../Components/Main-Components/submissionProgress";
 import UserInput from "../Components/Main-Components/user-input";
 import { Button } from "../Components/Main-Components/button";
-import axios from "axios";
+
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
 // const subModules: SubModuleProps[] = [

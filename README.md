@@ -253,12 +253,12 @@ Used to upload file to a specific URL ( images ony allowed !! ).
 
 #### The InputFile takes 3 props :
 
-- url : url to which file will be uploaded.
 - className?
+- setState : setState for the to get the file value
 - disabled ?: boolean value to indicate of the input is disabled or not
 
 ```javascript
-<InputFile url="https://store1.gofile.io/uploadFile" />
+<InputFile setState={setFile} />
 ```
 
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719671300/VODO/reusable%20components/INputFile_ripmgb.png)
@@ -751,6 +751,7 @@ A drop list with items ( same as select HTML tag )
 - className ?: styles of the selector
 - itemsStyle ?: styles for each element in the selector
 - id?: id for the selector
+  -name?:name for the selector
 
 This is how the selector component is used :
 

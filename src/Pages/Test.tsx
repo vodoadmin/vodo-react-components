@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 
 import SideBar, {
   ModuleProps,
@@ -14,31 +14,36 @@ import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import { SearchInput } from "../Components/Main-Components/search-input";
 import { Selector } from "../Components/Main-Components/selector";
+import InputFile from "../Components/Main-Components/input-file";
+// import SubmissionProgress from "../Components/Main-Components/submissionProgress";
+import UserInput from "../Components/Main-Components/user-input";
+import { Button } from "../Components/Main-Components/button";
+import axios from "axios";
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
-const subModules: SubModuleProps[] = [
-  {
-    title: "SubModule 1",
-    submoduleArr: [
-      { title: "SubItem 1", link: "/subitem1" },
-      { title: "SubItem 2", link: "/subitem2" },
-    ],
-    Svg: <DeleteIcon height={20} />,
-  },
-  {
-    title: "SubModule 2",
-    submoduleArr: [
-      { title: "SubItem 3", link: "/subitem3" },
-      { title: "SubItem 4", link: "/subitem4" },
-    ],
-    Svg: <EditIcon />,
-  },
-];
+// const subModules: SubModuleProps[] = [
+//   {
+//     title: "SubModule 1",
+//     submoduleArr: [
+//       { title: "SubItem 1", link: "/subitem1" },
+//       { title: "SubItem 2", link: "/subitem2" },
+//     ],
+//     Svg: <DeleteIcon height={20} />,
+//   },
+//   {
+//     title: "SubModule 2",
+//     submoduleArr: [
+//       { title: "SubItem 3", link: "/subitem3" },
+//       { title: "SubItem 4", link: "/subitem4" },
+//     ],
+//     Svg: <EditIcon />,
+//   },
+// ];
 
-const modules: ModuleProps[] = [
-  { title: "Module 1", link: "/module1", Svg: <EyeICon /> },
-  { title: "Module 2", link: "/module2", Svg: <TrashCanIcon /> },
-];
+// const modules: ModuleProps[] = [
+//   { title: "Module 1", link: "/module1", Svg: <EyeICon /> },
+//   { title: "Module 2", link: "/module2", Svg: <TrashCanIcon /> },
+// ];
 
 // const TabelHead = [
 //   { accessorKey: "id", header: "ID" },
@@ -87,14 +92,69 @@ const modules: ModuleProps[] = [
 // };
 
 const Test: React.FC = () => {
+  // const [file, setFile] = useState(null);
+  // const [progress, setProgress] = useState(0);
+  // const onsubmit = async (e: any) => {
+  //   e.preventDefault();
+  //   const formData = {
+  //     name: e.currentTarget[0].value,
+  //     password: e.currentTarget[1].value,
+  //   };
+  //   const config = {
+  //     onUploadProgress: (progressEvent: any) => {
+  //       const percentCompleted = Math.round(
+  //         (progressEvent.loaded * 100) / progressEvent.total
+  //       );
+  //       setProgress(percentCompleted);
+  //       console.log(`Upload progress: ${percentCompleted}%`);
+  //       // You can update your UI with the progress here
+  //     },
+  //     timeout: 5000, // Example timeout of 5 seconds
+  //   };
+  //   try {
+  //     const response = await axios.post(
+  //       "https://668acd082c68eaf3211de0b8.mockapi.io/submit/submit",
+  //       formData,
+  //       config
+  //     );
+
+  //     console.log("Submission successful:", response.data);
+
+  //     // Handle remaining time or other response data here
+  //   } catch (error) {
+  //     console.error("Submission error:", error);
+
+  //     // Handle error, e.g., timeout, network error, etc.
+  //   }
+  // };
+  // setTimeout(() => {
+  //   const interval = setInterval(() => {
+  //     setProgress((prevProgress) => {
+  //       const newProgress = prevProgress + 3;
+  //       if (newProgress >= 100) {
+  //         clearInterval(interval);
+  //         return 100;
+  //       }
+  //       return newProgress;
+  //     });
+  //   }, 300);
+  // }, 3000);
+
   return (
-    <div className="flex items-start justify-start">
+    <div className="">
+      {/* <SubmissionProgress progress={progress} /> */}
+      {/* <form onSubmit={(e) => onsubmit(e)} className="w-[800px] mx-auto">
+        <UserInput label="username" placeholder="username" type="text" />
+        <UserInput label="password" placeholder="password" type="password" />
+        <Button type="submit">submit</Button>
+      </form> */}
       {/* <MainTabel
         TabelHead={TabelHead}
         TabelData={TabelData}
         tableStyling={tableStyling}
       /> */}
-      <SideBar modules={modules} subModules={subModules} />
+      {/* <SideBar modules={modules} subModules={subModules} /> */}
+      {/* <InputFile setState={setFile} className="w-[400px]" /> */}
       {/* <Switcher
         items={["Item 1", "Item 2", "Item 3"]}
         setSelectedOption={() => {}}
@@ -107,11 +167,6 @@ const Test: React.FC = () => {
         setPageFn={() => {}}
       /> */}
       {/* <SearchInput setInputValue={() => {}} /> */}
-      <Selector
-        items={[{ name: "Item 1", value: "1" }]}
-        value="item 2"
-        placeholder="change"
-      />
     </div>
   );
 };

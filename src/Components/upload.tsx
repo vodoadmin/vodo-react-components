@@ -18,13 +18,11 @@ const Upload: React.FC<Upload> = ({
   progress,
   remaining,
 }) => {
-  console.log(progress);
-
   const fileSize = (file.size / 1024).toFixed(2);
   return (
     <section className={cn("w-[391px] bg-black/5 p-3 rounded-md relative", className)}>
       <div className="flex items-center ">
-        <UploadIcon width={44} height={44} stroke={complete ? "#60B04C" : ""} />
+        <UploadIcon width={44} height={44} stroke={complete ? "#60B04C" : undefined} />
         <div className=" grow">
           <h1 className="text-sm font-normal">{file.name}</h1>
           {!complete && (

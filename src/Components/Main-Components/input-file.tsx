@@ -4,72 +4,60 @@ import { Input } from "../input";
 import { Label } from "../label";
 import CloudUploadIcon from "../../Icons/cloudUploadIcon";
 import { ChangeEvent, useState } from "react";
-// import axios from "axios";
 import Upload from "../upload";
 import React from "react";
 
 interface inputFile {
   className?: string;
   disabled?: boolean;
-  url: string;
+  setState: any;
 }
 
-const uploadFileWithProgress = (
-  url: string,
-  formData: any,
-  setProgress: any,
-  setRemaining: any
-) => {
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
+const simulateUploadProgress = (setProgress: any, setRemaining: any) => {
+  return new Promise((resolve) => {
+    let progress = 0;
+    const totalDuration = 1000; // total duration for the simulated upload in milliseconds
+    const intervalDuration = 100; // update interval in milliseconds
+    const interval = setInterval(() => {
+      progress += (intervalDuration / totalDuration) * 100;
+      setProgress(Math.min(progress, 100));
 
-    // Set up a listener to track the upload progress
-    xhr.upload.onprogress = (event) => {
-      if (event.lengthComputable) {
-        const percentCompleted = Math.round((event.loaded * 100) / event.total);
-        const remainingTime = (
-          (event.total - event.loaded) /
-          (event.loaded / event.timeStamp)
-        ).toFixed(2); // Approximate remaining time in milliseconds
-        setProgress(percentCompleted);
-        setRemaining(remainingTime);
+      const remainingTime = (
+        (totalDuration - (progress / 100) * totalDuration) /
+        1000
+      ).toFixed(2);
+      setRemaining(remainingTime);
+
+      if (progress >= 100) {
+        clearInterval(interval);
+        resolve("Upload complete");
       }
-    };
-
-    // Set up listeners for success and error
-    xhr.onload = () => {
-      if (xhr.status >= 200 && xhr.status < 300) {
-        resolve(xhr.response);
-      } else {
-        reject(new Error(xhr.statusText));
-      }
-    };
-
-    xhr.onerror = () => reject(new Error("Network error"));
-
-    // Send the form data
-    xhr.send(formData);
+    }, intervalDuration);
   });
 };
 
-const InputFile: React.FC<inputFile> = ({ className, disabled, url }) => {
+const InputFile: React.FC<inputFile> = ({ className, disabled, setState }) => {
   const [file, setFile] = useState<File | null>(null);
   const [progress, setProgress] = useState<number>(0);
   const [remaining, setRemaining] = useState<string | undefined>("0");
+  const [error, setError] = useState("");
   const onChange = async (e: ChangeEvent<HTMLInputElement> | undefined) => {
     if (e && e.target && e.target.files) {
       const selected = e.target.files[0];
+      if (selected.size > 1 * 1024 * 1024) {
+        setError("File size exceeds 1 MB");
+        return;
+      }
+      setState(selected);
+
       setFile(selected);
-      const formData = new FormData();
-      formData.append("file", selected);
       try {
-        uploadFileWithProgress(url, formData, setProgress, setRemaining)
+        simulateUploadProgress(setProgress, setRemaining)
           .then((response) => {
-            console.log("Upload successful", response);
+            console.log(response);
           })
           .catch((error) => {
-            console.error("Upload failed", error);
+            console.error("Upload simulation failed", error);
           });
       } catch (err) {
         console.log(err);
@@ -82,7 +70,7 @@ const InputFile: React.FC<inputFile> = ({ className, disabled, url }) => {
       <Label
         htmlFor="file"
         className={cn(
-          "flex items-center gap-5 border-2 p-[50px] border-dashed relative focus-within:border-black has-[input:active]:bg-black/20 has-[input:disabled]:opacity-50 has-[input:disabled]:bg-transparent",
+          "flex mb-2.5 items-center gap-5 border-2 p-[50px] border-dashed relative focus-within:border-black has-[input:active]:bg-black/20 has-[input:disabled]:opacity-50 has-[input:disabled]:bg-transparent",
           className
         )}
       >
@@ -109,6 +97,7 @@ const InputFile: React.FC<inputFile> = ({ className, disabled, url }) => {
           {progress == 100 && <Upload complete file={file} />}
         </div>
       )}
+      {error && !file && <span className="text-red-500">{error}</span>}
     </>
   );
 };

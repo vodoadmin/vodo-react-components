@@ -46,8 +46,8 @@ export default function MainTabel({
             )}
           >
             <tr className={tableStyling?.headStyle}>
-              {TabelHead?.map((item: tableHeaderType) => (
-                <ThTable className={tableStyling?.headElementStyle}>
+              {TabelHead?.map((item: tableHeaderType, i) => (
+                <ThTable key={i} className={tableStyling?.headElementStyle}>
                   {item.header}
                 </ThTable>
               ))}
@@ -60,10 +60,7 @@ export default function MainTabel({
               TabelData.map((row: tableItemType, rowIndex: number) => (
                 <tr key={rowIndex} className={tableStyling?.bodyStyle}>
                   {TabelHead.map((head: tableHeaderType, colIndex: number) => (
-                    <TdTable
-                      key={colIndex}
-                      className={tableStyling?.bodyElementStyle}
-                    >
+                    <TdTable key={colIndex} className={tableStyling?.bodyElementStyle}>
                       {head.accessorKey === "image" && row[head.accessorKey] ? (
                         <div className="flex items-center justify-center">
                           <img

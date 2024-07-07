@@ -24,7 +24,6 @@ const SideModuleCard: React.FC<subModuleCardProps> = ({
   svg,
 }) => {
   const [open, setOpen] = useState(false);
-  console.log(submoduleArr);
 
   return (
     <Accordion type={"single"} collapsible className="w-full">

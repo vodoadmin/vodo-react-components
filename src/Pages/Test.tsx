@@ -8,9 +8,7 @@ import SideBar, {
 import DeleteIcon from "../Icons/deleteSVG";
 import EditIcon from "../Icons/editIcon";
 import TrashCanIcon from "../Icons/trashCanIcon";
-import MainTabel, {
-  mainTabelProps,
-} from "../Components/Main-Components/MainTabel";
+import MainTabel, { mainTabelProps } from "../Components/Main-Components/MainTabel";
 import EyeICon from "../Icons/eyeIcon";
 import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
@@ -96,14 +94,7 @@ const Test: React.FC = () => {
         TabelData={TabelData}
         tableStyling={tableStyling}
       /> */}
-      {/* <SideBar
-        modules={modules}
-        subModules={subModules}
-        className={{
-          subModule: "bg-green-300 px-2 py-1",
-          module: "bg-red-300 px-2 py-1",
-        }}
-      /> */}
+      <SideBar modules={modules} subModules={subModules} />
       {/* <Switcher
         items={["Item 1", "Item 2", "Item 3"]}
         setSelectedOption={() => {}}

@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 focus:bg-[#C4332B] active:bg-[#C4332B] active:shadow-custom",
+          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90  active:bg-[#C4332B] active:shadow-custom",
         outline:
           "border border-destructive text-destructive bg-background shadow-sm hover:bg-destructive/[0.05] hover:text-destructive focus:bg-destructive/[0.05] active:bg-destructive/[0.15] active:shadow-custom",
         secondary:

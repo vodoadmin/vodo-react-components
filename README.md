@@ -252,6 +252,7 @@ const [item, setItem] = (useState < null) | (string > null);
 //=================================================
 
 <section id="InputFile">
+
 ### 7- InputFile
 
 Used to upload file to a specific URL ( images ony allowed !! ).
@@ -263,7 +264,7 @@ Used to upload file to a specific URL ( images ony allowed !! ).
 - disabled ?: boolean value to indicate of the input is disabled or not
 
 ```javascript
-<InputFile setState={setFile} />
+<InputFile setState={setState} />
 ```
 
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719671300/VODO/reusable%20components/INputFile_ripmgb.png)

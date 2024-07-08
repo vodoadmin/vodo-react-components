@@ -8,7 +8,9 @@ import SideBar, {
 import DeleteIcon from "../Icons/deleteSVG";
 import EditIcon from "../Icons/editIcon";
 import TrashCanIcon from "../Icons/trashCanIcon";
-import MainTabel, { mainTabelProps } from "../Components/Main-Components/MainTabel";
+import MainTabel, {
+  mainTabelProps,
+} from "../Components/Main-Components/MainTabel";
 import EyeICon from "../Icons/eyeIcon";
 import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";

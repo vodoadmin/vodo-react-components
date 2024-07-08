@@ -163,7 +163,12 @@ The card that appears contains : section containing username,avatar and user's e
 - footerHref ?: Link appears in the footer ( The footer has a - view all - word which refs to a link )
 
 ```javascript
-<CardWrapper className="w-[500px]" showFooter footerHref="#" cardTitle="Add business">
+<CardWrapper
+  className="w-[500px]"
+  showFooter
+  footerHref="#"
+  cardTitle="Add business"
+>
   Card Content
 </CardWrapper>
 ```
@@ -484,7 +489,7 @@ Button contains on/off status
 
 <section id="Icons">
 
-### 14- Icons
+### 15- Icons
 
 Various icons as shown in the image below.
 
@@ -528,7 +533,7 @@ Various icons as shown in the image below.
 
 <section id="table">
 
-### 15- Table
+### 16- Table
 
 #### The Table takes 2 props:
 
@@ -543,7 +548,11 @@ Various icons as shown in the image below.
 This is how the table component is used :
 
 ```javascript
-<MainTabel TabelHead={TabelHead} TabelData={TabelData} tableStyling={tableStyling} />
+<MainTabel
+  TabelHead={TabelHead}
+  TabelData={TabelData}
+  tableStyling={tableStyling}
+/>
 ```
 
 ##### How to set the headers ?
@@ -647,7 +656,7 @@ const tableStyling = {
 
 <section id="dropDown">
 
-### 16- DropDown
+### 17- DropDown
 
 #### The DropDown takes 3 props:
 
@@ -705,7 +714,7 @@ const selections: dropOptions[] = [
 
 <section id="pagination">
 
-### 17- PaginationComponent
+### 18- PaginationComponent
 
 #### It has two sections :
 
@@ -721,7 +730,11 @@ const selections: dropOptions[] = [
 This is how the table component is used :
 
 ```javascript
-<PaginationComponent setLimitFn={() => {}} setPageFn={() => {}} totalDataLength={100} />
+<PaginationComponent
+  setLimitFn={() => {}}
+  setPageFn={() => {}}
+  totalDataLength={100}
+/>
 ```
 
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719955058/VODO/reusable%20components/pagination_jwxzkr.png)
@@ -736,7 +749,7 @@ This is how the table component is used :
 
 <section id="selector">
 
-### 18- selector
+### 19- selector
 
 A drop list with items ( same as select HTML tag )
 

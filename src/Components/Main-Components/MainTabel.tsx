@@ -1,4 +1,4 @@
-import React, { ClassAttributes } from "react";
+import React, { ClassAttributes, useMemo } from "react";
 import "../../index.css";
 import ThTable from "../ThTable";
 import TdTable from "../TdTable";
@@ -24,12 +24,16 @@ export default function MainTabel({
   tableStyling,
 }: mainTabelProps) {
   // Check if all accessor keys in headers are present in tableData
-  const allKeysPresent = TabelHead.every((header) =>
-    TabelData.every((dataItem) =>
-      Object.keys(dataItem)
-        .map((el) => el.toLowerCase())
-        .includes(header.accessorKey.toLowerCase())
-    )
+  const allKeysPresent = useMemo(
+    () =>
+      TabelHead.every((header) =>
+        TabelData.every((dataItem) =>
+          Object.keys(dataItem)
+            .map((el) => el.toLowerCase())
+            .includes(header.accessorKey.toLowerCase())
+        )
+      ),
+    [TabelHead, TabelData]
   );
 
   if (!allKeysPresent) {

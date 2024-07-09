@@ -25,14 +25,16 @@ export default function MainTabel({
 }: mainTabelProps) {
   // Check if all accessor keys in headers are present in tableData
   const allKeysPresent = TabelHead.every((header) =>
-    Object.keys(TabelData[0])
-      .map((el) => el.toLowerCase())
-      .includes(header.accessorKey.toLowerCase())
+    TabelData.every((dataItem) =>
+      Object.keys(dataItem)
+        .map((el) => el.toLowerCase())
+        .includes(header.accessorKey.toLowerCase())
+    )
   );
 
   if (!allKeysPresent) {
     throw new Error(
-      "Table data does not contain all required accessor keys of headers"
+      "Table data does not contain all required accessor keys of headers or tabel data objects don't have the same keys. Check data and headers arrays !"
     );
   }
 
@@ -60,7 +62,10 @@ export default function MainTabel({
               TabelData.map((row: tableItemType, rowIndex: number) => (
                 <tr key={rowIndex} className={tableStyling?.bodyStyle}>
                   {TabelHead.map((head: tableHeaderType, colIndex: number) => (
-                    <TdTable key={colIndex} className={tableStyling?.bodyElementStyle}>
+                    <TdTable
+                      key={colIndex}
+                      className={tableStyling?.bodyElementStyle}
+                    >
                       {head.accessorKey === "image" && row[head.accessorKey] ? (
                         <div className="flex items-center justify-center">
                           <img

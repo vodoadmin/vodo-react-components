@@ -1,10 +1,10 @@
 import React, { ReactElement, ReactNode } from "react";
 import { Button } from "./button";
-import ModulesIcon from "../../Icons/Icons_2/ModulesSVG";
+import ModulesIcon from "../../Icons/ModulesSVG";
 import BurgerIcon from "../../Icons/burgerSVG";
 import { useState } from "react";
 import ArrowMenuIcon from "../../Icons/arrow-menuSVG";
-import LogoIcon from "../../Icons/Icons_2/logoSVG";
+import LogoIcon from "../../Icons/logoSVG";
 import SideCard from "../sidebar-card";
 import SideModuleCard from "../sub-module-card";
 import {

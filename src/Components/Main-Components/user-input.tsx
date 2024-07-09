@@ -1,7 +1,7 @@
 import { Label } from "../label";
 import { InputForm } from "../inputForm";
 import { ChangeEvent, useRef, useState } from "react";
-import ErrorIcon from "../../Icons/Icons_2/errorSVG";
+import ErrorIcon from "../../Icons/errorSVG";
 import TickIcon from "../../Icons/tickSVG";
 import React from "react";
 

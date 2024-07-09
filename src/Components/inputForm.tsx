@@ -3,8 +3,8 @@ import * as React from "react";
 import { cn } from "../Utils/utils";
 
 import ClearIcon from "../Icons/clearSVG";
-import EyePasswordIcon from "../Icons/Icons_2/eyepasswordSVG";
-import EyeSlashIcon from "../Icons/Icons_2/eyeslash";
+import EyePasswordIcon from "../Icons/eyepasswordSVG";
+import EyeSlashIcon from "../Icons/eyeslash";
 import CloseIcon from "../Icons/closeSVG";
 
 export interface InputProps

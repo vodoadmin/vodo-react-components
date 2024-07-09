@@ -1,4 +1,4 @@
-import "./index.css";
+// import "./index.css";
 import "class-variance-authority";
 // import "./main.tsx";
 
@@ -35,28 +35,28 @@ export { default as PaginationComponent } from "./Components/Main-Components/Pag
 //===================================== icons =======================================================
 //===================================================================================================
 
-export { default as AddBusinessIcon } from "./Icons/add-businessSVG";
-export { default as ArrowMenuIcon } from "./Icons/arrow-menuSVG";
-export { default as EditIcon } from "./Icons/editIcon";
-export { default as CalendarIcon } from "./Icons/calendarIcon";
-export { default as DownloadIcon } from "./Icons/downloadSVG";
-export { default as FilterSearchIcon } from "./Icons/filterSearchSVG";
-export { default as LogoIcon } from "./Icons/logoSVG";
-export { default as NotificationIcon } from "./Icons/notification-bill";
-export { default as PeopleIcon } from "./Icons/peopleSVG";
-export { default as StatsIcon } from "./Icons/statsSVG";
-export { default as TickIcon } from "./Icons/tickSVG";
-export { default as EyePasswordIcon } from "./Icons/eyepasswordSVG";
-export { default as EyeSlashIcon } from "./Icons/eyeslash";
-export { default as ClearIcon } from "./Icons/clearSVG";
-export { default as ErrorIcon } from "./Icons/errorSVG";
-export { default as TicketIcon } from "./Icons/ticketSVG";
-export { default as PhoneIcon } from "./Icons/phoneSVG";
-export { default as PaypalIcon } from "./Icons/paypalSVG";
-export { default as ModulesIcon } from "./Icons/ModulesSVG";
-export { default as LinkIcon } from "./Icons/linkSVG";
-export { default as ExportIcon } from "./Icons/exportSVG";
-export { default as DeleteIcon } from "./Icons/deleteSVG";
-export { default as BurgerIcon } from "./Icons/burgerSVG";
-export { default as ArrowDownIcon } from "./Icons/arrow-downSVG";
-export { default as EyeIcon } from "./Icons/eyeSVG";
+// export { default as AddBusinessIcon } from "./Icons/add-businessSVG";
+// export { default as ArrowMenuIcon } from "./Icons/arrow-menuSVG";
+// export { default as EditIcon } from "./Icons/editIcon";
+// export { default as CalendarIcon } from "./Icons/calendarIcon";
+// export { default as DownloadIcon } from "./Icons/downloadSVG";
+// export { default as FilterSearchIcon } from "./Icons/filterSearchSVG";
+// export { default as LogoIcon } from "./Icons/logoSVG";
+// export { default as NotificationIcon } from "./Icons/notification-bill";
+// export { default as PeopleIcon } from "./Icons/peopleSVG";
+// export { default as StatsIcon } from "./Icons/statsSVG";
+// export { default as TickIcon } from "./Icons/tickSVG";
+// export { default as EyePasswordIcon } from "./Icons/eyepasswordSVG";
+// export { default as EyeSlashIcon } from "./Icons/eyeslash";
+// export { default as ClearIcon } from "./Icons/clearSVG";
+// export { default as ErrorIcon } from "./Icons/errorSVG";
+// export { default as TicketIcon } from "./Icons/ticketSVG";
+// export { default as PhoneIcon } from "./Icons/phoneSVG";
+// export { default as PaypalIcon } from "./Icons/paypalSVG";
+// export { default as ModulesIcon } from "./Icons/ModulesSVG";
+// export { default as LinkIcon } from "./Icons/linkSVG";
+// export { default as ExportIcon } from "./Icons/exportSVG";
+// export { default as DeleteIcon } from "./Icons/deleteSVG";
+// export { default as BurgerIcon } from "./Icons/burgerSVG";
+// export { default as ArrowDownIcon } from "./Icons/arrow-downSVG";
+// export { default as EyeIcon } from "./Icons/eyeSVG";

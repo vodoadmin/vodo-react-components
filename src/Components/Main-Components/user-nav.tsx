@@ -5,8 +5,8 @@ import ArrowDownIcon from "../../Icons/arrow-downSVG";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 import { UserProfile } from "../user-profile";
 import { Button } from "./button";
-import EditIcon from "../../Icons/editIcon";
-import LogoutIcon from "../../Icons/LogoutSVG";
+import EditIcon from "../../Icons/Icons_2/editIcon";
+import LogoutIcon from "../../Icons/Icons_2/LogoutSVG";
 interface UserNavProps {
   name: string;
   email: string;

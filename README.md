@@ -52,7 +52,6 @@ function App() {
       <li><a href="#user-content-UserProfile">UserProfile</a></li>
       <li><a href="#user-content-SearchInput">SearchInput</a></li>
       <li><a href="#user-content-TextArea">TextArea</a></li>
-      <li><a href="#user-content-Icons">Icons</a></li>
       <li><a href="#user-content-table">table</a></li>
       <li><a href="#user-content-dropDown">dropDown</a></li>
       <li><a href="#user-content-pagination">pagination</a></li>
@@ -479,50 +478,6 @@ Button contains on/off status
 ```
 
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719679516/VODO/reusable%20components/TextArea_vgcgkc.png)
-
-</section>
-
-//=================================================
-
-<a href="#user-content-table">Go back to the table of components</a>
-
-//=================================================
-
-<section id="Icons">
-
-### 15- Icons
-
-Various icons as shown in the image below.
-
-```javascript
-<EyeIcon />
-<AddBusinessIcon />
-<ArrowDownIcon />
-<ArrowMenuIcon />
-<BurgerIcon />
-<CalendarIcon />
-<DeleteIcon />
-<DownloadIcon />
-<ExportIcon />
-<FilterSearchIcon />
-<LinkIcon />
-<LogoIcon />
-<ModulesIcon />
-<NotificationIcon />
-<PaypalIcon />
-<PeopleIcon />
-<PhoneIcon />
-<StatsIcon />
-<TicketIcon />
-<EditIcon />
-<ErrorIcon />
-<TickIcon />
-<ClearIcon />
-<EyePasswordIcon />
-<EyeSlashIcon />
-```
-
-![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719684241/VODO/reusable%20components/Icons_mustafa_ccldbt.png)
 
 </section>
 

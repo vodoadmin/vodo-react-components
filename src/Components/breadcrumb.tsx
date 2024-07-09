@@ -3,7 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 import { cn } from "../Utils/utils";
 import ArrowRightIcon from "../Icons/arrowRightIcon";
-import MoreIcon from "../Icons/moreSVG";
+import MoreIcon from "../Icons/Icons_2/moreSVG";
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,

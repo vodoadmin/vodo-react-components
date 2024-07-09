@@ -1,10 +1,10 @@
 import React, { ReactElement, ReactNode } from "react";
 import { Button } from "./button";
-import ModulesIcon from "../../Icons/ModulesSVG";
+import ModulesIcon from "../../Icons/Icons_2/ModulesSVG";
 import BurgerIcon from "../../Icons/burgerSVG";
 import { useState } from "react";
 import ArrowMenuIcon from "../../Icons/arrow-menuSVG";
-import LogoIcon from "../../Icons/logoSVG";
+import LogoIcon from "../../Icons/Icons_2/logoSVG";
 import SideCard from "../sidebar-card";
 import SideModuleCard from "../sub-module-card";
 import {
@@ -57,7 +57,10 @@ const SideBar = ({
     >
       <div className="flex w-full items-center justify-end gap-[70px]">
         {open && <LogoIcon />}
-        <Button className="w-16 py-8 rounded-none " onClick={() => handleSideBar()}>
+        <Button
+          className="w-16 py-8 rounded-none "
+          onClick={() => handleSideBar()}
+        >
           {open ? <ArrowMenuIcon stroke="white" /> : <BurgerIcon />}
         </Button>
       </div>

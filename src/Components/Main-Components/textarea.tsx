@@ -1,7 +1,7 @@
 import { Label } from "../label";
 import { Textarea } from "../textarea";
 import React, { ChangeEvent } from "react";
-import ErrorIcon from "../../Icons/errorSVG";
+import ErrorIcon from "../../Icons/Icons_2/errorSVG";
 import TickIcon from "../../Icons/tickSVG";
 import { cn } from "../../Utils/utils";
 

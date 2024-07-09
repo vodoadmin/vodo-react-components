@@ -6,12 +6,12 @@ import SideBar, {
 } from "../Components/Main-Components/sidebar";
 
 import DeleteIcon from "../Icons/deleteSVG";
-import EditIcon from "../Icons/editIcon";
-import TrashCanIcon from "../Icons/trashCanIcon";
+import EditIcon from "../Icons/Icons_2/editIcon";
+import TrashCanIcon from "../Icons/Icons_2/trashCanIcon";
 import MainTabel, {
   mainTabelProps,
 } from "../Components/Main-Components/MainTabel";
-import EyeICon from "../Icons/eyeIcon";
+import EyeICon from "../Icons/Icons_2/eyeIcon";
 import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import { SearchInput } from "../Components/Main-Components/search-input";

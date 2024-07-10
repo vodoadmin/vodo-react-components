@@ -83,14 +83,14 @@
   @apply relative z-10 grid place-content-center after:-z-10 after:rounded-lg after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-0 after:h-0 after:absolute after:transition-all;
 }
 
-.vodo-rc-sidebar-acitve {
+.vodo-rc-sidebar-active {
   @apply after:bg-destructive after:!w-full after:!h-full;
 }
-.vodo-rc-sidebar-acitve span {
+.vodo-rc-sidebar-active span {
   @apply text-white;
 }
-.vodo-rc-sidebar-acitve svg,
-.vodo-rc-sidebar-acitve path {
+.vodo-rc-sidebar-active svg,
+.vodo-rc-sidebar-active path {
   @apply !stroke-white;
 }
 .vodo-rc-aside > button path {

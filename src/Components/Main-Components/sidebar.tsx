@@ -65,7 +65,7 @@ const SideBar = ({
         <AccordionItem value="item-1" className="w-full border-none">
           <AccordionTrigger
             onClick={(e: any) =>
-              e.currentTarget.classList.toggle("vodo-rc-sidebar-acitve")
+              e.currentTarget.classList.toggle("vodo-rc-sidebar-active")
             }
             className="hover:no-underline w-full p-0 rounded-none  py-6 !flex !justify-start px-5 gap-4 vodo-rc-icon-trigger after:rounded-none"
           >

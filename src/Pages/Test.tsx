@@ -1,17 +1,6 @@
 import React, { ReactNode, useState } from "react";
-
-import SideBar, {
-  ModuleProps,
-  SubModuleProps,
-} from "../Components/Main-Components/sidebar";
-
 import DeleteIcon from "../Icons/deleteSVG";
-import EditIcon from "../Icons/Icons_2/editIcon";
-import TrashCanIcon from "../Icons/Icons_2/trashCanIcon";
-import MainTabel, {
-  mainTabelProps,
-} from "../Components/Main-Components/MainTabel";
-import EyeICon from "../Icons/Icons_2/eyeIcon";
+import MainTabel, { mainTabelProps } from "../Components/Main-Components/MainTabel";
 import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import { SearchInput } from "../Components/Main-Components/search-input";
@@ -20,6 +9,7 @@ import InputFile from "../Components/Main-Components/input-file";
 // import SubmissionProgress from "../Components/Main-Components/submissionProgress";
 import UserInput from "../Components/Main-Components/user-input";
 import { Button } from "../Components/Main-Components/button";
+import SideBar from "../Components/Main-Components/sidebar";
 
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
@@ -92,7 +82,7 @@ import { Button } from "../Components/Main-Components/button";
 //   bodyStyle: "bg-green-200",
 //   bodyElementStyle: "bg-yellow-400",
 // };
-
+import handleLogin from "./handler";
 const Test: React.FC = () => {
   // const [file, setFile] = useState(null);
   // const [progress, setProgress] = useState(0);
@@ -155,7 +145,13 @@ const Test: React.FC = () => {
         TabelData={TabelData}
         tableStyling={tableStyling}
       /> */}
-      {/* <SideBar modules={modules} subModules={subModules} /> */}
+      <Button
+        variant={"destructive"}
+        onClick={() => handleLogin("kegejif579@javnoi.com", "MQoqKK0S")}
+      >
+        Log In
+      </Button>
+      <SideBar />
       {/* <InputFile setState={setFile} className="w-[400px]" /> */}
       {/* <Switcher
         items={["Item 1", "Item 2", "Item 3"]}

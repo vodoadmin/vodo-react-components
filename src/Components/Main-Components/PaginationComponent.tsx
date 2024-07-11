@@ -15,7 +15,7 @@ const PaginationComponent: React.FC<myProps> = ({
   constantLimit,
   totalDataLength,
 }) => {
-  const [limit, setLimit] = useState<number>(6);
+  const [limit, setLimit] = useState<number>(constantLimit ?? 6);
   const [page, setPage] = useState<number>(1);
   const totalPages: any = useMemo(() => {
     return totalDataLength !== undefined
@@ -28,14 +28,6 @@ const PaginationComponent: React.FC<myProps> = ({
     setLimit(value);
     setLimitFn(value);
   }
-
-  //   console.log(page, totalPages, limit, totalPages);
-  console.log({
-    page: page,
-    totalPages: totalPages,
-    limit: limit,
-    totalDataLength: totalDataLength,
-  });
 
   function prevPage() {
     if (page === 1) return;

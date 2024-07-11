@@ -16,19 +16,13 @@ import {
 } from "../command";
 import { useState } from "react";
 
-type PopoverTriggerProps = React.ComponentPropsWithoutRef<
-  typeof PopoverTrigger
->;
+type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>;
 
 type SetStateAction<S> = (arg: S) => void;
 
-interface ItemType {
-  [key: string]: any;
-}
-
 interface SwitcherProps extends PopoverTriggerProps {
-  items: ItemType[] | any[];
-  targetKey?: keyof ItemType;
+  items: any[];
+  targetKey?: any;
   heading?: string;
   placeHolder?: string;
   className?: string;
@@ -46,14 +40,13 @@ export const Switcher: React.FC<SwitcherProps> = ({
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
 
-  const onSelect = (item: ItemType) => {
-    const selectedItem = targetKey ? item[targetKey] : item;
-    setOpen(false);
-    setSelected(selectedItem);
-    setSelectedOption(selectedItem);
-  };
+  const onSelect = (item: any) => {
+    console.log(item);
 
-  console.log(selected);
+    setOpen(false);
+    setSelected(item);
+    setSelectedOption(item);
+  };
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -87,7 +80,7 @@ export const Switcher: React.FC<SwitcherProps> = ({
                 <CommandItem
                   key={i}
                   onSelect={(item: any) => {
-                    onSelect(item);
+                    onSelect(typeof item === "string" ? item : item[targetKey]);
                   }}
                   className="text-sm"
                 >

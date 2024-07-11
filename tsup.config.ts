@@ -11,7 +11,8 @@ export default defineConfig({
     InputFile: "./src/Components/Main-Components/input-file.tsx",
     MainTable: "./src/Components/Main-Components/MainTabel.tsx",
     NavigationTrail: "./src/Components/Main-Components/navigation-trail.tsx",
-    PaginationComponent: "./src/Components/Main-Components/PaginationComponent.tsx",
+    PaginationComponent:
+      "./src/Components/Main-Components/PaginationComponent.tsx",
     SearchInput: "./src/Components/Main-Components/search-input.tsx",
     Selector: "./src/Components/Main-Components/selector.tsx",
     Status: "./src/Components/Main-Components/status.tsx",

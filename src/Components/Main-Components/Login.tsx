@@ -16,7 +16,7 @@ interface LoginProps {
   url?: string;
 }
 
-type handleChangeEmailType = (e: React.ChangeEvent<HTMLInputElement>) => void;
+type handleChangeEmailType = (e: any) => void;
 
 const Login: React.FC<LoginProps> = ({
   url = "https://accounts.vodoerp.com/api/login",

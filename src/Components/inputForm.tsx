@@ -39,7 +39,9 @@ const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
             {type === "password" &&
               (showPassword ? <EyePasswordIcon /> : <EyeSlashIcon />)}
           </div>
-          <div className="cursor-pointer" onClick={() => setInputValue("")}>
+          <div className="cursor-pointer" onClick={() => {
+            setInputValue(""); 
+            onChange && onChange("")}}>
             <CloseIcon />
           </div>
         </div>

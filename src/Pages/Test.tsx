@@ -135,8 +135,29 @@ const Test: React.FC = () => {
   //   }, 300);
   // }, 3000);
 
+  const testArr = [
+    {
+      id: 4,
+      nationality: "آيسلندا",
+      created_at: "2022-09-12T08:16:13.000000Z",
+      updated_at: "2022-09-12T08:16:13.000000Z",
+    },
+    {
+      id: 5,
+      nationality: "أذربيجان",
+      created_at: "2022-09-12T08:16:13.000000Z",
+      updated_at: "2022-09-12T08:16:13.000000Z",
+    },
+    {
+      id: 6,
+      nationality: "أراض فرنسية جنوبية وأنتارتيكية",
+      created_at: "2022-09-12T08:16:13.000000Z",
+      updated_at: "2022-09-12T08:16:13.000000Z",
+    },
+  ];
+
   return (
-    <div className="">
+    <div className="flex flex-col items-center">
       {/* <SubmissionProgress progress={progress} /> */}
       {/* <form onSubmit={(e) => onsubmit(e)} className="w-[800px] mx-auto">
         <UserInput label="username" placeholder="username" type="text" />
@@ -162,12 +183,17 @@ const Test: React.FC = () => {
         setPageFn={() => {}}
       /> */}
       {/* <SearchInput setInputValue={() => {}} /> */}
-      <Login url="https://accounts.vodoerp.com/api/login" />
-      <PaginationComponent
+      {/* <Login url="https://accounts.vodoerp.com/api/login" /> */}
+      {/* <PaginationComponent
         totalDataLength={20}
         setLimitFn={() => {}}
         setPageFn={() => {}}
         constantLimit={10}
+      /> */}
+      <Switcher
+        items={testArr}
+        setSelectedOption={() => {}}
+        targetKey={"nationality"}
       />
     </div>
   );

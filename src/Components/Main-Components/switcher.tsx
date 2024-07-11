@@ -22,8 +22,13 @@ type PopoverTriggerProps = React.ComponentPropsWithoutRef<
 
 type SetStateAction<S> = (arg: S) => void;
 
+interface ItemType {
+  [key: string]: any;
+}
+
 interface SwitcherProps extends PopoverTriggerProps {
-  items: string[];
+  items: ItemType[];
+  targetKey: keyof ItemType;
   heading?: string;
   placeHolder?: string;
   className?: string;
@@ -33,6 +38,7 @@ interface SwitcherProps extends PopoverTriggerProps {
 export const Switcher: React.FC<SwitcherProps> = ({
   className,
   items = [],
+  targetKey,
   heading,
   setSelectedOption,
   placeHolder,
@@ -54,7 +60,7 @@ export const Switcher: React.FC<SwitcherProps> = ({
           size="default"
           role="combobox"
           aria-expanded={open}
-          aria-label="Select a company size"
+          aria-label={placeHolder}
           className={cn(
             "text-sm font-normal py-3 gap-x-2 flex items-center rounded-none text-destructive",
             className
@@ -68,25 +74,25 @@ export const Switcher: React.FC<SwitcherProps> = ({
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="w-[200px] p-0 ">
         <Command>
           <CommandList>
-            <CommandInput placeholder="Search size..." />
+            <CommandInput placeholder={placeHolder} />
             <CommandEmpty>No results found</CommandEmpty>
             <CommandGroup heading={heading}>
-              {items.map((item) => (
+              {items.map((item, i) => (
                 <CommandItem
-                  key={item}
+                  key={i}
                   onSelect={(item: any) => {
-                    onSelect(item);
+                    onSelect(item[targetKey]);
                   }}
                   className="text-sm"
                 >
-                  {item}
+                  {item[targetKey]}
                   <CheckIcon
                     className={cn(
                       "ml-auto h-4 w-4",
-                      selected === item ? "opacity-100" : "opacity-0"
+                      selected === item[targetKey] ? "opacity-100" : "opacity-0"
                     )}
                   />
                 </CommandItem>

@@ -156,6 +156,8 @@ const Test: React.FC = () => {
     },
   ];
 
+  const testArr2 = ["item1", "item2", "item3"];
+
   return (
     <div className="flex flex-col items-center">
       {/* <SubmissionProgress progress={progress} /> */}
@@ -194,6 +196,7 @@ const Test: React.FC = () => {
         items={testArr}
         setSelectedOption={() => {}}
         targetKey={"nationality"}
+        placeHolder="select"
       />
     </div>
   );

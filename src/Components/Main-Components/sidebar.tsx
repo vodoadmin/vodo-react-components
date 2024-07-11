@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { Button } from "./button";
 import ModulesIcon from "../../Icons/ModulesSVG";
 import BurgerIcon from "../../Icons/burgerSVG";
@@ -57,10 +57,7 @@ const SideBar = ({
     >
       <div className="flex w-full items-center justify-end gap-[70px]">
         {open && <LogoIcon />}
-        <Button
-          className="w-16 py-8 rounded-none "
-          onClick={() => handleSideBar()}
-        >
+        <Button className="w-16 py-8 rounded-none " onClick={() => handleSideBar()}>
           {open ? <ArrowMenuIcon stroke="white" /> : <BurgerIcon />}
         </Button>
       </div>
@@ -68,7 +65,7 @@ const SideBar = ({
         <AccordionItem value="item-1" className="w-full border-none">
           <AccordionTrigger
             onClick={(e: any) =>
-              e.currentTarget.classList.toggle("vodo-rc-sidebar-acitve")
+              e.currentTarget.classList.toggle("vodo-rc-sidebar-active")
             }
             className="hover:no-underline w-full p-0 rounded-none  py-6 !flex !justify-start px-5 gap-4 vodo-rc-icon-trigger after:rounded-none"
           >

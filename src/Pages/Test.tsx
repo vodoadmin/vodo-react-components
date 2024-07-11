@@ -6,12 +6,12 @@ import SideBar, {
 } from "../Components/Main-Components/sidebar";
 
 import DeleteIcon from "../Icons/deleteSVG";
-import EditIcon from "../Icons/Icons_2/editIcon";
-import TrashCanIcon from "../Icons/Icons_2/trashCanIcon";
+// import EditIcon from "../Icons/Icons_2/editIcon";
+// import TrashCanIcon from "../Icons/Icons_2/trashCanIcon";
 import MainTabel, {
   mainTabelProps,
 } from "../Components/Main-Components/MainTabel";
-import EyeICon from "../Icons/Icons_2/eyeIcon";
+// import EyeICon from "../Icons/eyeIcon";
 import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import { SearchInput } from "../Components/Main-Components/search-input";
@@ -20,6 +20,7 @@ import InputFile from "../Components/Main-Components/input-file";
 // import SubmissionProgress from "../Components/Main-Components/submissionProgress";
 import UserInput from "../Components/Main-Components/user-input";
 import { Button } from "../Components/Main-Components/button";
+import Login from "../Components/Main-Components/Login";
 
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
@@ -169,6 +170,7 @@ const Test: React.FC = () => {
         setPageFn={() => {}}
       /> */}
       {/* <SearchInput setInputValue={() => {}} /> */}
+      <Login url="https://accounts.vodoerp.com/api/login" />
     </div>
   );
 };

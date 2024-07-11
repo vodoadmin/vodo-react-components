@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "../index.css";
+
 import { cn } from "../Utils/utils";
 
 export default function TdTable({

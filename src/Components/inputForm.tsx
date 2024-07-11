@@ -11,15 +11,15 @@ export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
 
 const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, onChange, ...props }, ref) => {
+  ({ className, type,value, onChange, ...props }, ref) => {
     const [showPassword, setShowPassword] = React.useState<boolean>(false);
-    const [inputValue, setInputValue] = React.useState<string>("");
+    const [inputValue, setInputValue] = React.useState<string>(value as string);
     return (
       <div className="relative ">
         <input
           type={type === "text" || showPassword === true ? "text" : "password"}
           className={cn(
-            "flex h-9 w-full placeholder:opacity-50 placeholder:text-xs  border-b-2  border-input bg-transparent px-3 py-1 text-sm  transition-colors outline-none focus:shadow-[#2b2f384f_0px_2px] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground disabled:bg-black/10 disabled:cursor-not-allowed disabled:opacity-50",
+            `flex h-9 rounded-full sm:w-64 w-56 placeholder:opacity-50 placeholder:text-xs  border-b-2  border-input box-border bg-transparent ps-3 ${type==="password"? "pe-12": "pe-5"} text-sm  transition-colors outline-none focus:shadow-[#2b2f384f_0px_2px] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground disabled:bg-black/10 disabled:cursor-not-allowed disabled:opacity-50`,
             className
           )}
           ref={ref}
@@ -31,7 +31,7 @@ const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
           {...props}
         />
 
-        <div className="absolute top-0.5 bottom-0.5 right-0 -translate-y-  flex items-center gap-2 scale-75 px-1">
+        <div className="absolute top-0.5 bottom-0.5 right-0   flex items-center gap-2 scale-75 px-1">
           <div
             className="cursor-pointer"
             onClick={() => setShowPassword((prev) => !prev)}

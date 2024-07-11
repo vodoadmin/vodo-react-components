@@ -52,7 +52,7 @@ function App() {
       <li><a href="#user-content-UserProfile">UserProfile</a></li>
       <li><a href="#user-content-SearchInput">SearchInput</a></li>
       <li><a href="#user-content-TextArea">TextArea</a></li>
-      <li><a href="#user-content-table">table</a></li>
+      <li><a href="#user-content-tableComponent">table</a></li>
       <li><a href="#user-content-dropDown">dropDown</a></li>
       <li><a href="#user-content-pagination">pagination</a></li>
       <li><a href="#user-content-selector">selector</a></li>
@@ -487,7 +487,7 @@ Button contains on/off status
 
 //=================================================
 
-<section id="table">
+<section id="tableComponent">
 
 ### 16- Table
 

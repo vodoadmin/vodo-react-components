@@ -1,9 +1,8 @@
-import React, { ClassAttributes, useMemo } from "react";
-import "../../index.css";
+import React, {  useMemo } from "react";
+
 import ThTable from "../ThTable";
 import TdTable from "../TdTable";
-import { TableHead } from "../table";
-import { capitalizeFirstLetter } from "../../Utils/capitalizeFirstLetter";
+
 import { tableHeaderType, tableItemType } from "@/Utils/tableTypes";
 import { cn } from "../../Utils/utils";
 

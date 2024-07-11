@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ESNext",
     "module": "ESNext",
     "jsx": "react",
     "moduleResolution": "node",
@@ -8,9 +8,11 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
+    "declarationDir": "./dist",
     "declarationMap": true,
     "emitDeclarationOnly": true,
     "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
     "baseUrl": ".",
     "paths": {

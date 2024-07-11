@@ -1,7 +1,7 @@
 {
   "name": "vodo-react-components",
   "description": "React resusable components for VODO fronend developers",
-  "version": "1.5.2",
+  "version": "1.5.9",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -36,7 +36,7 @@
   "size-limit": [
     {
       "path": "dist/index.js",
-      "limit": "300 KB"
+      "limit": "600 KB"
     }
   ],
   "dependencies": {

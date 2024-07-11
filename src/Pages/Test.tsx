@@ -163,6 +163,12 @@ const Test: React.FC = () => {
       /> */}
       {/* <SearchInput setInputValue={() => {}} /> */}
       <Login url="https://accounts.vodoerp.com/api/login" />
+      <PaginationComponent
+        totalDataLength={100}
+        setLimitFn={() => {}}
+        setPageFn={() => {}}
+        constantLimit={20}
+      />
     </div>
   );
 };

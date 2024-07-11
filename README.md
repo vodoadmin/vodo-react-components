@@ -56,6 +56,7 @@ function App() {
       <li><a href="#user-content-dropDown">dropDown</a></li>
       <li><a href="#user-content-pagination">pagination</a></li>
       <li><a href="#user-content-selector">selector</a></li>
+      <li><a href="#user-content-login">Login</a></li>
 </ul>
 </section>
 <hr />
@@ -677,11 +678,12 @@ const selections: dropOptions[] = [
 - The left one for pages
 - The right one for limit
 
-#### The PaginationComponent takes 3 props:
+#### The PaginationComponent takes 4 props:
 
 - totalDataLength : total number of rows (data)
 - setPageFn : setState function to get the current page
 - setLimitFn : setState function to get the limit
+- constantLimit ?: if your API doesn't allow you to set limit for data per page, you will have to set this prop with the length of the array received from the API. If you set this prop, the limit input field will disappear.
 
 This is how the table component is used :
 
@@ -690,8 +692,11 @@ This is how the table component is used :
   setLimitFn={() => {}}
   setPageFn={() => {}}
   totalDataLength={100}
+  constantLimit={20}
 />
 ```
+
+**\*** HINT : If you don't know the totalDataLength from back-end you can set it to a big random number
 
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719955058/VODO/reusable%20components/pagination_jwxzkr.png)
 
@@ -730,6 +735,31 @@ This is how the selector component is used :
   value="item 2"
   placeholder="change"
 />
+```
+
+</section>
+
+//=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
+
+//=================================================
+
+<section id="login">
+
+### 19- Login
+
+A login page that will be used during development only to do login and get data needed for APIs' call ( token , secrect_key , ...).
+This login should be removed before deployment of your module.
+
+#### The Login takes 1 prop:
+
+- url ?: url of login that will get the userNAme and password and return json contains all data. url is set by default to this value ("https://accounts.vodoerp.com/api/login")
+
+This is how the login component is used :
+
+```javascript
+<Login url="https://accounts.vodoerp.com/api/login" />
 ```
 
 </section>

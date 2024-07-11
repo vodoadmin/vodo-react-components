@@ -6,11 +6,13 @@ import ArrowRightIcon from "../../Icons/arrowRightIcon";
 interface myProps {
   setPageFn: (page: number) => void;
   setLimitFn: (page: number) => void;
+  constantLimit?: number;
   totalDataLength?: number;
 }
 const PaginationComponent: React.FC<myProps> = ({
   setPageFn,
   setLimitFn,
+  constantLimit,
   totalDataLength,
 }) => {
   const [limit, setLimit] = useState<number>(6);
@@ -50,35 +52,41 @@ const PaginationComponent: React.FC<myProps> = ({
   return (
     <div className="flex items-center gap-x-2">
       <span className="text-[13px] text-primary leading-5">Page</span>
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={prevPage}
-        disabled={page === 1 || totalPages === Infinity}
-        className="p-0 text-destructive hover:text-destructive/80 w-fit disabled:bg-transparent"
+      <p
+        onClick={page === 1 || totalPages === Infinity ? () => {} : prevPage}
+        className={`  w-fit disabled:text-slate-400 p-[1 px] ${
+          page === 1 || totalPages === Infinity
+            ? ""
+            : "cursor-pointer hover:text-destructive/80"
+        }`}
       >
-        <ArrowLeftIcon />
-      </Button>
+        {"<"}
+      </p>
       <span className="flex items-center justify-center w-6 h-6 text-white rounded-full bg-destructive">
         {page}
       </span>
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={nextPage}
-        disabled={page === totalPages || totalPages === Infinity}
-        className="p-0 text-destructive hover:text-destructive/80 w-fit disabled:bg-transparent"
+      <p
+        onClick={
+          page === totalPages || totalPages === Infinity ? () => {} : nextPage
+        }
+        className={`  w-fit disabled:text-slate-400 p-[1 px] ${
+          page === totalPages || totalPages === Infinity
+            ? ""
+            : "cursor-pointer hover:text-destructive/80"
+        }`}
       >
-        <ArrowRightIcon />
-      </Button>
-      <div className="p-1 border border-stone-400">
-        <input
-          type="number"
-          value={limit === 0 ? "" : limit}
-          onChange={handleLimit}
-          className="text-center max-w-12 focus:outline-none "
-        />
-      </div>
+        {">"}
+      </p>
+      {!constantLimit && (
+        <div className="p-1 border border-stone-400">
+          <input
+            type="number"
+            value={limit === 0 ? "" : limit}
+            onChange={handleLimit}
+            className="text-center max-w-12 focus:outline-none "
+          />
+        </div>
+      )}
     </div>
   );
 };

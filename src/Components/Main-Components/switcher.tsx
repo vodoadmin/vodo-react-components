@@ -42,7 +42,6 @@ export const Switcher: React.FC<SwitcherProps> = ({
 
   const onSelect = (item: any) => {
     console.log(item);
-
     setOpen(false);
     setSelected(item);
     setSelectedOption(item);
@@ -73,7 +72,10 @@ export const Switcher: React.FC<SwitcherProps> = ({
       <PopoverContent className="w-[200px] p-0 ">
         <Command>
           <CommandList>
-            <CommandInput placeholder={placeHolder} />
+            <CommandInput
+              placeholder={placeHolder}
+              className="box-border border-none "
+            />
             <CommandEmpty>No results found</CommandEmpty>
             <CommandGroup heading={heading}>
               {items.map((item, i) => (

@@ -1,6 +1,8 @@
 import React, { ReactNode, useState } from "react";
 import DeleteIcon from "../Icons/deleteSVG";
-import MainTabel, { mainTabelProps } from "../Components/Main-Components/MainTabel";
+import MainTabel, {
+  mainTabelProps,
+} from "../Components/Main-Components/MainTabel";
 import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import { SearchInput } from "../Components/Main-Components/search-input";
@@ -10,6 +12,7 @@ import InputFile from "../Components/Main-Components/input-file";
 import UserInput from "../Components/Main-Components/user-input";
 import { Button } from "../Components/Main-Components/button";
 import SideBar from "../Components/Main-Components/sidebar";
+import Login from "../Components/Main-Components/Login";
 
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
@@ -82,8 +85,7 @@ import SideBar from "../Components/Main-Components/sidebar";
 //   bodyStyle: "bg-green-200",
 //   bodyElementStyle: "bg-yellow-400",
 // };
-import handleLogin from "./handler";
-import Login from "@/Components/Main-Components/Login";
+
 const Test: React.FC = () => {
   // const [file, setFile] = useState(null);
   // const [progress, setProgress] = useState(0);
@@ -146,13 +148,7 @@ const Test: React.FC = () => {
         TabelData={TabelData}
         tableStyling={tableStyling}
       /> */}
-      <Button
-        variant={"destructive"}
-        onClick={() => handleLogin("kegejif579@javnoi.com", "MQoqKK0S")}
-      >
-        Log In
-      </Button>
-      <SideBar />
+
       {/* <InputFile setState={setFile} className="w-[400px]" /> */}
       {/* <Switcher
         items={["Item 1", "Item 2", "Item 3"]}

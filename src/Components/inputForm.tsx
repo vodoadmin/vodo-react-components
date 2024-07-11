@@ -8,10 +8,12 @@ import EyeSlashIcon from "../Icons/eyeslash";
 import CloseIcon from "../Icons/closeSVG";
 
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  onChangeFn?: (e: any) => void;
+}
 
 const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type,value, onChange, ...props }, ref) => {
+  ({ className, type, value, onChangeFn, ...props }, ref) => {
     const [showPassword, setShowPassword] = React.useState<boolean>(false);
     const [inputValue, setInputValue] = React.useState<string>(value as string);
     return (
@@ -19,14 +21,16 @@ const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type === "text" || showPassword === true ? "text" : "password"}
           className={cn(
-            `flex h-9 rounded-full sm:w-64 w-56 placeholder:opacity-50 placeholder:text-xs  border-b-2  border-input box-border bg-transparent ps-3 ${type==="password"? "pe-12": "pe-5"} text-sm  transition-colors outline-none focus:shadow-[#2b2f384f_0px_2px] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground disabled:bg-black/10 disabled:cursor-not-allowed disabled:opacity-50`,
+            `flex h-9 rounded-full sm:w-64 w-56 placeholder:opacity-50 placeholder:text-xs  border-b-2  border-input box-border bg-transparent ps-3 ${
+              type === "password" ? "pe-12" : "pe-5"
+            } text-sm  transition-colors outline-none focus:shadow-[#2b2f384f_0px_2px] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground disabled:bg-black/10 disabled:cursor-not-allowed disabled:opacity-50`,
             className
           )}
           ref={ref}
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);
-            onChange && onChange(e);
+            onChangeFn && onChangeFn(e);
           }}
           {...props}
         />
@@ -39,9 +43,13 @@ const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
             {type === "password" &&
               (showPassword ? <EyePasswordIcon /> : <EyeSlashIcon />)}
           </div>
-          <div className="cursor-pointer" onClick={() => {
-            setInputValue(""); 
-            onChange && onChange("")}}>
+          <div
+            className="cursor-pointer"
+            onClick={() => {
+              setInputValue("");
+              onChangeFn && onChangeFn("");
+            }}
+          >
             <CloseIcon />
           </div>
         </div>

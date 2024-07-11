@@ -30,14 +30,14 @@ const Login: React.FC<LoginProps> = ({
   //===========================================================
 
   const handleChangeEmail: handleChangeEmailType = (e) => {
-    setEmail(e.target.value);
+    setEmail(typeof e === "string" ? e : e.target.value);
   };
 
   //===========================================================
   //===========================================================
 
   const handleChangePassword: handleChangeEmailType = (e) => {
-    setPassword(e.target.value);
+    setPassword(typeof e === "string" ? e : e.target.value);
   };
 
   //===========================================================
@@ -90,7 +90,7 @@ const Login: React.FC<LoginProps> = ({
       <UserInput
         label="UserName"
         value={email}
-        onChange={handleChangeEmail}
+        onChangeFn={handleChangeEmail}
         type="text"
         name="email"
         id="email"
@@ -99,7 +99,7 @@ const Login: React.FC<LoginProps> = ({
       <UserInput
         label="Password"
         value={password}
-        onChange={handleChangePassword}
+        onChangeFn={handleChangePassword}
         type="password"
         name="password"
         id="password"

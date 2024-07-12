@@ -228,6 +228,7 @@ A drop list with a search bar.
 - placeHolder : The value appears initially in the droplist section
 - className?
 - items : items appear in the drop list
+- targetKey ?: If the items array is an array of string, you don't have to send this prop. But if you sent an array of objects, you have to specify the key which contains the options to appear in the selector. for example you have an array of objects like this ({ id:1 , nationality : "Egyptian " }, ...) and you want to show nationalities in the switcher so you have to specify the targetKey as "nationality".
 - heading : the title of the options in the drop list (eg. sizes)
 - setSelectedOption : Used to get the selected option. This prop is the setState function you pass to the component.
 

@@ -1,8 +1,6 @@
 import React, { ReactNode, useState } from "react";
 import DeleteIcon from "../Icons/deleteSVG";
-import MainTabel, {
-  mainTabelProps,
-} from "../Components/Main-Components/MainTabel";
+import MainTabel, { mainTabelProps } from "../Components/Main-Components/MainTabel";
 import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import { SearchInput } from "../Components/Main-Components/search-input";
@@ -155,6 +153,7 @@ const Test: React.FC = () => {
       updated_at: "2022-09-12T08:16:13.000000Z",
     },
   ];
+  const test = ["مصر", "مصر", "مصر", "مصر"];
 
   const testArr2 = ["item1", "item2", "item3"];
 
@@ -198,6 +197,7 @@ const Test: React.FC = () => {
         targetKey={"nationality"}
         placeHolder="select"
       />
+      <Switcher items={test} setSelectedOption={() => {}} placeHolder="select" />
     </div>
   );
 };

@@ -22,13 +22,9 @@ type PopoverTriggerProps = React.ComponentPropsWithoutRef<
 
 type SetStateAction<S> = (arg: S) => void;
 
-interface ItemType {
-  [key: string]: any;
-}
-
 interface SwitcherProps extends PopoverTriggerProps {
-  items: ItemType[] | any[];
-  targetKey?: keyof ItemType;
+  items: any[];
+  targetKey?: any;
   heading?: string;
   placeHolder?: string;
   className?: string;
@@ -49,15 +45,12 @@ export const Switcher: React.FC<SwitcherProps> = ({
   // console.dir(items);
   // console.log(targetKey);
 
-  const onSelect = (item: ItemType) => {
-    const selectedItem = targetKey ? item[targetKey] : item;
-    // console.log(selectedItem);
+  const onSelect = (item: any) => {
+    console.log(item);
     setOpen(false);
-    setSelected(selectedItem);
-    setSelectedOption(selectedItem);
+    setSelected(item);
+    setSelectedOption(item);
   };
-
-  // console.log(selected);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -84,34 +77,33 @@ export const Switcher: React.FC<SwitcherProps> = ({
       <PopoverContent className="w-[200px] p-0 ">
         <Command>
           <CommandList>
-            <CommandInput placeholder={placeHolder} className="h-fit" />
+            <CommandInput
+              placeholder={placeHolder}
+              className="box-border border-none "
+            />
             <CommandEmpty>No results found</CommandEmpty>
             <CommandGroup heading={heading}>
-              {items.map((item, i) => {
-                console.log(item);
-                console.log(targetKey);
-                return (
-                  <CommandItem
-                    key={i}
-                    onSelect={(item: any) => {
-                      onSelect(item);
-                    }}
-                    className="text-sm"
-                  >
-                    {targetKey ? `${item[targetKey]}` : item}
-                    <CheckIcon
-                      className={cn(
-                        "ml-auto h-4 w-4",
-                        selected === targetKey
-                          ? item[targetKey]
-                          : item
-                          ? "opacity-100"
-                          : "opacity-0"
-                      )}
-                    />
-                  </CommandItem>
-                );
-              })}
+              {items.map((item, i) => (
+                <CommandItem
+                  key={i}
+                  onSelect={(item: any) => {
+                    onSelect(typeof item === "string" ? item : item[targetKey]);
+                  }}
+                  className="text-sm"
+                >
+                  {targetKey ? item[targetKey] : item}
+                  <CheckIcon
+                    className={cn(
+                      "ml-auto h-4 w-4",
+                      selected === targetKey
+                        ? item[targetKey]
+                        : item
+                        ? "opacity-100"
+                        : "opacity-0"
+                    )}
+                  />
+                </CommandItem>
+              ))}
             </CommandGroup>
           </CommandList>
         </Command>

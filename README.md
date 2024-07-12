@@ -1,4 +1,4 @@
-# VODO-REACT-COMPONENTS
+# VODO-REACT-COMPONENTS NPM Package
 
 Npm package created to supply reusable components to VODO developers.
 

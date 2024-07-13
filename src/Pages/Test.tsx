@@ -193,11 +193,10 @@ const Test: React.FC = () => {
       /> */}
       <Switcher
         items={testArr}
-        setSelectedOption={() => {}}
+        setSelectedOption={(item: any) => {}}
         targetKey={"nationality"}
         placeHolder="select"
       />
-      <Switcher items={test} setSelectedOption={() => {}} placeHolder="select" />
     </div>
   );
 };

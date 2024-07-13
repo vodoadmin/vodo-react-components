@@ -16,9 +16,7 @@ import {
 } from "../command";
 import { useState } from "react";
 
-type PopoverTriggerProps = React.ComponentPropsWithoutRef<
-  typeof PopoverTrigger
->;
+type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>;
 
 type SetStateAction<S> = (arg: S) => void;
 
@@ -42,13 +40,9 @@ export const Switcher: React.FC<SwitcherProps> = ({
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
 
-  // console.dir(items);
-  // console.log(targetKey);
-
   const onSelect = (item: any) => {
-    console.log(item);
     setOpen(false);
-    setSelected(item);
+    setSelected(item[targetKey]);
     setSelectedOption(item);
   };
 
@@ -86,12 +80,12 @@ export const Switcher: React.FC<SwitcherProps> = ({
               {items.map((item, i) => (
                 <CommandItem
                   key={i}
-                  onSelect={(item: any) => {
+                  onSelect={() => {
                     onSelect(item);
                   }}
                   className="text-sm"
                 >
-                  {targetKey ? item[targetKey] : item}
+                  {item[targetKey]}
                   <CheckIcon
                     className={cn(
                       "ml-auto h-4 w-4",

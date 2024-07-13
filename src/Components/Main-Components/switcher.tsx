@@ -87,7 +87,7 @@ export const Switcher: React.FC<SwitcherProps> = ({
                 <CommandItem
                   key={i}
                   onSelect={(item: any) => {
-                    onSelect(typeof item === "string" ? item : item[targetKey]);
+                    onSelect(item);
                   }}
                   className="text-sm"
                 >

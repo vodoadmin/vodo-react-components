@@ -163,12 +163,7 @@ The card that appears contains : section containing username,avatar and user's e
 - footerHref ?: Link appears in the footer ( The footer has a - view all - word which refs to a link )
 
 ```javascript
-<CardWrapper
-  className="w-[500px]"
-  showFooter
-  footerHref="#"
-  cardTitle="Add business"
->
+<CardWrapper className="w-[500px]" showFooter footerHref="#" cardTitle="Add business">
   Card Content
 </CardWrapper>
 ```
@@ -230,7 +225,7 @@ A drop list with a search bar.
 - items : items appear in the drop list
 - targetKey ?: If the items array is an array of string, you don't have to send this prop. But if you sent an array of objects, you have to specify the key which contains the options to appear in the selector. for example you have an array of objects like this ({ id:1 , nationality : "Egyptian " }, ...) and you want to show nationalities in the switcher so you have to specify the targetKey as "nationality".
 - heading : the title of the options in the drop list (eg. sizes)
-- setSelectedOption : Used to get the selected option. This prop is the setState function you pass to the component.
+- setSelectedOption : will return the selected item from the array weather it is object or string
 
 ```javascript
 const [item, setItem] = (useState < null) | (string > null);
@@ -506,11 +501,7 @@ Button contains on/off status
 This is how the table component is used :
 
 ```javascript
-<MainTabel
-  TabelHead={TabelHead}
-  TabelData={TabelData}
-  tableStyling={tableStyling}
-/>
+<MainTabel TabelHead={TabelHead} TabelData={TabelData} tableStyling={tableStyling} />
 ```
 
 ##### How to set the headers ?

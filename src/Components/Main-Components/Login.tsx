@@ -59,7 +59,7 @@ const Login: React.FC<LoginProps> = ({
         throw new Error("Something went wrong !!");
       }
       const res: any = await result.json();
-      setCookie("token", res.data.access_token, 1);
+      setCookie("token", res.data.personal_access_token, 1);
       setCookie("user_id", res.data.user_id);
       if (res.data.have_business) {
         setCookie("secure_key", res.data.business.business_data.secure_key);

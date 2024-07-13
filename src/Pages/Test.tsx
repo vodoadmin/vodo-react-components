@@ -192,9 +192,8 @@ const Test: React.FC = () => {
         constantLimit={10}
       /> */}
       <Switcher
-        items={testArr}
-        setSelectedOption={(item: any) => {}}
-        targetKey={"nationality"}
+        items={testArr2}
+        setSelectedOption={(item) => {}}
         placeHolder="select"
       />
     </div>

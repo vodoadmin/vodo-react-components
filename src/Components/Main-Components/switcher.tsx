@@ -42,7 +42,7 @@ export const Switcher: React.FC<SwitcherProps> = ({
 
   const onSelect = (item: any) => {
     setOpen(false);
-    setSelected(item[targetKey]);
+    setSelected(targetKey ? item[targetKey] : item);
     setSelectedOption(item);
   };
 
@@ -85,7 +85,7 @@ export const Switcher: React.FC<SwitcherProps> = ({
                   }}
                   className="text-sm"
                 >
-                  {item[targetKey]}
+                  {targetKey ? item[targetKey] : item}
                   <CheckIcon
                     className={cn(
                       "ml-auto h-4 w-4",

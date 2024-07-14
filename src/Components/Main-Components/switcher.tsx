@@ -42,7 +42,7 @@ export const Switcher: React.FC<SwitcherProps> = ({
 
   const onSelect = (item: any) => {
     setOpen(false);
-    setSelected(item);
+    setSelected(targetKey ? item[targetKey] : item);
     setSelectedOption(item);
   };
 

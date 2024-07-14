@@ -21,9 +21,9 @@ const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type === "text" || showPassword === true ? "text" : "password"}
           className={cn(
-            `flex h-9 rounded-full sm:w-64 w-56 placeholder:opacity-50 placeholder:text-xs  border-b-2  border-input box-border bg-transparent ps-3 ${
+            `flex h-9 rounded-full placeholder:opacity-50 placeholder:text-xs  border-b-2  border-input box-border bg-transparent ps-3 ${
               type === "password" ? "pe-12" : "pe-5"
-            } text-sm  transition-colors outline-none focus:shadow-[#2b2f384f_0px_2px] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground disabled:bg-black/10 disabled:cursor-not-allowed disabled:opacity-50`,
+            } text-sm w-full  transition-colors outline-none focus:shadow-[#2b2f384f_0px_2px] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground disabled:bg-black/10 disabled:cursor-not-allowed disabled:opacity-50`,
             className
           )}
           ref={ref}

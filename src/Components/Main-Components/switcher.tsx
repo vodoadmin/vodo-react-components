@@ -64,7 +64,7 @@ export const Switcher: React.FC<SwitcherProps> = ({
           <ArrowDownIcon
             className="font-bold text-primary shrink-0"
             height={12}
-            width={12}
+            width={15}
           />
         </Button>
       </PopoverTrigger>

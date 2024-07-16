@@ -25,7 +25,10 @@ export const DropDown = ({
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
+        <DropdownMenuTrigger
+          asChild
+          className=" focus-visible:ring-0 focus-visible:ring-offset-0"
+        >
           <Button variant="ghost" className="w-8 h-8 p-0">
             <span className="sr-only">Open menu</span>
             {/* <EditIcon className="w-6 h-6" /> */}
@@ -35,7 +38,7 @@ export const DropDown = ({
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>{title}</DropdownMenuLabel>
           {selections?.map((item, i) => (
-            <DropdownMenuItem onClick={() => item.action()} key={i}>
+            <DropdownMenuItem onClick={() => item.action()} key={i} className="gap-2">
               {item.icon && item.icon}
               {item.name}
             </DropdownMenuItem>

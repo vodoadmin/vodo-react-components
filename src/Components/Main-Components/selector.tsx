@@ -44,7 +44,7 @@ export const Selector: React.FC<SelectorProps> = ({
     <Select
       defaultValue={defaultValue}
       onValueChange={onValueChange}
-      disabled
+      disabled={disabled}
       value={value}
     >
       <SelectTrigger

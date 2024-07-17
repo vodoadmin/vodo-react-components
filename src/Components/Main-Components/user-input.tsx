@@ -28,6 +28,7 @@ const UserInput: React.FC<UserInputProps> = ({
   onChangeFn,
   value,
   name,
+  id,
   labelStyle = "",
 }) => {
   const input = useRef(null);
@@ -36,7 +37,7 @@ const UserInput: React.FC<UserInputProps> = ({
     <>
       <div className="relative">
         <Label
-          htmlFor="username"
+          htmlFor={id}
           className={cn(
             `w-full opacity-50 text-muted-foreground  text-[14px]  ${
               error
@@ -51,6 +52,7 @@ const UserInput: React.FC<UserInputProps> = ({
           {label}
         </Label>
         <InputForm
+          id={id}
           placeholder={placeholder}
           onBlur={onBlur}
           onChangeFn={onChangeFn}

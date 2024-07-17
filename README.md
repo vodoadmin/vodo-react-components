@@ -326,11 +326,11 @@ Used to upload file to a specific URL ( images ony allowed !! ).
 
 #### The UserInput takes same props as default input field with extra props :
 
-- label
-- labelStyle: for styling label
-- success : success message if validation is OK
-- error : error message if there is a problem with validation
-- onChangeFn : useState function to get change in value
+- label ?
+- labelStyle?: for styling label
+- success ?: success message if validation is OK
+- error ?: error message if there is a problem with validation
+- onChangeFn ?: useState function to get change in value
 
 ```javascript
 <UserInput label="Username" type={"text"} placeholder="type your username" />

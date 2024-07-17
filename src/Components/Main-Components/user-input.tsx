@@ -8,11 +8,11 @@ import React from "react";
 import { cn } from "../../Utils/utils";
 
 interface UserInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string;
+  label?: string;
   error?: string;
   success?: string;
   onChangeFn?: (e: any) => void;
-  labelStyle: string;
+  labelStyle?: string;
 }
 const UserInput: React.FC<UserInputProps> = ({
   type,
@@ -28,7 +28,7 @@ const UserInput: React.FC<UserInputProps> = ({
   onChangeFn,
   value,
   name,
-  labelStyle,
+  labelStyle = "",
 }) => {
   const input = useRef(null);
 

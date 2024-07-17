@@ -12,6 +12,7 @@ interface UserInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string;
   success?: string;
   onChangeFn?: (e: any) => void;
+  labelStyle: string;
 }
 const UserInput: React.FC<UserInputProps> = ({
   type,
@@ -27,6 +28,7 @@ const UserInput: React.FC<UserInputProps> = ({
   onChangeFn,
   value,
   name,
+  labelStyle,
 }) => {
   const input = useRef(null);
 
@@ -35,13 +37,16 @@ const UserInput: React.FC<UserInputProps> = ({
       <div className="relative">
         <Label
           htmlFor="username"
-          className={`w-full opacity-50 text-muted-foreground  text-[14px]  ${
-            error
-              ? "text-destructive opacity-100"
-              : success
-              ? "text-secondary opacity-100"
-              : ""
-          }`}
+          className={cn(
+            `w-full opacity-50 text-muted-foreground  text-[14px]  ${
+              error
+                ? "text-destructive opacity-100"
+                : success
+                ? "text-secondary opacity-100"
+                : ""
+            }`,
+            labelStyle
+          )}
         >
           {label}
         </Label>

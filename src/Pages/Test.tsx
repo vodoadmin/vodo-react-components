@@ -1,6 +1,8 @@
 import React, { ReactNode, useState } from "react";
 import DeleteIcon from "../Icons/deleteSVG";
-import MainTabel, { mainTabelProps } from "../Components/Main-Components/MainTabel";
+import MainTabel, {
+  mainTabelProps,
+} from "../Components/Main-Components/MainTabel";
 import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import { SearchInput } from "../Components/Main-Components/search-input";

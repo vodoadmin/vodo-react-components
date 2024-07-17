@@ -163,7 +163,12 @@ The card that appears contains : section containing username,avatar and user's e
 - footerHref ?: Link appears in the footer ( The footer has a - view all - word which refs to a link )
 
 ```javascript
-<CardWrapper className="w-[500px]" showFooter footerHref="#" cardTitle="Add business">
+<CardWrapper
+  className="w-[500px]"
+  showFooter
+  footerHref="#"
+  cardTitle="Add business"
+>
   Card Content
 </CardWrapper>
 ```
@@ -319,9 +324,13 @@ Used to upload file to a specific URL ( images ony allowed !! ).
 
 ### 9- UserInput
 
-A drop list with a search bar.
+#### The UserInput takes same props as default input field with extra props :
 
-#### The UserInput takes same props as default input field
+- label
+- labelStyle: for styling label
+- success : success message if validation is OK
+- error : error message if there is a problem with validation
+- onChangeFn : useState function to get change in value
 
 ```javascript
 <UserInput label="Username" type={"text"} placeholder="type your username" />
@@ -501,7 +510,11 @@ Button contains on/off status
 This is how the table component is used :
 
 ```javascript
-<MainTabel TabelHead={TabelHead} TabelData={TabelData} tableStyling={tableStyling} />
+<MainTabel
+  TabelHead={TabelHead}
+  TabelData={TabelData}
+  tableStyling={tableStyling}
+/>
 ```
 
 ##### How to set the headers ?

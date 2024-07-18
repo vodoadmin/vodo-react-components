@@ -11,7 +11,10 @@ export interface mainTabelProps {
     headStyle?: string;
     headElementStyle?: string;
     bodyStyle?: string;
-    bodyElementStyle?: string;
+    bodyElementStyle?: {
+      general?: string;
+      text?: string;
+    };
     bodyRowStyle?: string;
     outerStyle?: string;
   };

@@ -7,16 +7,24 @@ export default function TdTable({
   className,
 }: {
   children: ReactNode;
-  className?: string;
+  className?: {
+    general?: string;
+    text?: string;
+  };
 }) {
   return (
     <td
       className={cn(
-        "py-1 text-sm bg-white border-b border-gray-200 text-pColor vodo-rc-poppins-regular text-center min-h-[69px]",
-        className
+        "py-1 px-3 text-sm bg-white border-b border-gray-200 text-pColor vodo-rc-poppins-regular text-center min-h-[69px]",
+        className?.general
       )}
     >
-      <div className={` flex justify-center items-center flex-col`}>
+      <div
+        className={cn(
+          `flex justify-center items-center flex-col`,
+          className?.text
+        )}
+      >
         {children}
       </div>
     </td>

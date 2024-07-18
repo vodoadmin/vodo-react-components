@@ -506,7 +506,9 @@ Button contains on/off status
   - headElementStyle ?: style for all elements in the header
   - bodyStyle ?: style for each row in the body ( it doesn't work )
   - bodyElementStyle ?: style for all elements in body
-  - bodyRowStyle?: style of rows in body;
+  - bodyRowStyle?: style of rows in body , it has two keys :
+    - general? : for the wrapper of the body element
+    - text? : for the text appears in body element
   - outerStyle?: The outer div that wraps the table element;
 
 This is how the table component is used :

@@ -30,6 +30,7 @@ const UserInput: React.FC<UserInputProps> = ({
   name,
   id,
   labelStyle = "",
+  ...props
 }) => {
   const input = useRef(null);
 
@@ -63,6 +64,7 @@ const UserInput: React.FC<UserInputProps> = ({
           type={type}
           ref={input}
           disabled={disabled}
+          {...props}
         />
         {/* <span className="absolute top-7 right-2">
           {error ? (

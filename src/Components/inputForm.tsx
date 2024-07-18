@@ -27,7 +27,7 @@ const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
             className
           )}
           ref={ref}
-          value={inputValue}
+          value={value}
           onChange={(e) => {
             setInputValue(e.target.value);
             onChangeFn && onChangeFn(e);

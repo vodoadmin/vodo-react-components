@@ -12,6 +12,8 @@ export interface mainTabelProps {
     headElementStyle?: string;
     bodyStyle?: string;
     bodyElementStyle?: string;
+    bodyRowStyle: string;
+    outerStyle: string;
   };
 }
 
@@ -41,11 +43,17 @@ export default function MainTabel({
 
   return (
     <>
-      <div className="inline-block min-w-full rounded-lg shadow-md ">
+      <div
+        className={cn(
+          "inline-block min-w-full rounded-lg shadow-md ",
+          tableStyling?.outerStyle
+        )}
+      >
         <table className="min-w-full leading-normal custom_tabel">
           <thead
             className={cn(
-              "w-full border-none rounded-lg whitespace-nowrap bg-neutral-100 hover:bg-neutral-100"
+              "w-full border-none rounded-lg whitespace-nowrap bg-neutral-100 hover:bg-neutral-100",
+              tableStyling?.headStyle
             )}
           >
             <tr className={tableStyling?.headStyle}>
@@ -56,14 +64,17 @@ export default function MainTabel({
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className={tableStyling?.bodyStyle}>
             {TabelData.length === 0 ? (
               <p className="text-center">No data available</p>
             ) : (
               TabelData.map((row: tableItemType, rowIndex: number) => (
-                <tr key={rowIndex} className={tableStyling?.bodyStyle}>
+                <tr key={rowIndex} className={tableStyling?.bodyRowStyle}>
                   {TabelHead.map((head: tableHeaderType, colIndex: number) => (
-                    <TdTable key={colIndex} className={tableStyling?.bodyElementStyle}>
+                    <TdTable
+                      key={colIndex}
+                      className={tableStyling?.bodyElementStyle}
+                    >
                       {head.accessorKey === "image" && row[head.accessorKey] ? (
                         <div className="flex items-center justify-center">
                           <img

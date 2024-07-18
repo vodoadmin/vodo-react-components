@@ -6,7 +6,7 @@ import { cn } from "../../Utils/utils";
 
 export interface mainTabelProps {
   TabelHead: tableHeaderType[];
-  TabelData: tableItemType[];
+  TabelData?: tableItemType[];
   tableStyling?: {
     headStyle?: string;
     headElementStyle?: string;
@@ -26,7 +26,7 @@ export default function MainTabel({
   const allKeysPresent = useMemo(
     () =>
       TabelHead.every((header) =>
-        TabelData.every((dataItem) =>
+        TabelData?.every((dataItem) =>
           Object.keys(dataItem)
             .map((el) => el.toLowerCase())
             .includes(header.accessorKey.toLowerCase())
@@ -65,10 +65,10 @@ export default function MainTabel({
             </tr>
           </thead>
           <tbody className={tableStyling?.bodyStyle}>
-            {TabelData.length === 0 ? (
+            {TabelData?.length === 0 ? (
               <p className="text-center">No data available</p>
             ) : (
-              TabelData.map((row: tableItemType, rowIndex: number) => (
+              TabelData?.map((row: tableItemType, rowIndex: number) => (
                 <tr key={rowIndex} className={tableStyling?.bodyRowStyle}>
                   {TabelHead.map((head: tableHeaderType, colIndex: number) => (
                     <TdTable

@@ -35,7 +35,7 @@ export const DropDown = ({
             className
           )}
         >
-          <Button variant="ghost" className="w-8 h-8 p-0">
+          <Button variant="ghost" className="w-8 p-0">
             <span className="sr-only">Open menu</span>
             {/* <EditIcon className="w-6 h-6" /> */}
             {mainIcon}

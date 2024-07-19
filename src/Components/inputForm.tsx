@@ -10,10 +10,11 @@ import CloseIcon from "../Icons/closeSVG";
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   onChangeFn?: (e: any) => void;
+  closeBtnFn?: () => void;
 }
 
 const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, value, onChangeFn, ...props }, ref) => {
+  ({ className, type, value, onChangeFn, closeBtnFn, ...props }, ref) => {
     const [showPassword, setShowPassword] = React.useState<boolean>(false);
     const [inputValue, setInputValue] = React.useState<string>(value as string);
     return (
@@ -27,7 +28,7 @@ const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
             className
           )}
           ref={ref}
-          value={value}
+          value={value || inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);
             onChangeFn && onChangeFn(e);
@@ -47,7 +48,7 @@ const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
             className="cursor-pointer"
             onClick={() => {
               setInputValue("");
-              onChangeFn && onChangeFn("");
+              closeBtnFn && closeBtnFn();
             }}
           >
             <CloseIcon />

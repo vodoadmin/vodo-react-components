@@ -13,6 +13,7 @@ interface UserInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   success?: string;
   onChangeFn?: (e: any) => void;
   labelStyle?: string;
+  closeBtnFn?: () => void;
 }
 const UserInput: React.FC<UserInputProps> = ({
   type,
@@ -30,6 +31,7 @@ const UserInput: React.FC<UserInputProps> = ({
   name,
   id,
   labelStyle = "",
+  closeBtnFn,
   ...props
 }) => {
   const input = useRef(null);
@@ -57,6 +59,7 @@ const UserInput: React.FC<UserInputProps> = ({
           placeholder={placeholder}
           onBlur={onBlur}
           onChangeFn={onChangeFn}
+          closeBtnFn={closeBtnFn}
           onFocus={onFocus}
           value={value}
           name={name}

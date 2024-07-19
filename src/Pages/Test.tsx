@@ -198,6 +198,7 @@ const Test: React.FC = () => {
         setSelectedOption={(item) => {}}
         placeHolder="select"
       />
+      <UserInput type="text" />
     </div>
   );
 };

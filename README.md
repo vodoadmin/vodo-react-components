@@ -624,11 +624,12 @@ const tableStyling = {
 
 ### 17- DropDown
 
-#### The DropDown takes 3 props:
+#### The DropDown takes 4 props:
 
 - selections : Array of objects, each object has 3 keys (icon , name and action ( the method that is called when click on the corresponding option in the droplist ) )
 - mainIcon : Icon of the droplist
 - title : title appears upwards the options.
+- className?
 
 This is how the table component is used :
 

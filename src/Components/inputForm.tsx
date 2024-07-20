@@ -28,7 +28,7 @@ const InputForm = React.forwardRef<HTMLInputElement, InputProps>(
             className
           )}
           ref={ref}
-          value={value || inputValue}
+          value={closeBtnFn ? value : inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);
             onChangeFn && onChangeFn(e);

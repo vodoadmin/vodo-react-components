@@ -16,7 +16,9 @@ import {
 } from "../command";
 import { useState } from "react";
 
-type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>;
+type PopoverTriggerProps = React.ComponentPropsWithoutRef<
+  typeof PopoverTrigger
+>;
 
 type SetStateAction<S> = (arg: S) => void;
 
@@ -27,6 +29,7 @@ interface SwitcherProps extends PopoverTriggerProps {
   placeHolder?: string;
   className?: string;
   setSelectedOption: SetStateAction<string | null>;
+  currentValue?: string;
 }
 
 export const Switcher: React.FC<SwitcherProps> = ({
@@ -36,9 +39,10 @@ export const Switcher: React.FC<SwitcherProps> = ({
   heading,
   setSelectedOption,
   placeHolder,
+  currentValue,
 }) => {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(currentValue ?? null);
 
   const onSelect = (item: any) => {
     setOpen(false);

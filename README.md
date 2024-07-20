@@ -231,6 +231,7 @@ A drop list with a search bar.
 - targetKey ?: If the items array is an array of string, you don't have to send this prop. But if you sent an array of objects, you have to specify the key which contains the options to appear in the selector. for example you have an array of objects like this ({ id:1 , nationality : "Egyptian " }, ...) and you want to show nationalities in the switcher so you have to specify the targetKey as "nationality".
 - heading : the title of the options in the drop list (eg. sizes)
 - setSelectedOption : will return the selected item from the array weather it is object or string
+- currentValue ?: It is the current selected value if You want the switcher to initially have a specific value
 
 ```javascript
 const [item, setItem] = (useState < null) | (string > null);

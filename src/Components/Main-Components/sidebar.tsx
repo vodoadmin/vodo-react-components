@@ -64,7 +64,7 @@ const SideBar = ({
           {open ? <ArrowMenuIcon stroke="white" /> : <BurgerIcon />}
         </Button>
       </div>
-      {subModules?.length && (
+      {subModules?.length ? (
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1" className="w-full border-none">
             <AccordionTrigger
@@ -95,6 +95,8 @@ const SideBar = ({
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+      ) : (
+        ""
       )}
 
       <div className="flex flex-col w-full gap-1">

@@ -94,7 +94,6 @@ const Login: React.FC<LoginProps> = ({
         type="text"
         name="email"
         id="email"
-        success="asdf"
       />
       <UserInput
         label="Password"

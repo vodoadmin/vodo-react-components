@@ -64,9 +64,9 @@ const SideBar = ({
           {open ? <ArrowMenuIcon stroke="white" /> : <BurgerIcon />}
         </Button>
       </div>
-      <Accordion type="single" collapsible className="w-full">
-        <AccordionItem value="item-1" className="w-full border-none">
-          {subModules?.length && (
+      {subModules?.length && (
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1" className="w-full border-none">
             <AccordionTrigger
               onClick={(e: any) =>
                 e.currentTarget.classList.toggle("vodo-rc-sidebar-active")
@@ -76,25 +76,26 @@ const SideBar = ({
               <ModulesIcon />
               {open && <span className=" text-black/50">Modules</span>}
             </AccordionTrigger>
-          )}
-          <AccordionContent className="p-0 pl-11">
-            {open && (
-              <ul className="*:my-3">
-                {subModules?.length &&
-                  subModules.map((module: SubModuleProps, i) => (
-                    <SideModuleCard
-                      key={i}
-                      title={module.title}
-                      submoduleArr={module.submoduleArr}
-                      svg={module.Svg}
-                      subModuleStyles={className?.subModule}
-                    />
-                  ))}
-              </ul>
-            )}
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+
+            <AccordionContent className="p-0 pl-11">
+              {open && (
+                <ul className="*:my-3">
+                  {subModules?.length &&
+                    subModules.map((module: SubModuleProps, i) => (
+                      <SideModuleCard
+                        key={i}
+                        title={module.title}
+                        submoduleArr={module.submoduleArr}
+                        svg={module.Svg}
+                        subModuleStyles={className?.subModule}
+                      />
+                    ))}
+                </ul>
+              )}
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      )}
 
       <div className="flex flex-col w-full gap-1">
         {modules?.length &&

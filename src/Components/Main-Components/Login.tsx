@@ -19,7 +19,7 @@ interface LoginProps {
 type handleChangeEmailType = (e: any) => void;
 
 const Login: React.FC<LoginProps> = ({
-  url = "https://accounts.vodoerp.com/api/login",
+  url = "https://testaccounts.vodoerp.com/api/login",
 }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");

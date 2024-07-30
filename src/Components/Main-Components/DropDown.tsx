@@ -9,7 +9,7 @@ import {
 import { Button } from "./button";
 
 import { dropOptions } from "@/Utils/DropDown.types";
-import { cn } from "@/Utils/utils";
+import { cn } from "../../Utils/utils";
 
 export const DropDown = ({
   title,

@@ -158,7 +158,7 @@ const Test: React.FC = () => {
   const test = ["مصر", "مصر", "مصر", "مصر"];
 
   const testArr2 = ["item1", "item2", "item3"];
-
+  const [selectedValue, setSelectedValue] = useState("");
   return (
     <div className="flex flex-col items-center">
       {/* <SubmissionProgress progress={progress} /> */}
@@ -199,6 +199,14 @@ const Test: React.FC = () => {
         placeHolder="select"
       />
       <UserInput type="text" />
+      <Selector
+        items={[
+          { name: "test", value: "test" },
+          { name: "test2", value: "test2" },
+        ]}
+        value={selectedValue}
+        onValueChange={(value) => setSelectedValue(value)}
+      />
     </div>
   );
 };

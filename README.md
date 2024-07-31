@@ -264,6 +264,7 @@ Used to upload file to a specific URL ( images ony allowed !! ).
 - className?
 - setState : setState for the to get the file value
 - disabled ?: boolean value to indicate of the input is disabled or not
+- name ?: name field of input
 
 ```javascript
 <InputFile setState={setState} />

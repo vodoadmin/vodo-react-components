@@ -7,7 +7,7 @@ import { ChangeEvent, useState } from "react";
 import Upload from "../upload";
 import React from "react";
 
-interface inputFile {
+interface inputFile extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   disabled?: boolean;
   setState: any;
@@ -36,7 +36,12 @@ const simulateUploadProgress = (setProgress: any, setRemaining: any) => {
   });
 };
 
-const InputFile: React.FC<inputFile> = ({ className, disabled, setState }) => {
+const InputFile: React.FC<inputFile> = ({
+  className,
+  disabled,
+  setState,
+  name,
+}) => {
   const [file, setFile] = useState<File | null>(null);
   const [progress, setProgress] = useState<number>(0);
   const [remaining, setRemaining] = useState<string | undefined>("0");
@@ -86,6 +91,7 @@ const InputFile: React.FC<inputFile> = ({ className, disabled, setState }) => {
           id="file"
           disabled={disabled}
           accept=".jpg,.png"
+          name={name ?? "image"}
           onChange={(e) => onChange(e)}
         ></Input>
       </Label>

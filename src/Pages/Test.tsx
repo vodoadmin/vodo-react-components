@@ -170,7 +170,7 @@ const Test: React.FC = () => {
   ];
   const module = [{ title: "test", link: "/test" }];
   const trailLink = [{ label: "employee", href: "/employee" }];
-
+  const [selectedValue, setSelectedValue] = useState("");
   return (
     <div className="flex flex-col items-center">
       {/* <SubmissionProgress progress={progress} /> */}
@@ -207,6 +207,12 @@ const Test: React.FC = () => {
         setPageFn={() => {}}
         constantLimit={10}
       /> */}
+      <Switcher
+        items={testArr2}
+        setSelectedOption={(item) => {}}
+        placeHolder="select"
+      />
+      <UserInput type="text" />
     </div>
   );
 };

@@ -132,16 +132,16 @@
 .vodo-rc-aside > div:first-of-type {
   @apply flex w-full items-center justify-end gap-[70px];
 }
-.vodo-rc-aside > div:nth-of-type(2) {
+.vodo-rc-aside > .vodo-rc-submodule-outer {
   @apply w-full;
 }
-.vodo-rc-aside > div:nth-of-type(3) {
+.vodo-rc-aside > .vodo-rc-modules {
   @apply flex flex-col w-full gap-1;
 }
-.vodo-rc-aside > div:nth-of-type(2) > div > h3 > button {
+.vodo-rc-aside > .vodo-rc-submodule-outer > div > h3 > button {
   @apply hover:no-underline w-full p-0 rounded-none  py-6 !flex !justify-start px-5 gap-4 vodo-rc-icon-trigger after:rounded-none;
 }
-.vodo-rc-aside > div:nth-of-type(2) > div > div > div {
+.vodo-rc-aside > .vodo-rc-submodule-outer > div > div > div {
   @apply p-0 pl-11;
 }
 
@@ -166,9 +166,9 @@
 .vodo-rc-aside .vodo-rc-submodule > div > div > div > ul {
   @apply *:my-3 *:cursor-pointer *:text-black;
 }
-.vodo-rc-aside > div:nth-of-type(3) > a {
-  @apply flex justify-start w-full h-10 gap-4 px-5 py-8 text-[#2B2F3880] rounded-none;
+.vodo-rc-aside .vodo-rc-modules > a {
+  @apply flex  justify-start w-full h-10 gap-4 px-5 py-8 text-[#2B2F3880] rounded-none;
 }
-.vodo-rc-aside > div:nth-of-type(3) > a span {
-  @apply text-inherit;
+.vodo-rc-aside .vodo-rc-modules > a span {
+  @apply text-inherit hover:text-destructive;
 }

@@ -1,16 +1,10 @@
 {
   "name": "vodo-react-components",
   "description": "React resusable components for VODO fronend developers",
-  "version": "2.0.1",
+  "version": "2.0.5",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.js",
-      "require": "./index.cjs"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mustafaahmed-f/vodo-reusable-components"
@@ -30,15 +24,12 @@
   ],
   "scripts": {
     "start": "react-scripts start",
-    "size": "size-limit",
     "buildAndPublish": "npm run build && npm publish",
     "testLocal": "npm unlink vodo-react-components && npm run build && npm link",
     "test": "react-scripts test",
     "build": "tsup",
     "build-css": "postcss src/styles/tailwind.css -o dist/assets/styles/tailwind.css",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "copy-assets": "cpx \"src/assets/**/*\" dist/assets"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "size-limit": [
     {

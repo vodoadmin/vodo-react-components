@@ -6,9 +6,10 @@ import {
   AccordionTrigger,
 } from "./accordion";
 import React from "react";
-import { ModuleProps, SubModuleProps } from "./Main-Components/sidebar";
+import { ModuleProps } from "./Main-Components/sidebar";
 import ArrowRightIcon from "../Icons/arrowRightIcon";
 import { cn } from "../Utils/utils";
+import { Link } from "react-router-dom";
 
 interface subModuleCardProps {
   title: string;
@@ -26,13 +27,13 @@ const SideModuleCard: React.FC<subModuleCardProps> = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <Accordion type={"single"} collapsible className="w-full">
-      <AccordionItem value="item-1" className="w-full border-none">
-        <AccordionTrigger className="w-full p-0 hover:no-underline">
+    <Accordion type={"single"} collapsible className="vodo-rc-submodule ">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>
           <li onClick={() => setOpen(!open)}>
             <div
               className={cn(
-                `flex items-center ${
+                `${
                   svg ? "gap-3" : "gap-2"
                 } hover:text-destructive *:*:*:hover:stroke-destructive ${
                   svg ? "flex-row-reverse" : "flex-row"
@@ -44,19 +45,17 @@ const SideModuleCard: React.FC<subModuleCardProps> = ({
                 <ArrowRightIcon stroke={open ? "#E4412D" : "black"} />
               </div>
 
-              <span className={`transition-all ${open ? "text-inherit" : ""}`}>
-                {title}
-              </span>
+              <span className={`${open ? "text-inherit" : ""}`}>{title}</span>
 
               {svg ?? svg}
             </div>
           </li>
         </AccordionTrigger>
-        <AccordionContent className="p-0 pl-11">
-          <ul className="*:my-3 *:cursor-pointer *:text-black ">
+        <AccordionContent>
+          <ul>
             {submoduleArr?.map((sub, i) => (
               <li key={i}>
-                <a href={sub.link}>{sub.title}</a>
+                <Link to={sub.link}>{sub.title}</Link>
               </li>
             ))}
           </ul>

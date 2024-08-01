@@ -1,6 +1,6 @@
 import { cn } from "../Utils/utils";
 import React, { ReactNode } from "react";
-
+import { Link } from "react-router-dom";
 interface SideCard {
   open: boolean;
   title: string;
@@ -9,24 +9,12 @@ interface SideCard {
   Svg: ReactNode;
 }
 
-const SideCard: React.FC<SideCard> = ({
-  open,
-  Svg,
-  title,
-  link,
-  moduleStyles,
-}) => {
+const SideCard: React.FC<SideCard> = ({ open, Svg, title, link, moduleStyles }) => {
   return (
-    <a
-      href={link}
-      className={cn(
-        "flex justify-start w-full h-10 gap-4 px-5 py-8 text-[#2B2F3880] rounded-none",
-        moduleStyles ?? ""
-      )}
-    >
+    <Link to={link} className={cn("", moduleStyles ?? "")}>
       {Svg && Svg}
-      {open && <span className="text-inherit">{title}</span>}
-    </a>
+      {open && <span>{title}</span>}
+    </Link>
   );
 };
 

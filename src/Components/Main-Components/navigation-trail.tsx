@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "../breadcrumb";
+import { Link } from "react-router-dom";
 
 interface TrailLink {
   label: string;
@@ -29,7 +30,7 @@ export const NavigationTrail: React.FC<NavigationTrailProps> = ({
           <React.Fragment key={link.label}>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <a href={link.href}>{link.label}</a>
+                <Link to={link.href}>{link.label}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />

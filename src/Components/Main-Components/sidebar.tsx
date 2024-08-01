@@ -48,38 +48,28 @@ const SideBar = ({
   };
   return (
     <aside
-      className={cn(
-        `bg-white z-50 items-end w-16 h-screen  transition-all flex flex-col vodo-rc-aside  ${
-          open ? "w-[280px]" : ""
-        }`,
-        sideBarStyle ?? ""
-      )}
+      className={cn(`vodo-rc-aside  ${open ? "!w-[280px]" : ""}`, sideBarStyle ?? "")}
     >
-      <div className="flex w-full items-center justify-end gap-[70px]">
-        {open && <LogoIcon />}
-        <Button
-          className="w-16 py-8 rounded-none "
-          onClick={() => handleSideBar()}
-        >
+      <div>
+        <Button className="w-16 py-8 rounded-none " onClick={() => handleSideBar()}>
           {open ? <ArrowMenuIcon stroke="white" /> : <BurgerIcon />}
         </Button>
       </div>
       {subModules?.length ? (
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible>
           <AccordionItem value="item-1" className="w-full border-none">
             <AccordionTrigger
               onClick={(e: any) =>
                 e.currentTarget.classList.toggle("vodo-rc-sidebar-active")
               }
-              className="hover:no-underline w-full p-0 rounded-none  py-6 !flex !justify-start px-5 gap-4 vodo-rc-icon-trigger after:rounded-none"
             >
               <ModulesIcon />
-              {open && <span className=" text-black/50">Modules</span>}
+              {open && <span className="text-black/50">Modules</span>}
             </AccordionTrigger>
 
-            <AccordionContent className="p-0 pl-11">
+            <AccordionContent>
               {open && (
-                <ul className="*:my-3">
+                <ul className="*:!my-3">
                   {subModules?.length &&
                     subModules.map((module: SubModuleProps, i) => (
                       <SideModuleCard
@@ -99,7 +89,7 @@ const SideBar = ({
         ""
       )}
 
-      <div className="flex flex-col w-full gap-1">
+      <div>
         {modules?.length &&
           modules.map((module: ModuleProps, i) => (
             <SideCard

@@ -126,3 +126,49 @@
 .vodo-rc-read > span {
   @apply hidden;
 }
+.vodo-rc-aside {
+  @apply z-50 flex flex-col items-end w-16 h-screen transition-all bg-white;
+}
+.vodo-rc-aside > div:first-of-type {
+  @apply flex w-full items-center justify-end gap-[70px];
+}
+.vodo-rc-aside > div:nth-of-type(2) {
+  @apply w-full;
+}
+.vodo-rc-aside > div:nth-of-type(3) {
+  @apply flex flex-col w-full gap-1;
+}
+.vodo-rc-aside > div:nth-of-type(2) > div > h3 > button {
+  @apply hover:no-underline w-full p-0 rounded-none  py-6 !flex !justify-start px-5 gap-4 vodo-rc-icon-trigger after:rounded-none;
+}
+.vodo-rc-aside > div:nth-of-type(2) > div > div > div {
+  @apply p-0 pl-11;
+}
+
+.vodo-rc-aside .vodo-rc-submodule {
+  @apply w-full;
+}
+.vodo-rc-aside .vodo-rc-submodule > div {
+  @apply w-full border-none;
+}
+.vodo-rc-aside .vodo-rc-submodule > div h3 button {
+  @apply w-full p-0 hover:no-underline;
+}
+.vodo-rc-aside .vodo-rc-submodule > div h3 button li div {
+  @apply flex items-center;
+}
+.vodo-rc-aside .vodo-rc-submodule > div h3 button li div span {
+  @apply transition-all;
+}
+.vodo-rc-aside .vodo-rc-submodule > div > div > div {
+  @apply p-0 pl-11;
+}
+.vodo-rc-aside .vodo-rc-submodule > div > div > div > ul {
+  @apply *:my-3 *:cursor-pointer *:text-black;
+}
+.vodo-rc-aside > div:nth-of-type(3) > a {
+  @apply flex justify-start w-full h-10 gap-4 px-5 py-8 text-[#2B2F3880] rounded-none;
+}
+.vodo-rc-aside > div:nth-of-type(3) > a span {
+  @apply text-inherit;
+}

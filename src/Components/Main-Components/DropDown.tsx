@@ -9,7 +9,7 @@ import {
 import { Button } from "./button";
 
 import { dropOptions } from "@/Utils/DropDown.types";
-import { cn } from "@/Utils/utils";
+import { cn } from "../../Utils/utils";
 
 export const DropDown = ({
   title,
@@ -32,10 +32,7 @@ export const DropDown = ({
       <DropdownMenu>
         <DropdownMenuTrigger
           asChild
-          className={cn(
-            " focus-visible:ring-0 focus-visible:ring-offset-0",
-            className
-          )}
+          className={cn(" focus-visible:ring-0 focus-visible:ring-offset-0", className)}
         >
           <Button variant="ghost" className="w-8 h-8 p-0">
             <span className="sr-only">Open menu</span>
@@ -46,11 +43,7 @@ export const DropDown = ({
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>{title}</DropdownMenuLabel>
           {selections?.map((item, i) => (
-            <DropdownMenuItem
-              onClick={() => item.action()}
-              key={i}
-              className="gap-2"
-            >
+            <DropdownMenuItem onClick={() => item.action()} key={i} className="gap-2">
               {item.icon && item.icon}
               {item.name}
             </DropdownMenuItem>

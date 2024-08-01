@@ -1,8 +1,6 @@
 import React, { ReactNode, useState } from "react";
 import DeleteIcon from "../Icons/deleteSVG";
-import MainTabel, {
-  mainTabelProps,
-} from "../Components/Main-Components/MainTabel";
+import MainTabel, { mainTabelProps } from "../Components/Main-Components/MainTabel";
 import { Switcher } from "../Components/Main-Components/switcher";
 import PaginationComponent from "../Components/Main-Components/PaginationComponent";
 import { SearchInput } from "../Components/Main-Components/search-input";
@@ -13,6 +11,7 @@ import UserInput from "../Components/Main-Components/user-input";
 import { Button } from "../Components/Main-Components/button";
 import SideBar from "../Components/Main-Components/sidebar";
 import Login from "../Components/Main-Components/Login";
+import { NavigationTrail } from "../Components/Main-Components/navigation-trail";
 
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
@@ -158,6 +157,19 @@ const Test: React.FC = () => {
   const test = ["مصر", "مصر", "مصر", "مصر"];
 
   const testArr2 = ["item1", "item2", "item3"];
+  const submodules = [
+    {
+      title: "employees",
+      submoduleArr: [
+        {
+          title: "all employees",
+          link: "/employee",
+        },
+      ],
+    },
+  ];
+  const module = [{ title: "test", link: "/test" }];
+  const trailLink = [{ label: "employee", href: "/employee" }];
 
   return (
     <div className="flex flex-col items-center">
@@ -172,7 +184,9 @@ const Test: React.FC = () => {
         TabelData={TabelData}
         tableStyling={tableStyling}
       /> */}
+      <NavigationTrail trailLink={trailLink} trailPage="Create" />
 
+      <SideBar subModules={submodules} modules={module} />
       {/* <InputFile setState={setFile} className="w-[400px]" /> */}
       {/* <Switcher
         items={["Item 1", "Item 2", "Item 3"]}
@@ -193,12 +207,6 @@ const Test: React.FC = () => {
         setPageFn={() => {}}
         constantLimit={10}
       /> */}
-      <Switcher
-        items={testArr2}
-        setSelectedOption={(item) => {}}
-        placeHolder="select"
-      />
-      <UserInput type="text" />
     </div>
   );
 };

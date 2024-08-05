@@ -1,0 +1,114 @@
+{
+  "name": "vodo-react-components",
+  "description": "React resusable components for VODO fronend developers",
+  "version": "2.0.5",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mustafaahmed-f/vodo-reusable-components"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "buttons",
+    "table",
+    "navbar"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "buildAndPublish": "npm run build && npm publish",
+    "testLocal": "npm unlink vodo-react-components && npm run build && npm link",
+    "test": "react-scripts test",
+    "build": "tsup",
+    "build-css": "postcss src/styles/tailwind.css -o dist/assets/styles/tailwind.css",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "600 KB"
+    }
+  ],
+  "dependencies": {
+    "@babel/plugin-transform-private-property-in-object": "^7.24.7",
+    "@radix-ui/react-accordion": "^1.2.0",
+    "@radix-ui/react-avatar": "^1.1.0",
+    "@radix-ui/react-dropdown-menu": "^2.1.1",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-popover": "^1.1.1",
+    "@radix-ui/react-progress": "^1.1.0",
+    "@radix-ui/react-select": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.0",
+    "vodo-react-components": "file:",
+    "web-vitals": "^2.1.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@size-limit/preset-small-lib": "^11.1.4",
+    "@swc/core": "^1.6.6",
+    "@testing-library/dom": "^10.3.1",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.101",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "ajv": "^8.16.0",
+    "autoprefixer": "^10.4.19",
+    "babel-jest": "^29.7.0",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.0.0",
+    "date-fns": "^3.6.0",
+    "esbuild-css-modules-plugin": "^3.1.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "postcss": "^8.4.39",
+    "postcss-import": "^16.1.0",
+    "react-day-picker": "^8.10.1",
+    "react-scripts": "^5.0.1",
+    "size-limit": "^11.1.4",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss": "^3.4.4",
+    "tailwindcss-animate": "^1.0.7",
+    "tsup": "^8.1.0",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

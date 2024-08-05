@@ -11,6 +11,7 @@ interface inputFile extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   disabled?: boolean;
   setState: any;
+  onChangeFn?: (e: any) => void;
 }
 
 const simulateUploadProgress = (setProgress: any, setRemaining: any) => {
@@ -40,13 +41,15 @@ const InputFile: React.FC<inputFile> = ({
   className,
   disabled,
   setState,
+  value,
+  onChangeFn,
   name,
 }) => {
   const [file, setFile] = useState<File | null>(null);
   const [progress, setProgress] = useState<number>(0);
   const [remaining, setRemaining] = useState<string | undefined>("0");
   const [error, setError] = useState("");
-  const onChange = async (e: ChangeEvent<HTMLInputElement> | undefined) => {
+  const handleChange = async (e: ChangeEvent<HTMLInputElement> | undefined) => {
     if (e && e.target && e.target.files) {
       const selected = e.target.files[0];
       if (selected.size > 1 * 1024 * 1024) {
@@ -92,7 +95,11 @@ const InputFile: React.FC<inputFile> = ({
           disabled={disabled}
           accept=".jpg,.png"
           name={name ?? "image"}
-          onChange={(e) => onChange(e)}
+          value={value}
+          onChange={(e) => {
+            handleChange(e);
+            onChangeFn?.(e);
+          }}
         ></Input>
       </Label>
       {file && (

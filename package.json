@@ -17,10 +17,7 @@
   "keywords": [
     "react",
     "ui",
-    "components",
-    "buttons",
-    "table",
-    "navbar"
+    "components"
   ],
   "scripts": {
     "start": "react-scripts start",

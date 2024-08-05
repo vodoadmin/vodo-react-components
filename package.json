@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mustafaahmed-f/vodo-reusable-components"
+    "url": "https://github.com/vodoadmin/vodo-react-components"
   },
   "files": [
     "dist/**/*"

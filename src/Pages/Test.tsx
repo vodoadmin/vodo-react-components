@@ -184,9 +184,9 @@ const Test: React.FC = () => {
         TabelData={TabelData}
         tableStyling={tableStyling}
       /> */}
-      <NavigationTrail trailLink={trailLink} trailPage="Create" />
+      {/* <NavigationTrail trailLink={trailLink} trailPage="Create" />
 
-      <SideBar subModules={submodules} modules={module} />
+      <SideBar subModules={submodules} modules={module} /> */}
       {/* <InputFile setState={setFile} className="w-[400px]" /> */}
       {/* <Switcher
         items={["Item 1", "Item 2", "Item 3"]}
@@ -211,8 +211,8 @@ const Test: React.FC = () => {
         items={testArr2}
         setSelectedOption={(item) => {}}
         placeHolder="select"
+        disabled={true}
       />
-      <UserInput type="text" />
     </div>
   );
 };

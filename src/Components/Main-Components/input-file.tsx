@@ -10,7 +10,7 @@ import React from "react";
 interface inputFile extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   disabled?: boolean;
-  setState: any;
+
   onChangeFn?: (e: any) => void;
 }
 
@@ -40,8 +40,6 @@ const simulateUploadProgress = (setProgress: any, setRemaining: any) => {
 const InputFile: React.FC<inputFile> = ({
   className,
   disabled,
-  setState,
-  value,
   onChangeFn,
   name,
 }) => {
@@ -56,7 +54,6 @@ const InputFile: React.FC<inputFile> = ({
         setError("File size exceeds 1 MB");
         return;
       }
-      setState(selected);
 
       setFile(selected);
       try {
@@ -95,7 +92,6 @@ const InputFile: React.FC<inputFile> = ({
           disabled={disabled}
           accept=".jpg,.png"
           name={name ?? "image"}
-          value={value}
           onChange={(e) => {
             handleChange(e);
             onChangeFn?.(e);

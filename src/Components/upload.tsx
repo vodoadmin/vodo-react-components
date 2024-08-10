@@ -10,6 +10,7 @@ interface Upload {
   file: File;
   progress?: number;
   remaining?: string;
+  onRemove: () => void; // Added prop to handle file removal
 }
 const Upload: React.FC<Upload> = ({
   className,
@@ -17,12 +18,19 @@ const Upload: React.FC<Upload> = ({
   file,
   progress,
   remaining,
+  onRemove,
 }) => {
   const fileSize = (file.size / 1024).toFixed(2);
   return (
-    <section className={cn("w-[391px] bg-black/5 p-3 rounded-md relative", className)}>
+    <section
+      className={cn("w-[391px] bg-black/5 p-3 rounded-md relative", className)}
+    >
       <div className="flex items-center ">
-        <UploadIcon width={44} height={44} stroke={complete ? "#60B04C" : undefined} />
+        <UploadIcon
+          width={44}
+          height={44}
+          stroke={complete ? "#60B04C" : undefined}
+        />
         <div className=" grow">
           <h1 className="text-sm font-normal">{file.name}</h1>
           {!complete && (
@@ -43,7 +51,7 @@ const Upload: React.FC<Upload> = ({
         </div>
       </div>
       <span
-        onClick={(e) => e.currentTarget.parentElement?.remove()}
+        onClick={onRemove}
         className="absolute w-5 h-5 text-xs cursor-pointer top-1 right-3 text-black/50"
       >
         <CloseIcon />

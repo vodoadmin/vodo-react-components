@@ -70,6 +70,13 @@ const InputFile: React.FC<inputFile> = ({
     }
   };
 
+  const handleRemoveFile = () => {
+    setFile(null); // Update the state to remove the file
+    setProgress(0);
+    setRemaining("0");
+    setError("");
+  };
+
   return (
     <>
       <Label
@@ -101,9 +108,16 @@ const InputFile: React.FC<inputFile> = ({
       {file && (
         <div>
           {progress < 100 && (
-            <Upload progress={progress} remaining={remaining} file={file} />
+            <Upload
+              progress={progress}
+              remaining={remaining}
+              file={file}
+              onRemove={handleRemoveFile}
+            />
           )}
-          {progress == 100 && <Upload complete file={file} />}
+          {progress == 100 && (
+            <Upload complete file={file} onRemove={handleRemoveFile} />
+          )}
         </div>
       )}
       {error && !file && <span className="text-red-500">{error}</span>}

@@ -1,7 +1,7 @@
 {
   "name": "vodo-react-components",
   "description": "React resusable components for VODO fronend developers",
-  "version": "2.1.4",
+  "version": "2.1.6",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,10 +17,7 @@
   "keywords": [
     "react",
     "ui",
-    "components",
-    "buttons",
-    "table",
-    "navbar"
+    "components"
   ],
   "scripts": {
     "start": "react-scripts start",

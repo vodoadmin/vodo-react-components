@@ -41,7 +41,7 @@ const SideModuleCard: React.FC<subModuleCardProps> = ({
                 subModuleStyles ?? ""
               )}
             >
-              <div className={`${open ? "rotate-90 " : ""}`}>
+              <div className={`rtl:rotate-180 ${open ? "!rotate-90 " : ""}`}>
                 <ArrowRightIcon stroke={open ? "#E4412D" : "black"} />
               </div>
 

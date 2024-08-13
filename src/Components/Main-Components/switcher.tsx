@@ -60,16 +60,12 @@ export const Switcher: React.FC<SwitcherProps> = ({
           aria-expanded={open}
           aria-label={placeHolder}
           className={cn(
-            "text-sm font-normal py-3 gap-x-2 flex items-center rounded-none text-destructive justify-between",
+            " group text-sm font-normal py-3 gap-x-2 flex items-center rounded-none text-destructive justify-between disabled:cursor-not-allowed disabled:pointer-events-auto  disabled:last:stroke-red-500",
             className
           )}
         >
           {selected || placeHolder}
-          <ArrowDownIcon
-            className="font-bold text-primary shrink-0"
-            height={12}
-            width={12}
-          />
+          <ArrowDownIcon className="rtl:mr-auto ltr:ml-auto font-bold text-primary shrink-0 group-disabled:*:stroke-[#2B2F3880] group-disabled:*:fill-[#2B2F3880]" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0 ">

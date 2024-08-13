@@ -1,7 +1,5 @@
 import React from "react";
 import Test from "./Pages/Test";
-// import Test from "./Pages/Test";
-// import InputFile from "./Components/Main-Components/input-file";
 import { BrowserRouter as Router } from "react-router-dom";
 function App() {
   return (

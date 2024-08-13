@@ -1,7 +1,4 @@
 import React, { ChangeEvent, useMemo, useState } from "react";
-import { Button } from "./button";
-import ArrowLeftIcon from "../../Icons/arrowLeftIcons";
-import ArrowRightIcon from "../../Icons/arrowRightIcon";
 
 interface myProps {
   setPageFn: (page: number) => void;
@@ -18,9 +15,7 @@ const PaginationComponent: React.FC<myProps> = ({
   const [limit, setLimit] = useState<number>(constantLimit ?? 6);
   const [page, setPage] = useState<number>(1);
   const totalPages: any = useMemo(() => {
-    return totalDataLength !== undefined
-      ? Math.ceil(totalDataLength / limit)
-      : null;
+    return totalDataLength !== undefined ? Math.ceil(totalDataLength / limit) : null;
   }, [totalDataLength, limit]);
 
   function handleLimit(e: ChangeEvent<HTMLInputElement>) {
@@ -58,9 +53,7 @@ const PaginationComponent: React.FC<myProps> = ({
         {page}
       </span>
       <p
-        onClick={
-          page === totalPages || totalPages === Infinity ? () => {} : nextPage
-        }
+        onClick={page === totalPages || totalPages === Infinity ? () => {} : nextPage}
         className={`  w-fit disabled:text-slate-400 p-[1 px] ${
           page === totalPages || totalPages === Infinity
             ? ""

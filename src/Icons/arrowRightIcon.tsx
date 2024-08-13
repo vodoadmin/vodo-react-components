@@ -1,7 +1,12 @@
 import { iconsProps } from "@/Utils/icons.types";
 import React from "react";
 
-const ArrowRightIcon = ({ stroke = "#2B2F38", width = 8, height = 14 }: iconsProps) => {
+const ArrowRightIcon = ({
+  stroke = "#2B2F38",
+  width = 8,
+  height = 14,
+  className,
+}: iconsProps) => {
   return (
     <svg
       width={width}
@@ -9,6 +14,7 @@ const ArrowRightIcon = ({ stroke = "#2B2F38", width = 8, height = 14 }: iconsPro
       viewBox={`0 0 ${width} ${height}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M6.95153 6.83888C6.95153 7.32345 6.76462 7.80802 6.39773 8.17491L1.88434 12.6883C1.68359 12.8891 1.35131 12.8891 1.15056 12.6883C0.949812 12.4876 0.949812 12.1553 1.15056 11.9545L5.66395 7.44113C5.99623 7.10885 5.99623 6.5689 5.66395 6.23663L1.15056 1.72321C0.949812 1.52246 0.949812 1.19018 1.15056 0.98943C1.35131 0.78868 1.68359 0.78868 1.88434 0.98943L6.39773 5.50285C6.76462 5.86974 6.95153 6.35431 6.95153 6.83888Z"

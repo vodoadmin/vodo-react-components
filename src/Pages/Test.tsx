@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import DeleteIcon from "../Icons/deleteSVG";
 import MainTabel, { mainTabelProps } from "../Components/Main-Components/MainTabel";
 import { Switcher } from "../Components/Main-Components/switcher";
@@ -84,11 +84,40 @@ import { NavigationTrail } from "../Components/Main-Components/navigation-trail"
 //   bodyStyle: "bg-green-200",
 //   bodyElementStyle: "bg-yellow-400",
 // };
+const arr = ["a", "b", "c", "d"];
+const items = [
+  { name: "0", value: "0" },
+  { name: "1", value: "1" },
+  { name: "2", value: "2" },
+  { name: "3", value: "3" },
+];
+const trailLink = [{ label: "تيست", href: "/hr/employee" }];
 
 const Test: React.FC = () => {
-  const [file, setFile] = useState<any>("");
-  console.log(file);
-  return <InputFile onChangeFn={(val) => setFile(val)} />;
+  useEffect(() => {
+    setTimeout(() => (document.dir = "rtl"), 3000);
+  }, []);
+  const submodules = [
+    {
+      title: "employees",
+      submoduleArr: [
+        {
+          title: "allEmployees",
+          link: "hr/employee",
+        },
+        {
+          title: "jobs",
+          link: "hr/jobs",
+        },
+      ],
+    },
+  ];
+  return (
+    <>
+      {" "}
+      <SideBar subModules={submodules} sideBarStyle="h-screen md:!static fixed  " />
+    </>
+  );
 };
 
 export default Test;

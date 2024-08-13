@@ -142,7 +142,7 @@
   @apply hover:no-underline w-full p-0 rounded-none  py-6 !flex !justify-start px-5 gap-4 vodo-rc-icon-trigger after:rounded-none;
 }
 .vodo-rc-aside > .vodo-rc-submodule-outer > div > div > div {
-  @apply p-0 pl-11;
+  @apply p-0 pl-11 rtl:pr-11 rtl:pl-0;
 }
 
 .vodo-rc-aside .vodo-rc-submodule {
@@ -161,7 +161,7 @@
   @apply transition-all;
 }
 .vodo-rc-aside .vodo-rc-submodule > div > div > div {
-  @apply p-0 pl-11;
+  @apply p-0 pl-11 rtl:pr-11 rtl:pl-0;
 }
 .vodo-rc-aside .vodo-rc-submodule > div > div > div > ul {
   @apply *:my-3 *:cursor-pointer *:text-black;

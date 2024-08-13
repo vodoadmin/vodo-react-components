@@ -48,25 +48,19 @@ const SideBar = ({
   };
   return (
     <aside
-      className={cn(
-        `vodo-rc-aside  ${open ? "!w-[280px]" : ""}`,
-        sideBarStyle ?? ""
-      )}
+      className={cn(`vodo-rc-aside  ${open ? "!w-[280px]" : ""}`, sideBarStyle ?? "")}
     >
       <div>
-        <Button
-          className="w-16 py-8 rounded-none "
-          onClick={() => handleSideBar()}
-        >
-          {open ? <ArrowMenuIcon stroke="white" /> : <BurgerIcon />}
+        <Button className="w-16 py-8 rounded-none " onClick={() => handleSideBar()}>
+          {open ? (
+            <ArrowMenuIcon className="transform rtl:rotate-180" />
+          ) : (
+            <BurgerIcon />
+          )}
         </Button>
       </div>
       {subModules?.length ? (
-        <Accordion
-          className="vodo-rc-submodule-outer"
-          type="single"
-          collapsible
-        >
+        <Accordion className="vodo-rc-submodule-outer" type="single" collapsible>
           <AccordionItem value="item-1" className="w-full border-none">
             <AccordionTrigger
               onClick={(e: any) =>

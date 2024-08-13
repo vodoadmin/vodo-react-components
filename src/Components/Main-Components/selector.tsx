@@ -25,6 +25,7 @@ interface SelectorProps {
   defaultValue?: string;
   name?: string;
   disabled?: boolean;
+  dir?: string;
 }
 
 export const Selector: React.FC<SelectorProps> = ({
@@ -39,6 +40,7 @@ export const Selector: React.FC<SelectorProps> = ({
   id,
   name,
   disabled,
+  dir,
 }) => {
   return (
     <Select
@@ -51,6 +53,7 @@ export const Selector: React.FC<SelectorProps> = ({
         className={cn("w-[200px] rounded-none", className)}
         id={id}
         name={name}
+        dir={dir}
       >
         <SelectValue className="" placeholder={placeholder} />
       </SelectTrigger>

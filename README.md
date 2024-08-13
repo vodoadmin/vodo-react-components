@@ -163,12 +163,7 @@ The card that appears contains : section containing username,avatar and user's e
 - footerHref ?: Link appears in the footer ( The footer has a - view all - word which refs to a link )
 
 ```javascript
-<CardWrapper
-  className="w-[500px]"
-  showFooter
-  footerHref="#"
-  cardTitle="Add business"
->
+<CardWrapper className="w-[500px]" showFooter footerHref="#" cardTitle="Add business">
   Card Content
 </CardWrapper>
 ```
@@ -232,6 +227,7 @@ A drop list with a search bar.
 - heading : the title of the options in the drop list (eg. sizes)
 - setSelectedOption : will return the selected item from the array weather it is object or string
 - currentValue ?: It is the current selected value if You want the switcher to initially have a specific value
+- disabled?:whether the input is disabled or not
 
 ```javascript
 const [item, setItem] = (useState < null) | (string > null);
@@ -516,11 +512,7 @@ Button contains on/off status
 This is how the table component is used :
 
 ```javascript
-<MainTabel
-  TabelHead={TabelHead}
-  TabelData={TabelData}
-  tableStyling={tableStyling}
-/>
+<MainTabel TabelHead={TabelHead} TabelData={TabelData} tableStyling={tableStyling} />
 ```
 
 ##### How to set the headers ?
@@ -726,7 +718,7 @@ This is how the table component is used :
 
 A drop list with items ( same as select HTML tag )
 
-#### The selector takes 3 props:
+#### The selector takes these props:
 
 - items : items array of objects, each object has two keys (name , value)
 - placeholder ?: initial text that appears on the selector
@@ -737,7 +729,8 @@ A drop list with items ( same as select HTML tag )
 - className ?: styles of the selector
 - itemsStyle ?: styles for each element in the selector
 - id?: id for the selector
-  -name?:name for the selector
+- name?:name for the selector
+- dir?:the direction of the selector
 
 This is how the selector component is used :
 

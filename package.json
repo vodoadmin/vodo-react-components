@@ -1,7 +1,7 @@
 {
   "name": "vodo-react-components",
   "description": "React resusable components for VODO fronend developers",
-  "version": "2.2.4",
+  "version": "2.2.7",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "start": "react-scripts start",
-    "buildAndPublish": "npm run build && npm publish",
+    "publishPackage": "npm run build && npm publish",
     "testLocal": "npm unlink vodo-react-components && npm run build && npm link",
     "test": "react-scripts test",
     "build": "tsup",

@@ -28,6 +28,7 @@ export { default as MainTabel } from "./Components/Main-Components/MainTabel";
 export { default as PaginationComponent } from "./Components/Main-Components/PaginationComponent";
 
 export { default as Login } from "./Components/Main-Components/Login";
+export { default as DropDownSelect } from "./Components/Main-Components/DropDownSelect";
 
 //===================================================================================================
 //==================================== Awaiting =====================================================

@@ -172,3 +172,36 @@
 .vodo-rc-aside .vodo-rc-modules > a span {
   @apply text-inherit hover:text-destructive;
 }
+.vodo-rc-loader {
+  border: 6px dotted #2a2f38;
+  border-style: solid solid dotted dotted;
+  animation: rotation 2s linear infinite;
+}
+.vodo-rc-loader::after {
+  inset: 0;
+  margin: auto;
+  border: 4px dotted #e4412d;
+  border-style: solid solid dotted;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}

@@ -768,3 +768,60 @@ This is how the login component is used :
 ```
 
 </section>
+//=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
+
+//=================================================
+
+<section id="loader">
+
+### 19- loader
+
+#### The loader takes 1 prop:
+
+- className ?: className for the loader
+
+This is how the loader component is used :
+
+```javascript
+<Loader />
+```
+
+</section>
+//=================================================
+
+<a href="#user-content-table">Go back to the table of components</a>
+
+//=================================================
+
+<section id="DropDownSelect">
+
+### 19- DropDownSelect
+
+#### The Login takes 10 prop:
+
+- label?:the label for the select
+- placeholder?:place holder for the select
+- handleChange: function will return the selected option;
+- options:the options that will be displayed on the list;
+- isDisabled?: set disabled or not disabled;
+- loading?: loading of the slice. takes boolean;
+- searchInputPlaceholder?: place holder of the search input;
+- onSearchInputChange: will return the value written inside the search;
+- labelKey: the key of the options that will be displayed;
+- valueKey: the key of the value;
+
+This is how the login component is used :
+
+```javascript
+<DropDownSelect
+  options={items2}
+  handleChange={(e: any) => console.log(e)}
+  onSearchInputChange={(e: string) => console.log(e)}
+  labelKey="name"
+  valueKey="value"
+/>
+```
+
+</section>

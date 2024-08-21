@@ -68,12 +68,12 @@ export const Switcher: React.FC<SwitcherProps> = ({
           <ArrowDownIcon className="rtl:mr-auto ltr:ml-auto font-bold text-primary shrink-0 group-disabled:*:stroke-[#2B2F3880] group-disabled:*:fill-[#2B2F3880]" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0 ">
-        <Command>
+      <PopoverContent className="w-full p-0">
+        <Command className="">
           <CommandList>
             <CommandInput
               placeholder={placeHolder}
-              className="box-border border-none "
+              className="box-border border-none"
             />
             <CommandEmpty>No results found</CommandEmpty>
             <CommandGroup heading={heading}>

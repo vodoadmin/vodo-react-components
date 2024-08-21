@@ -12,6 +12,9 @@ import { Button } from "../Components/Main-Components/button";
 import SideBar from "../Components/Main-Components/sidebar";
 import Login from "../Components/Main-Components/Login";
 import { NavigationTrail } from "../Components/Main-Components/navigation-trail";
+import { log } from "console";
+import DropDownSelect from "../Components/Main-Components/DropDownSelect";
+import Loader from "../Components/Main-Components/Loader";
 
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
@@ -86,36 +89,35 @@ import { NavigationTrail } from "../Components/Main-Components/navigation-trail"
 // };
 const arr = ["a", "b", "c", "d"];
 const items = [
-  { name: "0", value: "0" },
-  { name: "1", value: "1" },
-  { name: "2", value: "2" },
-  { name: "3", value: "3" },
+  { label: "a", value: "0" },
+  { label: "v", value: "1" },
+  { label: "c", value: "2" },
+  { label: "d", value: "3" },
 ];
-const trailLink = [{ label: "تيست", href: "/hr/employee" }];
-
+const items2 = [
+  { name: "a", value: "0" },
+  { name: "v", value: "1" },
+  { name: "c", value: "2" },
+  { name: "d", value: "3" },
+];
+const OnSearch = (e: any) => {
+  console.log(e);
+};
+const onChange = (e: any) => {
+  console.log(e);
+};
 const Test: React.FC = () => {
-  useEffect(() => {
-    setTimeout(() => (document.dir = "rtl"), 3000);
-  }, []);
-  const submodules = [
-    {
-      title: "employees",
-      submoduleArr: [
-        {
-          title: "allEmployees",
-          link: "hr/employee",
-        },
-        {
-          title: "jobs",
-          link: "hr/jobs",
-        },
-      ],
-    },
-  ];
   return (
     <>
-      {" "}
-      <SideBar subModules={submodules} sideBarStyle="h-screen md:!static fixed  " />
+      <div className="w-[400px] mx-auto mt-96">
+        <DropDownSelect
+          options={items2}
+          handleChange={(e: any) => console.log(e)}
+          onSearchInputChange={(e: string) => console.log(e)}
+          labelKey="name"
+          valueKey="value"
+        />
+      </div>
     </>
   );
 };

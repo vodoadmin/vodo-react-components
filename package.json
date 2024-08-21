@@ -1,7 +1,7 @@
 {
   "name": "vodo-react-components",
-  "description": "React resusable components for VODO fronend developers",
-  "version": "2.2.7",
+  "description": "React reusable components for VODO frontend developers",
+  "version": "2.3.3",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -48,6 +48,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.26.0",
+    "react-select": "^5.8.0",
+    "react-tailwindcss-select": "^1.8.5",
     "vodo-react-components": "file:",
     "web-vitals": "^2.1.4"
   },

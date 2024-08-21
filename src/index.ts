@@ -29,6 +29,7 @@ export { default as PaginationComponent } from "./Components/Main-Components/Pag
 
 export { default as Login } from "./Components/Main-Components/Login";
 export { default as DropDownSelect } from "./Components/Main-Components/DropDownSelect";
+export { default as Loader } from "./Components/Main-Components/Loader";
 
 //===================================================================================================
 //==================================== Awaiting =====================================================

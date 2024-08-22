@@ -30,10 +30,14 @@ const DropDownSelect = ({
     setValue(value);
     handleChange(value);
   };
-  const mappedOptions = options.map((option: any) => ({
-    label: option[labelKey],
-    value: option[valueKey],
-  }));
+  const mappedOptions = options.map((option: any) => {
+    const { [labelKey]: label, [valueKey]: value, ...rest } = option;
+    return {
+      label,
+      value,
+      ...rest,
+    };
+  });
   return (
     <div className={`mb-4 `}>
       {label ? (
@@ -58,8 +62,8 @@ const DropDownSelect = ({
         searchInputPlaceholder={searchInputPlaceholder}
         classNames={{
           listItem: () =>
-            " list-none p-2 cursor-pointer hover:bg-slate-200 hover:text-destructive transition text-gray-400 rounded-sm text-base font-semibold ",
-          menu: "z-10 w-full bg-white absolute",
+            " list-none p-2 cursor-pointer hover:bg-[#f3f4f6] hover:text-destructive transition text-gray-400 rounded-sm text-base font-semibold ",
+          menu: "z-10 w-full bg-white absolute shadow-lg",
           menuButton: () =>
             `flex  items-center justify-between text-gray-600  border placeholder-gray-300 h-11 px-1 border-gray-200 rounded-sm py-2 cnt ${
               isDisabled
@@ -69,6 +73,7 @@ const DropDownSelect = ({
           searchIcon: "hidden",
           searchBox:
             "w-full py-2 ps-8 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none",
+          ChevronIcon: (open) => (open ? "rotate-90" : "rotate-0"),
         }}
         primaryColor={""}
       />

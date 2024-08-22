@@ -98,7 +98,7 @@ const items2 = [
   { name: "a", value: "0" },
   { name: "v", value: "1" },
   { name: "c", value: "2" },
-  { name: "d", value: "3" },
+  { name: "d", value: "3", leyone: "one", id: "3" },
 ];
 const OnSearch = (e: any) => {
   console.log(e);
@@ -108,8 +108,8 @@ const onChange = (e: any) => {
 };
 const Test: React.FC = () => {
   return (
-    <>
-      <div className="w-[400px] mx-auto mt-96">
+    <div className="h-full bg-white ">
+      <div className="w-[800px] mx-auto mt-96">
         <DropDownSelect
           options={items2}
           handleChange={(e: any) => console.log(e)}
@@ -118,7 +118,7 @@ const Test: React.FC = () => {
           valueKey="value"
         />
       </div>
-    </>
+    </div>
   );
 };
 

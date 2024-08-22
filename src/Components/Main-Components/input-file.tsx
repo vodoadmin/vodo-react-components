@@ -10,7 +10,6 @@ import React from "react";
 interface inputFile extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   disabled?: boolean;
-
   onChangeFn?: (e: any) => void;
 }
 
@@ -37,12 +36,7 @@ const simulateUploadProgress = (setProgress: any, setRemaining: any) => {
   });
 };
 
-const InputFile: React.FC<inputFile> = ({
-  className,
-  disabled,
-  onChangeFn,
-  name,
-}) => {
+const InputFile: React.FC<inputFile> = ({ className, disabled, onChangeFn, name }) => {
   const [file, setFile] = useState<File | null>(null);
   const [progress, setProgress] = useState<number>(0);
   const [remaining, setRemaining] = useState<string | undefined>("0");

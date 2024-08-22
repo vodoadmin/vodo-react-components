@@ -57,6 +57,8 @@ function App() {
       <li><a href="#user-content-pagination">pagination</a></li>
       <li><a href="#user-content-selector">selector</a></li>
       <li><a href="#user-content-login">Login</a></li>
+      <li><a href="#user-content-loader">Loader</a></li>
+      <li><a href="#user-content-DropDownSelect">DropDownSelect</a></li>
 </ul>
 </section>
 <hr />
@@ -258,12 +260,11 @@ Used to upload file to a specific URL ( images ony allowed !! ).
 #### The InputFile takes 3 props :
 
 - className?
-- setState : setState for the to get the file value
 - disabled ?: boolean value to indicate of the input is disabled or not
-- name ?: name field of input
+- onChangeFn?:a function that will return the event
 
 ```javascript
-<InputFile setState={setState} />
+<InputFile onChangeFn={handleChange} />
 ```
 
 ![App Screenshot](https://res.cloudinary.com/dvvmu40wx/image/upload/v1719671300/VODO/reusable%20components/INputFile_ripmgb.png)

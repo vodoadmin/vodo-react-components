@@ -95,10 +95,10 @@ const items = [
   { label: "d", value: "3" },
 ];
 const items2 = [
-  { name: "a", value: "0" },
-  { name: "v", value: "1" },
-  { name: "c", value: "2" },
-  { name: "d", value: "3", leyone: "one", id: "3" },
+  { name: "ass", value: "0" },
+  { name: "var", value: "1" },
+  { name: "car", value: "2" },
+  { name: "door", value: "3", leyone: "one", id: "3" },
 ];
 const OnSearch = (e: any) => {
   console.log(e);
@@ -116,6 +116,8 @@ const Test: React.FC = () => {
           onSearchInputChange={(e: string) => console.log(e)}
           labelKey="name"
           valueKey="value"
+          isMultiple
+          className="h-[40px] disabled:!bg-red-500"
         />
       </div>
     </div>

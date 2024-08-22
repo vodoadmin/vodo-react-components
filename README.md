@@ -812,6 +812,9 @@ This is how the loader component is used :
 - onSearchInputChange: will return the value written inside the search;
 - labelKey: the key of the options that will be displayed;
 - valueKey: the key of the value;
+- isMultiple?:sets multiple values
+- className?
+- disabledClassName?:styles when the input is disabled
 
 This is how the login component is used :
 

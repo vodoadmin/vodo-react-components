@@ -6,11 +6,14 @@ interface DropDownSelectProps {
   handleChange: any;
   options: any;
   isDisabled?: boolean;
+  isMultiple?: boolean;
   loading?: boolean;
   searchInputPlaceholder?: string;
   onSearchInputChange: any;
   labelKey: string;
   valueKey: string;
+  className?: string;
+  disabledClassName?: string;
 }
 const DropDownSelect = ({
   label,
@@ -23,6 +26,9 @@ const DropDownSelect = ({
   searchInputPlaceholder,
   labelKey,
   valueKey,
+  isMultiple,
+  className,
+  disabledClassName,
 }: DropDownSelectProps) => {
   const [value, setValue] = useState(null);
 
@@ -51,6 +57,7 @@ const DropDownSelect = ({
       <Select
         isSearchable={true}
         isDisabled={isDisabled}
+        isMultiple={isMultiple}
         loading={loading}
         onSearchInputChange={(e) =>
           e.target.value.length >= 2 && onSearchInputChange(e.target.value)
@@ -65,9 +72,9 @@ const DropDownSelect = ({
             " list-none p-2 cursor-pointer hover:bg-[#f3f4f6] hover:text-destructive transition text-gray-400 rounded-sm text-base font-semibold ",
           menu: "z-10 w-full bg-white absolute shadow-lg",
           menuButton: () =>
-            `flex  items-center justify-between text-gray-600  border placeholder-gray-300 h-11 px-1 border-gray-200 rounded-sm py-2 cnt ${
+            `flex  items-center justify-between text-gray-600  border placeholder-gray-300 h-11 px-1 border-gray-200 rounded-sm py-2 cnt ${className} ${
               isDisabled
-                ? "bg-gray-200"
+                ? disabledClassName
                 : "bg-white hover:border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500/20"
             }`,
           searchIcon: "hidden",

@@ -46,7 +46,6 @@ const DropDownSelect = ({
       ...rest,
     };
   });
-  console.log(mappedOptions);
 
   return (
     <div className={`mb-4 `}>

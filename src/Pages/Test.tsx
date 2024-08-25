@@ -98,7 +98,7 @@ const items2 = [
   { name: "ass", value: "0" },
   { name: "var", value: "1" },
   { name: "car", value: "2" },
-  { name: "door", value: "3", leyone: "one", id: "3" },
+  { name: null, value: "3", leyone: "one", id: "3" },
 ];
 const OnSearch = (e: any) => {
   console.log(e);

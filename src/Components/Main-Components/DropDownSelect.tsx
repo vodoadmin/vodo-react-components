@@ -37,13 +37,17 @@ const DropDownSelect = ({
     handleChange(value);
   };
   const mappedOptions = options.map((option: any) => {
-    const { [labelKey]: label, [valueKey]: value, ...rest } = option;
+    const { [labelKey]: rawLabel, [valueKey]: rawValue, ...rest } = option;
+    const label = rawLabel !== null && rawLabel !== undefined ? rawLabel : "";
+    const value = rawValue !== null && rawValue !== undefined ? rawValue : "";
     return {
       label,
       value,
       ...rest,
     };
   });
+  console.log(mappedOptions);
+
   return (
     <div className={`mb-4 `}>
       {label ? (

@@ -205,3 +205,9 @@
     transform: rotate(-360deg);
   }
 }
+.drop-down-select > div:first-of-type {
+  @apply w-[80%];
+}
+.drop-down-select p {
+  @apply overflow-hidden text-ellipsis text-nowrap;
+}

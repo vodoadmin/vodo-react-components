@@ -95,7 +95,7 @@ const items = [
   { label: "d", value: "3" },
 ];
 const items2 = [
-  { name: "ass", value: "0" },
+  { name: "asssssssssssssssssssss asdf", value: "0" },
   { name: "var", value: "1" },
   { name: "car", value: "2" },
   { name: null, value: "3", leyone: "one", id: "3" },
@@ -109,14 +109,13 @@ const onChange = (e: any) => {
 const Test: React.FC = () => {
   return (
     <div className="h-full bg-white ">
-      <div className="w-[800px] mx-auto mt-96">
+      <div className="px-10 mx-auto mt-96">
         <DropDownSelect
           options={items2}
           handleChange={(e: any) => console.log(e)}
           onSearchInputChange={(e: string) => console.log(e)}
           labelKey="name"
           valueKey="value"
-          isMultiple
           className="h-[40px] disabled:!bg-red-500"
         />
       </div>

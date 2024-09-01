@@ -95,7 +95,7 @@ const items = [
   { label: "d", value: "3" },
 ];
 const items2 = [
-  { name: "asssssssssssssssssssss asdf", value: "0" },
+  { name: "شركة تجريبية فاتورة غير معتمدة", value: "0" },
   { name: "var", value: "1" },
   { name: "car", value: "2" },
   { name: null, value: "3", leyone: "one", id: "3" },
@@ -106,18 +106,26 @@ const OnSearch = (e: any) => {
 const onChange = (e: any) => {
   console.log(e);
 };
+const submodules = [
+  {
+    title: "employees",
+    submoduleArr: [
+      {
+        title: "allEmployees",
+        link: "/hr",
+      },
+      {
+        title: "jobs",
+        link: "/hr/jobs",
+      },
+    ],
+  },
+];
 const Test: React.FC = () => {
   return (
-    <div className="h-full bg-white ">
-      <div className="px-10 mx-auto mt-96">
-        <DropDownSelect
-          options={items2}
-          handleChange={(e: any) => console.log(e)}
-          onSearchInputChange={(e: string) => console.log(e)}
-          labelKey="name"
-          valueKey="value"
-          className="h-[40px] disabled:!bg-red-500"
-        />
+    <div className="flex items-center h-full bg-white">
+      <div className="max-w-[400px] mx-auto w-full">
+        <SideBar subModules={submodules} sideBarStyle="hr-sticky hr-top-0" />
       </div>
     </div>
   );

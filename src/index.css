@@ -152,7 +152,7 @@
   @apply w-full border-none;
 }
 .vodo-rc-aside .vodo-rc-submodule > div h3 button {
-  @apply w-full p-0 hover:no-underline;
+  @apply w-full !p-0 hover:no-underline;
 }
 .vodo-rc-aside .vodo-rc-submodule > div h3 button li div {
   @apply flex items-center;
@@ -208,6 +208,7 @@
 .drop-down-select > div:first-of-type {
   @apply w-[80%];
 }
+
 .drop-down-select p {
   @apply overflow-hidden text-ellipsis text-nowrap;
 }

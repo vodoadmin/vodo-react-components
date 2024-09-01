@@ -86,8 +86,6 @@ const DropDownSelect = ({
           searchBox:
             "w-full py-2 ps-8 text-sm text-gray-500 bg-gray-100 border border-gray-200 rounded focus:border-gray-200 focus:ring-0 focus:outline-none",
           ChevronIcon: (open) => (open ? "rotate-90" : "rotate-0"),
-          tagItemText: "",
-          tagItem: () => "",
         }}
         primaryColor={""}
       />

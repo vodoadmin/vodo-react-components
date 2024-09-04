@@ -82,7 +82,7 @@ export default function MainTabel({
                             src={row[head.accessorKey]}
                             width={50}
                             height={50}
-                            className="rounded-full"
+                            className="rounded-full size-[50px] object-cover"
                           />
                         </div>
                       ) : (

@@ -35,12 +35,16 @@ interface SideBarprops {
   modules?: ModuleProps[];
   className?: classNameProp;
   sideBarStyle?: string;
+  ModuleName?: string;
+  ModuleIcon?: any;
 }
 const SideBar = ({
   subModules,
   modules,
   className, //// To add style to subModules & modules
   sideBarStyle, //// To add style to the whole sidebar
+  ModuleName,
+  ModuleIcon,
 }: SideBarprops) => {
   const [open, setOpen] = useState(false);
   const handleSideBar = () => {
@@ -67,8 +71,8 @@ const SideBar = ({
                 e.currentTarget.classList.toggle("vodo-rc-sidebar-active")
               }
             >
-              <ModulesIcon />
-              {open && <span className="text-black/50">Modules</span>}
+              {ModuleIcon || <ModulesIcon />}
+              {open && <span className="text-black/50">{ModuleName || "Modules"}</span>}
             </AccordionTrigger>
 
             <AccordionContent>

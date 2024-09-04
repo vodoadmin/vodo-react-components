@@ -74,10 +74,7 @@ export default function MainTabel({
               TabelData?.map((row: tableItemType, rowIndex: number) => (
                 <tr key={rowIndex} className={tableStyling?.bodyRowStyle}>
                   {TabelHead.map((head: tableHeaderType, colIndex: number) => (
-                    <TdTable
-                      key={colIndex}
-                      className={tableStyling?.bodyElementStyle}
-                    >
+                    <TdTable key={colIndex} className={tableStyling?.bodyElementStyle}>
                       {head.accessorKey === "image" && row[head.accessorKey] ? (
                         <div className="flex items-center justify-center">
                           <img
@@ -85,7 +82,7 @@ export default function MainTabel({
                             src={row[head.accessorKey]}
                             width={50}
                             height={50}
-                            className=""
+                            className="rounded-full"
                           />
                         </div>
                       ) : (

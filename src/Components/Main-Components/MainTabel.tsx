@@ -5,6 +5,7 @@ import { tableHeaderType, tableItemType } from "@/Utils/tableTypes";
 import { cn } from "../../Utils/utils";
 
 export interface mainTabelProps {
+  tableRef: any;
   TabelHead: tableHeaderType[];
   TabelData?: tableItemType[];
   tableStyling?: {
@@ -24,6 +25,7 @@ export default function MainTabel({
   TabelHead,
   TabelData,
   tableStyling,
+  tableRef,
 }: mainTabelProps) {
   // Check if all accessor keys in headers are present in tableData
   const allKeysPresent = useMemo(
@@ -52,7 +54,7 @@ export default function MainTabel({
           tableStyling?.outerStyle
         )}
       >
-        <table className="min-w-full leading-normal custom_tabel">
+        <table className="min-w-full leading-normal custom_tabel" ref={tableRef}>
           <thead
             className={cn(
               "w-full border-none rounded-lg whitespace-nowrap bg-neutral-100 hover:bg-neutral-100",

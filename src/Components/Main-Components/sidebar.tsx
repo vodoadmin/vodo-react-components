@@ -4,7 +4,6 @@ import ModulesIcon from "../../Icons/ModulesSVG";
 import BurgerIcon from "../../Icons/burgerSVG";
 import { useState } from "react";
 import ArrowMenuIcon from "../../Icons/arrow-menuSVG";
-import LogoIcon from "../../Icons/logoSVG";
 import SideCard from "../sidebar-card";
 import SideModuleCard from "../sub-module-card";
 import {
@@ -50,6 +49,11 @@ const SideBar = ({
   const handleSideBar = () => {
     setOpen(!open);
   };
+  const handleAccordionChange = (value: any) => {
+    if (!open && value) {
+      setOpen(true);
+    }
+  };
   return (
     <aside
       className={cn(`vodo-rc-aside  ${open ? "!w-[280px]" : ""}`, sideBarStyle ?? "")}
@@ -64,7 +68,12 @@ const SideBar = ({
         </Button>
       </div>
       {subModules?.length ? (
-        <Accordion className="vodo-rc-submodule-outer" type="single" collapsible>
+        <Accordion
+          className="vodo-rc-submodule-outer"
+          type="single"
+          collapsible
+          onValueChange={handleAccordionChange}
+        >
           <AccordionItem value="item-1" className="w-full border-none">
             <AccordionTrigger
               onClick={(e: any) =>

@@ -1,7 +1,7 @@
 {
   "name": "vodo-react-components",
   "description": "React reusable components for VODO frontend developers",
-  "version": "2.4.5",
+  "version": "2.4.6",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",

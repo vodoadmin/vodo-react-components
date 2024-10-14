@@ -48,7 +48,7 @@ const DropDownSelect = ({
   });
 
   return (
-    <div className={`mb-4 `}>
+    <div>
       {label ? (
         <label htmlFor="" className="mb-[2px] text-base">
           {label}

@@ -9,38 +9,52 @@ import InputFile from "../Components/Main-Components/input-file";
 // import SubmissionProgress from "../Components/Main-Components/submissionProgress";
 import UserInput from "../Components/Main-Components/user-input";
 import { Button } from "../Components/Main-Components/button";
-import SideBar from "../Components/Main-Components/sidebar";
+import SideBar, {
+  ModuleProps,
+  SubModuleProps,
+} from "../Components/Main-Components/sidebar";
 import Login from "../Components/Main-Components/Login";
 import { NavigationTrail } from "../Components/Main-Components/navigation-trail";
 import { log } from "console";
 import DropDownSelect from "../Components/Main-Components/DropDownSelect";
 import Loader from "../Components/Main-Components/Loader";
+import EyeSlashIcon from "../Icons/eyeslash";
+import EyePasswordIcon from "../Icons/eyepasswordSVG";
+import EditIcon from "../Icons/editIcon";
+import { useLocation } from "react-router-dom";
 
 // import ArrowRightIcon from "../Icons/arrow-rightSVG";
 
-// const subModules: SubModuleProps[] = [
-//   {
-//     title: "SubModule 1",
-//     submoduleArr: [
-//       { title: "SubItem 1", link: "/subitem1" },
-//       { title: "SubItem 2", link: "/subitem2" },
-//     ],
-//     Svg: <DeleteIcon height={20} />,
-//   },
-//   {
-//     title: "SubModule 2",
-//     submoduleArr: [
-//       { title: "SubItem 3", link: "/subitem3" },
-//       { title: "SubItem 4", link: "/subitem4" },
-//     ],
-//     Svg: <EditIcon />,
-//   },
-// ];
+const subModules: SubModuleProps[] = [
+  {
+    title: "SubModule 1",
+    submoduleArr: [
+      { title: "SubItem 1", link: "/subitem1", dataLink: "sub1" },
+      { title: "SubItem 2", link: "/subitem2", dataLink: "sub2" },
+    ],
+    Svg: <DeleteIcon height={20} />,
+    dataTesting: "subModule1",
+  },
+  {
+    title: "SubModule 2",
+    submoduleArr: [
+      { title: "SubItem 3", link: "/subitem3", dataLink: "sub3" },
+      { title: "SubItem 4", link: "/subitem4", dataLink: "sub4" },
+    ],
+    Svg: <EditIcon />,
+    dataTesting: "subModule2",
+  },
+];
 
-// const modules: ModuleProps[] = [
-//   { title: "Module 1", link: "/module1", Svg: <EyeICon /> },
-//   { title: "Module 2", link: "/module2", Svg: <TrashCanIcon /> },
-// ];
+const modules: ModuleProps[] = [
+  { title: "Module 1", link: "/module1", Svg: <EyeSlashIcon />, dataLink: "module1" },
+  {
+    title: "Module 2",
+    link: "/module2",
+    Svg: <EyePasswordIcon />,
+    dataLink: "module1",
+  },
+];
 
 // const TabelHead = [
 //   { accessorKey: "id", header: "ID" },
@@ -86,46 +100,34 @@ import Loader from "../Components/Main-Components/Loader";
 //   headElementStyle: "bg-red-200 p-4 ",
 //   bodyStyle: "bg-green-200",
 //   bodyElementStyle: "bg-yellow-400",
-// };
-const arr = ["a", "b", "c", "d"];
+// }
+
 const items = [
-  { label: "a", value: "0" },
-  { label: "v", value: "1" },
-  { label: "c", value: "2" },
-  { label: "d", value: "3" },
-];
-const items2 = [
-  { name: "شركة تجريبية فاتورة غير معتمدة", value: "0" },
-  { name: "var", value: "1" },
-  { name: "car", value: "2" },
-  { name: null, value: "3", leyone: "one", id: "3" },
-];
-const OnSearch = (e: any) => {
-  console.log(e);
-};
-const onChange = (e: any) => {
-  console.log(e);
-};
-const submodules = [
-  {
-    title: "employees",
-    submoduleArr: [
-      {
-        title: "allEmployees",
-        link: "/hr",
-      },
-      {
-        title: "jobs",
-        link: "/hr/jobs",
-      },
-    ],
-  },
+  { name: "test", value: "1" },
+  { name: "example", value: "2" },
+  { name: "sample", value: "3" },
+  { name: "demo", value: "4" },
+  { name: "placeholder", value: "5" },
+  { name: "mock", value: "6" },
+  { name: "template", value: "7" },
+  { name: "prototype", value: "8" },
+  { name: "trial", value: "9" },
+  { name: "specimen", value: "10" },
 ];
 const Test: React.FC = () => {
+  // const location = useLocation();
   return (
     <div className="flex items-center h-full bg-white">
       <div className="max-w-[400px] mx-auto w-full">
-        <SideBar subModules={submodules} sideBarStyle="hr-sticky hr-top-0" />
+        {/* <SideBar subModules={subModules} modules={modules} image="" admin="" name="" /> */}
+        <DropDownSelect
+          onSearchInputChange={() => {}}
+          options={items}
+          labelKey="name"
+          handleChange={() => {}}
+          valueKey="id"
+          showOptions
+        />
       </div>
     </div>
   );

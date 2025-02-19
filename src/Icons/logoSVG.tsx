@@ -1,14 +1,17 @@
 import React from "react";
-
-const LogoIcon = ({ width = 125, height = 32 }) => {
+interface LogoIcontype {
+  className?: string;
+}
+const LogoIcon: React.FC<LogoIcontype> = ({ className }) => {
   return (
     <svg
-      width={width}
-      height={height}
-      viewBox={`0 0 ${width} ${height}`}
+      width={125}
+      height={32}
+      viewBox={`0 0 125 32`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      className={className}
     >
       <rect
         x="0.728516"

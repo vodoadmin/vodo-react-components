@@ -127,11 +127,9 @@
   @apply hidden;
 }
 .vodo-rc-aside {
-  @apply z-50 flex flex-col items-end w-16 h-screen transition-all bg-white;
+  @apply z-50 flex flex-col p-5 h-screen transition-all bg-white;
 }
-.vodo-rc-aside > div:first-of-type {
-  @apply flex w-full items-center justify-end gap-[70px];
-}
+
 .vodo-rc-aside > .vodo-rc-submodule-outer {
   @apply w-full;
 }
@@ -161,13 +159,13 @@
   @apply transition-all;
 }
 .vodo-rc-aside .vodo-rc-submodule > div > div > div {
-  @apply p-0 pl-11 rtl:pr-11 rtl:pl-0;
+  @apply p-0 pl-2 rtl:pr-11 rtl:pl-0;
 }
 .vodo-rc-aside .vodo-rc-submodule > div > div > div > ul {
   @apply *:my-3 *:cursor-pointer *:text-black;
 }
 .vodo-rc-aside .vodo-rc-modules > a {
-  @apply flex  justify-start w-full h-10 gap-4 px-5 py-8 text-[#2B2F3880] rounded-none;
+  @apply flex  justify-start w-full gap-3 rounded-none font-bold;
 }
 .vodo-rc-aside .vodo-rc-modules > a span {
   @apply text-inherit hover:text-destructive;
@@ -211,4 +209,16 @@
 
 .drop-down-select p {
   @apply overflow-hidden text-ellipsis text-nowrap;
+}
+.active-sub {
+  @apply bg-[#F4F4F4] border-l border-l-destructive p-2;
+}
+div[data-radix-popper-content-wrapper] {
+  @apply pointer-events-auto;
+}
+div[data-radix-popper-content-wrapper] * {
+  @apply !pointer-events-auto;
+}
+.active-card {
+  @apply bg-[#F2F2F2];
 }

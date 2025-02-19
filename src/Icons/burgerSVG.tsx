@@ -1,6 +1,6 @@
 import React from "react";
 
-const BurgerIcon = ({ stroke = "white", width = 28, height = 23 }) => {
+const BurgerIcon = ({ stroke = "white", width = 28, height = 23, className = "" }) => {
   return (
     <svg
       width={width}
@@ -8,6 +8,7 @@ const BurgerIcon = ({ stroke = "white", width = 28, height = 23 }) => {
       viewBox={`0 0 ${width} ${height}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M1.7998 2.25H25.7998"

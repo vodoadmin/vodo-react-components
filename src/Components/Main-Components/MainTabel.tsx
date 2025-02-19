@@ -71,7 +71,11 @@ export default function MainTabel({
           </thead>
           <tbody className={tableStyling?.bodyStyle}>
             {TabelData?.length === 0 ? (
-              <p className="text-center">No data available</p>
+              <tr>
+                <td>
+                  <p className="text-center">No data available</p>
+                </td>
+              </tr>
             ) : (
               TabelData?.map((row: tableItemType, rowIndex: number) => (
                 <tr key={rowIndex} className={tableStyling?.bodyRowStyle}>

@@ -54,10 +54,11 @@ export const Selector: React.FC<SelectorProps> = ({
         id={id}
         name={name}
         dir={dir}
+        data-state="open"
       >
         <SelectValue className="" placeholder={placeholder} />
       </SelectTrigger>
-      <SelectContent className="min-w-fit">
+      <SelectContent className="min-w-fit" data-state="open">
         {items.map((item) => (
           <SelectItem
             showCheckIcon={showCheckIcon}

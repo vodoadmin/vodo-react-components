@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-tailwindcss-select";
 interface DropDownSelectProps {
   label?: string;
@@ -14,6 +14,8 @@ interface DropDownSelectProps {
   valueKey: string;
   className?: string;
   disabledClassName?: string;
+  noOptionsMessage?: string;
+  showOptions?: boolean;
 }
 const DropDownSelect = ({
   label,
@@ -29,6 +31,8 @@ const DropDownSelect = ({
   isMultiple,
   className,
   disabledClassName,
+  showOptions,
+  noOptionsMessage,
 }: DropDownSelectProps) => {
   const [value, setValue] = useState(null);
 
@@ -36,6 +40,20 @@ const DropDownSelect = ({
     setValue(value);
     handleChange(value);
   };
+  const [searchTerm, setSearchTerm] = useState("");
+  const debounceDelay = 500;
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      if (searchTerm.length >= 2) {
+        onSearchInputChange(searchTerm);
+      }
+    }, debounceDelay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchTerm, debounceDelay]);
   const mappedOptions = options.map((option: any) => {
     const { [labelKey]: rawLabel, [valueKey]: rawValue, ...rest } = option;
     const label = rawLabel !== null && rawLabel !== undefined ? rawLabel : "";
@@ -46,7 +64,7 @@ const DropDownSelect = ({
       ...rest,
     };
   });
-
+  const show = showOptions ? mappedOptions : searchTerm ? mappedOptions : [];
   return (
     <div>
       {label ? (
@@ -62,12 +80,10 @@ const DropDownSelect = ({
         isDisabled={isDisabled}
         isMultiple={isMultiple}
         loading={loading}
-        onSearchInputChange={(e) =>
-          e.target.value.length >= 2 && onSearchInputChange(e.target.value)
-        }
+        onSearchInputChange={(e) => setSearchTerm(e.target.value)}
         value={!mappedOptions.length ? null : value}
         onChange={handleChoose}
-        options={mappedOptions}
+        options={show}
         placeholder={placeHolder}
         searchInputPlaceholder={searchInputPlaceholder}
         classNames={{
@@ -88,6 +104,7 @@ const DropDownSelect = ({
           ChevronIcon: (open) => (open ? "rotate-90" : "rotate-0"),
         }}
         primaryColor={""}
+        noOptionsMessage={noOptionsMessage}
       />
     </div>
   );

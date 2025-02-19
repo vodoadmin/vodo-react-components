@@ -1,18 +1,12 @@
-import React, { ReactNode } from "react";
-import { Button } from "./button";
-import ModulesIcon from "../../Icons/ModulesSVG";
-import BurgerIcon from "../../Icons/burgerSVG";
+import React, { ReactNode, useEffect } from "react";
 import { useState } from "react";
-import ArrowMenuIcon from "../../Icons/arrow-menuSVG";
 import SideCard from "../sidebar-card";
 import SideModuleCard from "../sub-module-card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../accordion";
+
 import { cn } from "../../Utils/utils";
+import { Button } from "./button";
+import ArrowMenuIcon from "../../Icons/arrow-menuSVG";
+import BurgerIcon from "../../Icons/burgerSVG";
 
 export interface classNameProp {
   subModule?: string;
@@ -23,11 +17,13 @@ export interface ModuleProps {
   title: string;
   link: string;
   Svg?: ReactNode;
+  dataLink?: string;
 }
 export interface SubModuleProps {
   title: string;
   submoduleArr: ModuleProps[];
   Svg?: ReactNode;
+  dataTesting?: string;
 }
 interface SideBarprops {
   subModules?: SubModuleProps[];
@@ -35,77 +31,88 @@ interface SideBarprops {
   className?: classNameProp;
   sideBarStyle?: string;
   ModuleName?: string;
+  name: string;
+  image: string;
+  admin: string;
   ModuleIcon?: any;
+  OpenState?: any;
 }
 const SideBar = ({
   subModules,
   modules,
   className, //// To add style to subModules & modules
   sideBarStyle, //// To add style to the whole sidebar
-  ModuleName,
-  ModuleIcon,
+  OpenState,
+  name,
+  image,
+  admin,
 }: SideBarprops) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const handleSideBar = () => {
     setOpen(!open);
   };
-  const handleAccordionChange = (value: any) => {
-    if (!open && value) {
-      setOpen(true);
+  useEffect(() => {
+    if (OpenState) {
+      OpenState(open);
     }
-  };
+  }, [open]);
   return (
     <aside
-      className={cn(`vodo-rc-aside  ${open ? "!w-[280px]" : ""}`, sideBarStyle ?? "")}
+      className={cn(
+        `vodo-rc-aside  ${open ? "!w-[230px]" : "w-14 !p-1"} relative`,
+        sideBarStyle ?? ""
+      )}
     >
-      <div>
-        <Button className="w-16 py-8 rounded-none " onClick={() => handleSideBar()}>
+      <div className="absolute top-0 ltr:right-0 rtl:left-0 w-fit">
+        <Button className="w-14 p-2.5 rounded-none" onClick={() => handleSideBar()}>
           {open ? (
-            <ArrowMenuIcon className="transform rtl:rotate-180" />
+            <ArrowMenuIcon className="transform size-5 rtl:rotate-180" />
           ) : (
-            <BurgerIcon />
+            <BurgerIcon className=" size-5" />
           )}
         </Button>
       </div>
-      {subModules?.length ? (
-        <Accordion
-          className="vodo-rc-submodule-outer"
-          type="single"
-          collapsible
-          onValueChange={handleAccordionChange}
-        >
-          <AccordionItem value="item-1" className="w-full border-none">
-            <AccordionTrigger
-              onClick={(e: any) =>
-                e.currentTarget.classList.toggle("vodo-rc-sidebar-active")
-              }
-            >
-              {ModuleIcon || <ModulesIcon />}
-              {open && <span className="text-black/50">{ModuleName || "Modules"}</span>}
-            </AccordionTrigger>
+      <div className="h-14"></div>
 
-            <AccordionContent>
-              {open && (
-                <ul className="*:!my-3">
-                  {subModules?.length &&
-                    subModules.map((module: SubModuleProps, i) => (
-                      <SideModuleCard
-                        key={i}
-                        title={module.title}
-                        submoduleArr={module.submoduleArr}
-                        svg={module.Svg}
-                        subModuleStyles={className?.subModule}
-                      />
-                    ))}
-                </ul>
-              )}
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+      {open ? (
+        <div className="w-[190px] h-[120px] bg-[#413E54] rounded-3xl border-t-[23px] border-destructive relative flex flex-col items-center justify-end my-5">
+          <>
+            <img
+              src={image}
+              alt={name}
+              className="size-[68px] rounded-full object-cover absolute -top-10 shadow-[0_-6px_6px_-1px_#0000001a]"
+            />
+            <div className="mb-4 text-center">
+              <h1 className="text-white capitalize">{name}</h1>
+              <span className="text-[#CDA6FF] capitalize h-[23px] block">
+                {admin && admin}
+              </span>
+            </div>
+          </>
+        </div>
       ) : (
-        ""
+        <img
+          src={image}
+          alt={name}
+          className="size-12 mb-[15px] rounded-full object-cover -top-10 shadow-[0_-6px_6px_-1px_#0000001a]"
+        />
       )}
 
+      <ul className="*:!my-3 w-full">
+        {subModules?.length &&
+          subModules.map((module: SubModuleProps, i) => (
+            <SideModuleCard
+              sideOpen={open}
+              setSideOpen={setOpen}
+              key={i}
+              title={module.title}
+              submoduleArr={module.submoduleArr}
+              svg={module.Svg}
+              subModuleStyles={className?.subModule}
+              dataTesting={module.dataTesting}
+            />
+          ))}
+      </ul>
       <div className="vodo-rc-modules">
         {modules?.length &&
           modules.map((module: ModuleProps, i) => (
@@ -116,6 +123,7 @@ const SideBar = ({
               Svg={module.Svg}
               open={open}
               moduleStyles={className?.module}
+              dataLink={module.dataLink}
             />
           ))}
       </div>
